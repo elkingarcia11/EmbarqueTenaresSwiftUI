@@ -1,0 +1,13 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "7c210285ad91bfaec743ad1cdc75c0a36a39d4994ee93a2203d801d0d6081829"
+build_start_time: [1645468093, 929960966]
+build_end_time: [1645468094, 954496860]
+inputs:
+  "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/DominicanRepublicLocationView.swift": [1645467914, 979687213]
+  "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUIApp.swift": [1645467903, 295048236]
+  "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/FAQsView.swift": [1645467917, 588564395]
+  "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/LocationsView.swift": [1645468090, 244683265]
+  "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/MainView.swift": [1645467905, 95218658]
+  "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/NewYorkLocationView.swift": [1645467912, 757351875]
+  "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/RatesView.swift": [1645467907, 823017120]
+  "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/TrackView.swift": [1645467906, 399168252]

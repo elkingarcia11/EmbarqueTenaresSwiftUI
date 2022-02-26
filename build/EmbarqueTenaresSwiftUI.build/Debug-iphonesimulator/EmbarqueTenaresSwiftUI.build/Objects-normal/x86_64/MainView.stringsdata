@@ -1,0 +1,24 @@
+{
+  "source": "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/MainView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Track"
+      },
+      {
+        "comment": "",
+        "key": "Locations"
+      },
+      {
+        "comment": "",
+        "key": "Rates"
+      },
+      {
+        "comment": "",
+        "key": "FAQs"
+      }
+    ]
+  },
+  "version": 1
+}

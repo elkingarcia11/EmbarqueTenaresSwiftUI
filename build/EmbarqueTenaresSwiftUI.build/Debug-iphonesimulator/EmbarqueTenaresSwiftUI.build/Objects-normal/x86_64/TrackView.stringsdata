@@ -1,0 +1,40 @@
+{
+  "source": "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/TrackView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Track Invoice"
+      },
+      {
+        "comment": "",
+        "key": "123456"
+      },
+      {
+        "comment": "",
+        "key": "Almacen NY"
+      },
+      {
+        "comment": "",
+        "key": "En transito"
+      },
+      {
+        "comment": "",
+        "key": "Almacen RD"
+      },
+      {
+        "comment": "",
+        "key": "En camino"
+      },
+      {
+        "comment": "",
+        "key": "Entregado"
+      },
+      {
+        "comment": "",
+        "key": "Search for invoice"
+      }
+    ]
+  },
+  "version": 1
+}
