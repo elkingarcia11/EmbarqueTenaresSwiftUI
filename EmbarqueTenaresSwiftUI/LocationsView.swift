@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct LocationsView: View {
+    
     var body: some View {
         VStack{
             TabView {

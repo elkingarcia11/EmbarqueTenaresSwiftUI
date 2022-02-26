@@ -835,193 +835,6 @@
         },
         {
           "kind": "Var",
-          "name": "screenSize",
-          "printedName": "screenSize",
-          "children": [
-            {
-              "kind": "TypeNominal",
-              "name": "CGSize",
-              "printedName": "CoreGraphics.CGSize",
-              "usr": "c:@S@CGSize"
-            }
-          ],
-          "declKind": "Var",
-          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV10screenSizeSo6CGSizeVvp",
-          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV10screenSizeSo6CGSizeVvp",
-          "moduleName": "EmbarqueTenaresSwiftUI",
-          "declAttributes": [
-            "HasInitialValue",
-            "HasStorage"
-          ],
-          "fixedbinaryorder": 2,
-          "isLet": true,
-          "hasStorage": true,
-          "accessors": [
-            {
-              "kind": "Accessor",
-              "name": "Get",
-              "printedName": "Get()",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "CGSize",
-                  "printedName": "CoreGraphics.CGSize",
-                  "usr": "c:@S@CGSize"
-                }
-              ],
-              "declKind": "Accessor",
-              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV10screenSizeSo6CGSizeVvg",
-              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV10screenSizeSo6CGSizeVvg",
-              "moduleName": "EmbarqueTenaresSwiftUI",
-              "implicit": true,
-              "declAttributes": [
-                "Transparent"
-              ],
-              "accessorKind": "get"
-            }
-          ]
-        },
-        {
-          "kind": "Var",
-          "name": "text",
-          "printedName": "text",
-          "children": [
-            {
-              "kind": "TypeNominal",
-              "name": "String",
-              "printedName": "Swift.String",
-              "usr": "s:SS"
-            }
-          ],
-          "declKind": "Var",
-          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV4textSSvp",
-          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV4textSSvp",
-          "moduleName": "EmbarqueTenaresSwiftUI",
-          "declAttributes": [
-            "ProjectedValueProperty",
-            "Custom"
-          ],
-          "accessors": [
-            {
-              "kind": "Accessor",
-              "name": "Get",
-              "printedName": "Get()",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "String",
-                  "printedName": "Swift.String",
-                  "usr": "s:SS"
-                }
-              ],
-              "declKind": "Accessor",
-              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV4textSSvg",
-              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV4textSSvg",
-              "moduleName": "EmbarqueTenaresSwiftUI",
-              "implicit": true,
-              "accessorKind": "get"
-            },
-            {
-              "kind": "Accessor",
-              "name": "Set",
-              "printedName": "Set()",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "Void",
-                  "printedName": "()"
-                },
-                {
-                  "kind": "TypeNominal",
-                  "name": "String",
-                  "printedName": "Swift.String",
-                  "usr": "s:SS"
-                }
-              ],
-              "declKind": "Accessor",
-              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV4textSSvs",
-              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV4textSSvs",
-              "moduleName": "EmbarqueTenaresSwiftUI",
-              "implicit": true,
-              "accessorKind": "set"
-            },
-            {
-              "kind": "Accessor",
-              "name": "Modify",
-              "printedName": "Modify()",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "Void",
-                  "printedName": "()"
-                }
-              ],
-              "declKind": "Accessor",
-              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV4textSSvM",
-              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV4textSSvM",
-              "moduleName": "EmbarqueTenaresSwiftUI",
-              "implicit": true,
-              "accessorKind": "_modify"
-            }
-          ]
-        },
-        {
-          "kind": "Var",
-          "name": "$text",
-          "printedName": "$text",
-          "children": [
-            {
-              "kind": "TypeNominal",
-              "name": "Binding",
-              "printedName": "SwiftUI.Binding<Swift.String>",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "String",
-                  "printedName": "Swift.String",
-                  "usr": "s:SS"
-                }
-              ],
-              "usr": "s:7SwiftUI7BindingV"
-            }
-          ],
-          "declKind": "Var",
-          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV5$text0cD07BindingVySSGvp",
-          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV5$text0cD07BindingVySSGvp",
-          "moduleName": "EmbarqueTenaresSwiftUI",
-          "implicit": true,
-          "accessors": [
-            {
-              "kind": "Accessor",
-              "name": "Get",
-              "printedName": "Get()",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "Binding",
-                  "printedName": "SwiftUI.Binding<Swift.String>",
-                  "children": [
-                    {
-                      "kind": "TypeNominal",
-                      "name": "String",
-                      "printedName": "Swift.String",
-                      "usr": "s:SS"
-                    }
-                  ],
-                  "usr": "s:7SwiftUI7BindingV"
-                }
-              ],
-              "declKind": "Accessor",
-              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV5$text0cD07BindingVySSGvg",
-              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV5$text0cD07BindingVySSGvg",
-              "moduleName": "EmbarqueTenaresSwiftUI",
-              "implicit": true,
-              "accessorKind": "get"
-            }
-          ]
-        },
-        {
-          "kind": "Var",
           "name": "_text",
           "printedName": "_text",
           "children": [
@@ -1050,324 +863,13 @@
             "HasInitialValue",
             "HasStorage"
           ],
-          "fixedbinaryorder": 3,
+          "fixedbinaryorder": 2,
           "hasStorage": true
         },
         {
           "kind": "Var",
-          "name": "progressValue",
-          "printedName": "progressValue",
-          "children": [
-            {
-              "kind": "TypeNominal",
-              "name": "Float",
-              "printedName": "Swift.Float",
-              "usr": "s:Sf"
-            }
-          ],
-          "declKind": "Var",
-          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV13progressValueSfvp",
-          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV13progressValueSfvp",
-          "moduleName": "EmbarqueTenaresSwiftUI",
-          "declAttributes": [
-            "ProjectedValueProperty",
-            "Custom"
-          ],
-          "accessors": [
-            {
-              "kind": "Accessor",
-              "name": "Get",
-              "printedName": "Get()",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "Float",
-                  "printedName": "Swift.Float",
-                  "usr": "s:Sf"
-                }
-              ],
-              "declKind": "Accessor",
-              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV13progressValueSfvg",
-              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV13progressValueSfvg",
-              "moduleName": "EmbarqueTenaresSwiftUI",
-              "implicit": true,
-              "accessorKind": "get"
-            },
-            {
-              "kind": "Accessor",
-              "name": "Set",
-              "printedName": "Set()",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "Void",
-                  "printedName": "()"
-                },
-                {
-                  "kind": "TypeNominal",
-                  "name": "Float",
-                  "printedName": "Swift.Float",
-                  "usr": "s:Sf"
-                }
-              ],
-              "declKind": "Accessor",
-              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV13progressValueSfvs",
-              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV13progressValueSfvs",
-              "moduleName": "EmbarqueTenaresSwiftUI",
-              "implicit": true,
-              "accessorKind": "set"
-            },
-            {
-              "kind": "Accessor",
-              "name": "Modify",
-              "printedName": "Modify()",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "Void",
-                  "printedName": "()"
-                }
-              ],
-              "declKind": "Accessor",
-              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV13progressValueSfvM",
-              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV13progressValueSfvM",
-              "moduleName": "EmbarqueTenaresSwiftUI",
-              "implicit": true,
-              "accessorKind": "_modify"
-            }
-          ]
-        },
-        {
-          "kind": "Var",
-          "name": "$progressValue",
-          "printedName": "$progressValue",
-          "children": [
-            {
-              "kind": "TypeNominal",
-              "name": "Binding",
-              "printedName": "SwiftUI.Binding<Swift.Float>",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "Float",
-                  "printedName": "Swift.Float",
-                  "usr": "s:Sf"
-                }
-              ],
-              "usr": "s:7SwiftUI7BindingV"
-            }
-          ],
-          "declKind": "Var",
-          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV14$progressValue0cD07BindingVySfGvp",
-          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV14$progressValue0cD07BindingVySfGvp",
-          "moduleName": "EmbarqueTenaresSwiftUI",
-          "implicit": true,
-          "accessors": [
-            {
-              "kind": "Accessor",
-              "name": "Get",
-              "printedName": "Get()",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "Binding",
-                  "printedName": "SwiftUI.Binding<Swift.Float>",
-                  "children": [
-                    {
-                      "kind": "TypeNominal",
-                      "name": "Float",
-                      "printedName": "Swift.Float",
-                      "usr": "s:Sf"
-                    }
-                  ],
-                  "usr": "s:7SwiftUI7BindingV"
-                }
-              ],
-              "declKind": "Accessor",
-              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV14$progressValue0cD07BindingVySfGvg",
-              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV14$progressValue0cD07BindingVySfGvg",
-              "moduleName": "EmbarqueTenaresSwiftUI",
-              "implicit": true,
-              "accessorKind": "get"
-            }
-          ]
-        },
-        {
-          "kind": "Var",
-          "name": "_progressValue",
-          "printedName": "_progressValue",
-          "children": [
-            {
-              "kind": "TypeNominal",
-              "name": "State",
-              "printedName": "SwiftUI.State<Swift.Float>",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "Float",
-                  "printedName": "Swift.Float",
-                  "usr": "s:Sf"
-                }
-              ],
-              "usr": "s:7SwiftUI5StateV"
-            }
-          ],
-          "declKind": "Var",
-          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV14_progressValue33_FCBFFDCB2A08BD2D0A70FCF449D802FDLL0cD05StateVySfGvp",
-          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV14_progressValue33_FCBFFDCB2A08BD2D0A70FCF449D802FDLL0cD05StateVySfGvp",
-          "moduleName": "EmbarqueTenaresSwiftUI",
-          "implicit": true,
-          "isInternal": true,
-          "declAttributes": [
-            "HasInitialValue",
-            "HasStorage"
-          ],
-          "fixedbinaryorder": 4,
-          "hasStorage": true
-        },
-        {
-          "kind": "Var",
-          "name": "eta",
-          "printedName": "eta",
-          "children": [
-            {
-              "kind": "TypeNominal",
-              "name": "String",
-              "printedName": "Swift.String",
-              "usr": "s:SS"
-            }
-          ],
-          "declKind": "Var",
-          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV3etaSSvp",
-          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV3etaSSvp",
-          "moduleName": "EmbarqueTenaresSwiftUI",
-          "declAttributes": [
-            "ProjectedValueProperty",
-            "Custom"
-          ],
-          "accessors": [
-            {
-              "kind": "Accessor",
-              "name": "Get",
-              "printedName": "Get()",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "String",
-                  "printedName": "Swift.String",
-                  "usr": "s:SS"
-                }
-              ],
-              "declKind": "Accessor",
-              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV3etaSSvg",
-              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV3etaSSvg",
-              "moduleName": "EmbarqueTenaresSwiftUI",
-              "implicit": true,
-              "accessorKind": "get"
-            },
-            {
-              "kind": "Accessor",
-              "name": "Set",
-              "printedName": "Set()",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "Void",
-                  "printedName": "()"
-                },
-                {
-                  "kind": "TypeNominal",
-                  "name": "String",
-                  "printedName": "Swift.String",
-                  "usr": "s:SS"
-                }
-              ],
-              "declKind": "Accessor",
-              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV3etaSSvs",
-              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV3etaSSvs",
-              "moduleName": "EmbarqueTenaresSwiftUI",
-              "implicit": true,
-              "accessorKind": "set"
-            },
-            {
-              "kind": "Accessor",
-              "name": "Modify",
-              "printedName": "Modify()",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "Void",
-                  "printedName": "()"
-                }
-              ],
-              "declKind": "Accessor",
-              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV3etaSSvM",
-              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV3etaSSvM",
-              "moduleName": "EmbarqueTenaresSwiftUI",
-              "implicit": true,
-              "accessorKind": "_modify"
-            }
-          ]
-        },
-        {
-          "kind": "Var",
-          "name": "$eta",
-          "printedName": "$eta",
-          "children": [
-            {
-              "kind": "TypeNominal",
-              "name": "Binding",
-              "printedName": "SwiftUI.Binding<Swift.String>",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "String",
-                  "printedName": "Swift.String",
-                  "usr": "s:SS"
-                }
-              ],
-              "usr": "s:7SwiftUI7BindingV"
-            }
-          ],
-          "declKind": "Var",
-          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV4$eta0cD07BindingVySSGvp",
-          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV4$eta0cD07BindingVySSGvp",
-          "moduleName": "EmbarqueTenaresSwiftUI",
-          "implicit": true,
-          "accessors": [
-            {
-              "kind": "Accessor",
-              "name": "Get",
-              "printedName": "Get()",
-              "children": [
-                {
-                  "kind": "TypeNominal",
-                  "name": "Binding",
-                  "printedName": "SwiftUI.Binding<Swift.String>",
-                  "children": [
-                    {
-                      "kind": "TypeNominal",
-                      "name": "String",
-                      "printedName": "Swift.String",
-                      "usr": "s:SS"
-                    }
-                  ],
-                  "usr": "s:7SwiftUI7BindingV"
-                }
-              ],
-              "declKind": "Accessor",
-              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV4$eta0cD07BindingVySSGvg",
-              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV4$eta0cD07BindingVySSGvg",
-              "moduleName": "EmbarqueTenaresSwiftUI",
-              "implicit": true,
-              "accessorKind": "get"
-            }
-          ]
-        },
-        {
-          "kind": "Var",
-          "name": "_eta",
-          "printedName": "_eta",
+          "name": "_finalInvoice",
+          "printedName": "_finalInvoice",
           "children": [
             {
               "kind": "TypeNominal",
@@ -1385,8 +887,8 @@
             }
           ],
           "declKind": "Var",
-          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV4_eta33_FCBFFDCB2A08BD2D0A70FCF449D802FDLL0cD05StateVySSGvp",
-          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV4_eta33_FCBFFDCB2A08BD2D0A70FCF449D802FDLL0cD05StateVySSGvp",
+          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV13_finalInvoice33_FCBFFDCB2A08BD2D0A70FCF449D802FDLL0cD05StateVySSGvp",
+          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV13_finalInvoice33_FCBFFDCB2A08BD2D0A70FCF449D802FDLL0cD05StateVySSGvp",
           "moduleName": "EmbarqueTenaresSwiftUI",
           "implicit": true,
           "isInternal": true,
@@ -1394,7 +896,179 @@
             "HasInitialValue",
             "HasStorage"
           ],
-          "fixedbinaryorder": 5,
+          "fixedbinaryorder": 3,
+          "hasStorage": true
+        },
+        {
+          "kind": "Var",
+          "name": "eta",
+          "printedName": "eta",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV3etaSivp",
+          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV3etaSivp",
+          "moduleName": "EmbarqueTenaresSwiftUI",
+          "declAttributes": [
+            "ProjectedValueProperty",
+            "Custom"
+          ],
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Int",
+                  "printedName": "Swift.Int",
+                  "usr": "s:Si"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV3etaSivg",
+              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV3etaSivg",
+              "moduleName": "EmbarqueTenaresSwiftUI",
+              "implicit": true,
+              "accessorKind": "get"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Set",
+              "printedName": "Set()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Int",
+                  "printedName": "Swift.Int",
+                  "usr": "s:Si"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV3etaSivs",
+              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV3etaSivs",
+              "moduleName": "EmbarqueTenaresSwiftUI",
+              "implicit": true,
+              "accessorKind": "set"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Modify",
+              "printedName": "Modify()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV3etaSivM",
+              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV3etaSivM",
+              "moduleName": "EmbarqueTenaresSwiftUI",
+              "implicit": true,
+              "accessorKind": "_modify"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "$eta",
+          "printedName": "$eta",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Binding",
+              "printedName": "SwiftUI.Binding<Swift.Int>",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Int",
+                  "printedName": "Swift.Int",
+                  "usr": "s:Si"
+                }
+              ],
+              "usr": "s:7SwiftUI7BindingV"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV4$eta0cD07BindingVySiGvp",
+          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV4$eta0cD07BindingVySiGvp",
+          "moduleName": "EmbarqueTenaresSwiftUI",
+          "implicit": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Binding",
+                  "printedName": "SwiftUI.Binding<Swift.Int>",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "Int",
+                      "printedName": "Swift.Int",
+                      "usr": "s:Si"
+                    }
+                  ],
+                  "usr": "s:7SwiftUI7BindingV"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV4$eta0cD07BindingVySiGvg",
+              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV4$eta0cD07BindingVySiGvg",
+              "moduleName": "EmbarqueTenaresSwiftUI",
+              "implicit": true,
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "_eta",
+          "printedName": "_eta",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "State",
+              "printedName": "SwiftUI.State<Swift.Int>",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Int",
+                  "printedName": "Swift.Int",
+                  "usr": "s:Si"
+                }
+              ],
+              "usr": "s:7SwiftUI5StateV"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV4_eta33_FCBFFDCB2A08BD2D0A70FCF449D802FDLL0cD05StateVySiGvp",
+          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV4_eta33_FCBFFDCB2A08BD2D0A70FCF449D802FDLL0cD05StateVySiGvp",
+          "moduleName": "EmbarqueTenaresSwiftUI",
+          "implicit": true,
+          "isInternal": true,
+          "declAttributes": [
+            "HasInitialValue",
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 4,
           "hasStorage": true
         },
         {
@@ -1566,8 +1240,32 @@
             "HasInitialValue",
             "HasStorage"
           ],
-          "fixedbinaryorder": 6,
+          "fixedbinaryorder": 5,
           "hasStorage": true
+        },
+        {
+          "kind": "Function",
+          "name": "getInvoiceStatus",
+          "printedName": "getInvoiceStatus(invoice:)",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Int",
+              "printedName": "Swift.Int",
+              "usr": "s:Si"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "String",
+              "printedName": "Swift.String",
+              "usr": "s:SS"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV16getInvoiceStatus7invoiceSiSS_tF",
+          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV16getInvoiceStatus7invoiceSiSS_tF",
+          "moduleName": "EmbarqueTenaresSwiftUI",
+          "funcSelfKind": "NonMutating"
         },
         {
           "kind": "Var",
@@ -1577,22 +1275,22 @@
             {
               "kind": "TypeNominal",
               "name": "VStack",
-              "printedName": "SwiftUI.VStack<SwiftUI.TupleView<(some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View)>>",
+              "printedName": "SwiftUI.VStack<SwiftUI.TupleView<(some SwiftUI.View, some SwiftUI.View)>>",
               "children": [
                 {
                   "kind": "TypeNominal",
                   "name": "TupleView",
-                  "printedName": "SwiftUI.TupleView<(some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View)>",
+                  "printedName": "SwiftUI.TupleView<(some SwiftUI.View, some SwiftUI.View)>",
                   "children": [
                     {
                       "kind": "TypeNominal",
                       "name": "Tuple",
-                      "printedName": "(some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View)",
+                      "printedName": "(some SwiftUI.View, some SwiftUI.View)",
                       "children": [
                         {
                           "kind": "TypeNominal",
                           "name": "ModifiedContent",
-                          "printedName": "SwiftUI.ModifiedContent<τ_0_0, SwiftUI._PaddingLayout>",
+                          "printedName": "SwiftUI.ModifiedContent<τ_0_0, SwiftUI._FlexFrameLayout>",
                           "children": [
                             {
                               "kind": "TypeNominal",
@@ -1601,23 +1299,17 @@
                             },
                             {
                               "kind": "TypeNominal",
-                              "name": "_PaddingLayout",
-                              "printedName": "SwiftUI._PaddingLayout",
-                              "usr": "s:7SwiftUI14_PaddingLayoutV"
+                              "name": "_FlexFrameLayout",
+                              "printedName": "SwiftUI._FlexFrameLayout",
+                              "usr": "s:7SwiftUI16_FlexFrameLayoutV"
                             }
                           ],
                           "usr": "s:7SwiftUI15ModifiedContentV"
                         },
                         {
                           "kind": "TypeNominal",
-                          "name": "Spacer",
-                          "printedName": "SwiftUI.Spacer",
-                          "usr": "s:7SwiftUI6SpacerV"
-                        },
-                        {
-                          "kind": "TypeNominal",
                           "name": "ModifiedContent",
-                          "printedName": "SwiftUI.ModifiedContent<τ_0_0, SwiftUI._PaddingLayout>",
+                          "printedName": "SwiftUI.ModifiedContent<τ_0_0, SwiftUI._FrameLayout>",
                           "children": [
                             {
                               "kind": "TypeNominal",
@@ -1626,41 +1318,9 @@
                             },
                             {
                               "kind": "TypeNominal",
-                              "name": "_PaddingLayout",
-                              "printedName": "SwiftUI._PaddingLayout",
-                              "usr": "s:7SwiftUI14_PaddingLayoutV"
-                            }
-                          ],
-                          "usr": "s:7SwiftUI15ModifiedContentV"
-                        },
-                        {
-                          "kind": "TypeNominal",
-                          "name": "Spacer",
-                          "printedName": "SwiftUI.Spacer",
-                          "usr": "s:7SwiftUI6SpacerV"
-                        },
-                        {
-                          "kind": "TypeNominal",
-                          "name": "ModifiedContent",
-                          "printedName": "SwiftUI.ModifiedContent<τ_0_0, SwiftUI._BackgroundStyleModifier<τ_1_0>>",
-                          "children": [
-                            {
-                              "kind": "TypeNominal",
-                              "name": "GenericTypeParam",
-                              "printedName": "τ_0_0"
-                            },
-                            {
-                              "kind": "TypeNominal",
-                              "name": "_BackgroundStyleModifier",
-                              "printedName": "SwiftUI._BackgroundStyleModifier<τ_1_0>",
-                              "children": [
-                                {
-                                  "kind": "TypeNominal",
-                                  "name": "GenericTypeParam",
-                                  "printedName": "τ_1_0"
-                                }
-                              ],
-                              "usr": "s:7SwiftUI24_BackgroundStyleModifierV"
+                              "name": "_FrameLayout",
+                              "printedName": "SwiftUI._FrameLayout",
+                              "usr": "s:7SwiftUI12_FrameLayoutV"
                             }
                           ],
                           "usr": "s:7SwiftUI15ModifiedContentV"
@@ -1690,22 +1350,22 @@
                 {
                   "kind": "TypeNominal",
                   "name": "VStack",
-                  "printedName": "SwiftUI.VStack<SwiftUI.TupleView<(some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View)>>",
+                  "printedName": "SwiftUI.VStack<SwiftUI.TupleView<(some SwiftUI.View, some SwiftUI.View)>>",
                   "children": [
                     {
                       "kind": "TypeNominal",
                       "name": "TupleView",
-                      "printedName": "SwiftUI.TupleView<(some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View)>",
+                      "printedName": "SwiftUI.TupleView<(some SwiftUI.View, some SwiftUI.View)>",
                       "children": [
                         {
                           "kind": "TypeNominal",
                           "name": "Tuple",
-                          "printedName": "(some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View)",
+                          "printedName": "(some SwiftUI.View, some SwiftUI.View)",
                           "children": [
                             {
                               "kind": "TypeNominal",
                               "name": "ModifiedContent",
-                              "printedName": "SwiftUI.ModifiedContent<τ_0_0, SwiftUI._PaddingLayout>",
+                              "printedName": "SwiftUI.ModifiedContent<τ_0_0, SwiftUI._FlexFrameLayout>",
                               "children": [
                                 {
                                   "kind": "TypeNominal",
@@ -1714,23 +1374,17 @@
                                 },
                                 {
                                   "kind": "TypeNominal",
-                                  "name": "_PaddingLayout",
-                                  "printedName": "SwiftUI._PaddingLayout",
-                                  "usr": "s:7SwiftUI14_PaddingLayoutV"
+                                  "name": "_FlexFrameLayout",
+                                  "printedName": "SwiftUI._FlexFrameLayout",
+                                  "usr": "s:7SwiftUI16_FlexFrameLayoutV"
                                 }
                               ],
                               "usr": "s:7SwiftUI15ModifiedContentV"
                             },
                             {
                               "kind": "TypeNominal",
-                              "name": "Spacer",
-                              "printedName": "SwiftUI.Spacer",
-                              "usr": "s:7SwiftUI6SpacerV"
-                            },
-                            {
-                              "kind": "TypeNominal",
                               "name": "ModifiedContent",
-                              "printedName": "SwiftUI.ModifiedContent<τ_0_0, SwiftUI._PaddingLayout>",
+                              "printedName": "SwiftUI.ModifiedContent<τ_0_0, SwiftUI._FrameLayout>",
                               "children": [
                                 {
                                   "kind": "TypeNominal",
@@ -1739,41 +1393,9 @@
                                 },
                                 {
                                   "kind": "TypeNominal",
-                                  "name": "_PaddingLayout",
-                                  "printedName": "SwiftUI._PaddingLayout",
-                                  "usr": "s:7SwiftUI14_PaddingLayoutV"
-                                }
-                              ],
-                              "usr": "s:7SwiftUI15ModifiedContentV"
-                            },
-                            {
-                              "kind": "TypeNominal",
-                              "name": "Spacer",
-                              "printedName": "SwiftUI.Spacer",
-                              "usr": "s:7SwiftUI6SpacerV"
-                            },
-                            {
-                              "kind": "TypeNominal",
-                              "name": "ModifiedContent",
-                              "printedName": "SwiftUI.ModifiedContent<τ_0_0, SwiftUI._BackgroundStyleModifier<τ_1_0>>",
-                              "children": [
-                                {
-                                  "kind": "TypeNominal",
-                                  "name": "GenericTypeParam",
-                                  "printedName": "τ_0_0"
-                                },
-                                {
-                                  "kind": "TypeNominal",
-                                  "name": "_BackgroundStyleModifier",
-                                  "printedName": "SwiftUI._BackgroundStyleModifier<τ_1_0>",
-                                  "children": [
-                                    {
-                                      "kind": "TypeNominal",
-                                      "name": "GenericTypeParam",
-                                      "printedName": "τ_1_0"
-                                    }
-                                  ],
-                                  "usr": "s:7SwiftUI24_BackgroundStyleModifierV"
+                                  "name": "_FrameLayout",
+                                  "printedName": "SwiftUI._FrameLayout",
+                                  "usr": "s:7SwiftUI12_FrameLayoutV"
                                 }
                               ],
                               "usr": "s:7SwiftUI15ModifiedContentV"
@@ -1817,7 +1439,7 @@
         {
           "kind": "Constructor",
           "name": "init",
-          "printedName": "init(text:progressValue:eta:showPopUp:)",
+          "printedName": "init(eta:showPopUp:)",
           "children": [
             {
               "kind": "TypeNominal",
@@ -1827,24 +1449,10 @@
             },
             {
               "kind": "TypeNominal",
-              "name": "String",
-              "printedName": "Swift.String",
+              "name": "Int",
+              "printedName": "Swift.Int",
               "hasDefaultArg": true,
-              "usr": "s:SS"
-            },
-            {
-              "kind": "TypeNominal",
-              "name": "Float",
-              "printedName": "Swift.Float",
-              "hasDefaultArg": true,
-              "usr": "s:Sf"
-            },
-            {
-              "kind": "TypeNominal",
-              "name": "String",
-              "printedName": "Swift.String",
-              "hasDefaultArg": true,
-              "usr": "s:SS"
+              "usr": "s:Si"
             },
             {
               "kind": "TypeNominal",
@@ -1855,8 +1463,8 @@
             }
           ],
           "declKind": "Constructor",
-          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV4text13progressValue3eta9showPopUpACSS_SfSSSbtcfc",
-          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV4text13progressValue3eta9showPopUpACSS_SfSSSbtcfc",
+          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV3eta9showPopUpACSi_Sbtcfc",
+          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV3eta9showPopUpACSi_Sbtcfc",
           "moduleName": "EmbarqueTenaresSwiftUI",
           "implicit": true,
           "init_kind": "Designated"
@@ -1880,22 +1488,22 @@
                 {
                   "kind": "TypeNominal",
                   "name": "VStack",
-                  "printedName": "SwiftUI.VStack<SwiftUI.TupleView<(some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View)>>",
+                  "printedName": "SwiftUI.VStack<SwiftUI.TupleView<(some SwiftUI.View, some SwiftUI.View)>>",
                   "children": [
                     {
                       "kind": "TypeNominal",
                       "name": "TupleView",
-                      "printedName": "SwiftUI.TupleView<(some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View)>",
+                      "printedName": "SwiftUI.TupleView<(some SwiftUI.View, some SwiftUI.View)>",
                       "children": [
                         {
                           "kind": "TypeNominal",
                           "name": "Tuple",
-                          "printedName": "(some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View, SwiftUI.Spacer, some SwiftUI.View)",
+                          "printedName": "(some SwiftUI.View, some SwiftUI.View)",
                           "children": [
                             {
                               "kind": "TypeNominal",
                               "name": "ModifiedContent",
-                              "printedName": "SwiftUI.ModifiedContent<τ_0_0, SwiftUI._PaddingLayout>",
+                              "printedName": "SwiftUI.ModifiedContent<τ_0_0, SwiftUI._FlexFrameLayout>",
                               "children": [
                                 {
                                   "kind": "TypeNominal",
@@ -1904,23 +1512,17 @@
                                 },
                                 {
                                   "kind": "TypeNominal",
-                                  "name": "_PaddingLayout",
-                                  "printedName": "SwiftUI._PaddingLayout",
-                                  "usr": "s:7SwiftUI14_PaddingLayoutV"
+                                  "name": "_FlexFrameLayout",
+                                  "printedName": "SwiftUI._FlexFrameLayout",
+                                  "usr": "s:7SwiftUI16_FlexFrameLayoutV"
                                 }
                               ],
                               "usr": "s:7SwiftUI15ModifiedContentV"
                             },
                             {
                               "kind": "TypeNominal",
-                              "name": "Spacer",
-                              "printedName": "SwiftUI.Spacer",
-                              "usr": "s:7SwiftUI6SpacerV"
-                            },
-                            {
-                              "kind": "TypeNominal",
                               "name": "ModifiedContent",
-                              "printedName": "SwiftUI.ModifiedContent<τ_0_0, SwiftUI._PaddingLayout>",
+                              "printedName": "SwiftUI.ModifiedContent<τ_0_0, SwiftUI._FrameLayout>",
                               "children": [
                                 {
                                   "kind": "TypeNominal",
@@ -1929,41 +1531,9 @@
                                 },
                                 {
                                   "kind": "TypeNominal",
-                                  "name": "_PaddingLayout",
-                                  "printedName": "SwiftUI._PaddingLayout",
-                                  "usr": "s:7SwiftUI14_PaddingLayoutV"
-                                }
-                              ],
-                              "usr": "s:7SwiftUI15ModifiedContentV"
-                            },
-                            {
-                              "kind": "TypeNominal",
-                              "name": "Spacer",
-                              "printedName": "SwiftUI.Spacer",
-                              "usr": "s:7SwiftUI6SpacerV"
-                            },
-                            {
-                              "kind": "TypeNominal",
-                              "name": "ModifiedContent",
-                              "printedName": "SwiftUI.ModifiedContent<τ_0_0, SwiftUI._BackgroundStyleModifier<τ_1_0>>",
-                              "children": [
-                                {
-                                  "kind": "TypeNominal",
-                                  "name": "GenericTypeParam",
-                                  "printedName": "τ_0_0"
-                                },
-                                {
-                                  "kind": "TypeNominal",
-                                  "name": "_BackgroundStyleModifier",
-                                  "printedName": "SwiftUI._BackgroundStyleModifier<τ_1_0>",
-                                  "children": [
-                                    {
-                                      "kind": "TypeNominal",
-                                      "name": "GenericTypeParam",
-                                      "printedName": "τ_1_0"
-                                    }
-                                  ],
-                                  "usr": "s:7SwiftUI24_BackgroundStyleModifierV"
+                                  "name": "_FrameLayout",
+                                  "printedName": "SwiftUI._FrameLayout",
+                                  "usr": "s:7SwiftUI12_FrameLayoutV"
                                 }
                               ],
                               "usr": "s:7SwiftUI15ModifiedContentV"
@@ -2088,6 +1658,217 @@
           "printedName": "Sendable",
           "usr": "s:s8SendableP",
           "mangledName": "$ss8SendableP"
+        }
+      ]
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "ExDivider",
+      "printedName": "ExDivider",
+      "children": [
+        {
+          "kind": "Var",
+          "name": "color",
+          "printedName": "color",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Color",
+              "printedName": "SwiftUI.Color",
+              "usr": "s:7SwiftUI5ColorV"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:22EmbarqueTenaresSwiftUI9ExDividerV5color0cD05ColorVvp",
+          "mangledName": "$s22EmbarqueTenaresSwiftUI9ExDividerV5color0cD05ColorVvp",
+          "moduleName": "EmbarqueTenaresSwiftUI",
+          "declAttributes": [
+            "HasInitialValue",
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 0,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Color",
+                  "printedName": "SwiftUI.Color",
+                  "usr": "s:7SwiftUI5ColorV"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:22EmbarqueTenaresSwiftUI9ExDividerV5color0cD05ColorVvg",
+              "mangledName": "$s22EmbarqueTenaresSwiftUI9ExDividerV5color0cD05ColorVvg",
+              "moduleName": "EmbarqueTenaresSwiftUI",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "width",
+          "printedName": "width",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "CGFloat",
+              "printedName": "CoreGraphics.CGFloat",
+              "usr": "s:12CoreGraphics7CGFloatV"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:22EmbarqueTenaresSwiftUI9ExDividerV5width12CoreGraphics7CGFloatVvp",
+          "mangledName": "$s22EmbarqueTenaresSwiftUI9ExDividerV5width12CoreGraphics7CGFloatVvp",
+          "moduleName": "EmbarqueTenaresSwiftUI",
+          "declAttributes": [
+            "HasInitialValue",
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 1,
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "CGFloat",
+                  "printedName": "CoreGraphics.CGFloat",
+                  "usr": "s:12CoreGraphics7CGFloatV"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:22EmbarqueTenaresSwiftUI9ExDividerV5width12CoreGraphics7CGFloatVvg",
+              "mangledName": "$s22EmbarqueTenaresSwiftUI9ExDividerV5width12CoreGraphics7CGFloatVvg",
+              "moduleName": "EmbarqueTenaresSwiftUI",
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "body",
+          "printedName": "body",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "OpaqueTypeArchetype",
+              "printedName": "some SwiftUI.View",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "View",
+                  "printedName": "SwiftUI.View",
+                  "usr": "s:7SwiftUI4ViewP"
+                }
+              ]
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:22EmbarqueTenaresSwiftUI9ExDividerV4bodyQrvp",
+          "mangledName": "$s22EmbarqueTenaresSwiftUI9ExDividerV4bodyQrvp",
+          "moduleName": "EmbarqueTenaresSwiftUI",
+          "declAttributes": [
+            "Custom"
+          ],
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "OpaqueTypeArchetype",
+                  "printedName": "some SwiftUI.View",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "View",
+                      "printedName": "SwiftUI.View",
+                      "usr": "s:7SwiftUI4ViewP"
+                    }
+                  ]
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:22EmbarqueTenaresSwiftUI9ExDividerV4bodyQrvg",
+              "mangledName": "$s22EmbarqueTenaresSwiftUI9ExDividerV4bodyQrvg",
+              "moduleName": "EmbarqueTenaresSwiftUI",
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Constructor",
+          "name": "init",
+          "printedName": "init()",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "ExDivider",
+              "printedName": "EmbarqueTenaresSwiftUI.ExDivider",
+              "usr": "s:22EmbarqueTenaresSwiftUI9ExDividerV"
+            }
+          ],
+          "declKind": "Constructor",
+          "usr": "s:22EmbarqueTenaresSwiftUI9ExDividerVACycfc",
+          "mangledName": "$s22EmbarqueTenaresSwiftUI9ExDividerVACycfc",
+          "moduleName": "EmbarqueTenaresSwiftUI",
+          "implicit": true,
+          "init_kind": "Designated"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:22EmbarqueTenaresSwiftUI9ExDividerV",
+      "mangledName": "$s22EmbarqueTenaresSwiftUI9ExDividerV",
+      "moduleName": "EmbarqueTenaresSwiftUI",
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "View",
+          "printedName": "View",
+          "children": [
+            {
+              "kind": "TypeWitness",
+              "name": "Body",
+              "printedName": "Body",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "OpaqueTypeArchetype",
+                  "printedName": "some SwiftUI.View",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "View",
+                      "printedName": "SwiftUI.View",
+                      "usr": "s:7SwiftUI4ViewP"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "usr": "s:7SwiftUI4ViewP",
+          "mangledName": "$s7SwiftUI4ViewP"
         }
       ]
     },
