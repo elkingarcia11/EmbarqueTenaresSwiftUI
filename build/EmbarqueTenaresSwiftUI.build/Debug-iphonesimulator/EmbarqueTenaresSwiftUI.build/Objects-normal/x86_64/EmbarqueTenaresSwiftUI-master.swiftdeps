@@ -1,9 +1,9 @@
 version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
 options: "7c210285ad91bfaec743ad1cdc75c0a36a39d4994ee93a2203d801d0d6081829"
-build_start_time: [1645846999, 239758014]
-build_end_time: [1645847000, 290724992]
+build_start_time: [1645921578, 454091072]
+build_end_time: [1645921580, 328634977]
 inputs:
-  "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/Color.swift": [1645471677, 589198112]
+  "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/Color.swift": [1645919812, 628448009]
   "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/DominicanRepublicLocationView.swift": [1645467914, 979687213]
   "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUIApp.swift": [1645467903, 295048236]
   "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/FAQsView.swift": [1645467917, 588564395]
@@ -12,4 +12,4 @@ inputs:
   "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/NewYorkLocationView.swift": [1645467912, 757351875]
   "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/ProgressBar.swift": [1645566378, 25536775]
   "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/RatesView.swift": [1645467907, 823017120]
-  "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/TrackView.swift": [1645846860, 368452072]
+  "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/TrackView.swift": [1645921578, 301867961]
