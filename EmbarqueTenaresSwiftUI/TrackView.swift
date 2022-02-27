@@ -12,7 +12,7 @@ import SwiftUI
 struct TrackView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
-    
+    @State var tracking = false
     @State var isPresented = false
     @State var popUpTitle = ""
     @State var popUpMessage = ""
@@ -54,26 +54,26 @@ struct TrackView: View {
     
     func togglePopUp(index : Int) {
         switch index {
-            case 0:
-                popUpTitle = "Almacen de NY"
-                popUpMessage = "Your shipment is currently in our New York warehouse. Your package will most likely arrive between 21 and 24 days."
-            case 1:
-                popUpTitle = "En transito"
-                popUpMessage = ""
-            case 2:
-                popUpTitle = "Almacen de RD"
-                popUpMessage = ""
-            case 3:
-                popUpTitle = "Entregando"
-                popUpMessage = ""
-            case 4:
-                popUpTitle = "Entregado"
-                popUpMessage = ""
-            default:
-                print("")
+        case 0:
+            popUpTitle = "Almacen NY"
+            popUpMessage = "The shipment is currently at our New York warehouse. Estimated days left: 21 to 25 days (Time will vary depending on the season)"
+        case 1:
+            popUpTitle = "Enviado"
+            popUpMessage = "The shipment is on its way to the Dominican Republic. Estimated days left: 4 to 20 days (Time will vary depending on the season)"
+        case 2:
+            popUpTitle = "Almacen RD"
+            popUpMessage = "The shipment is currently at our Dominican Republic warehouse. Estimated days left: 2 to 4 days (Time will vary depending on the season)"
+        case 3:
+            popUpTitle = "Entregando"
+            popUpMessage = "The shipment is currently being delivered to your Dominican Republic address. Estimated days left: 0 to 2 days (Time will vary depending on the season)"
+        case 4:
+            popUpTitle = "Entregado"
+            popUpMessage = "The shipment has been delivered to your Dominican Republic Address. Thank you for choosing and trusting us!"
+        default:
+            print("")
             
         }
-            
+        
         isPresented.toggle()
     }
     
@@ -82,11 +82,20 @@ struct TrackView: View {
             
             VStack(alignment: .center) {
                 VStack{
-                    Text("Track Invoice")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.black)
-                        .padding(eta > -1 ? 10.0 : 0)
+                    if tracking {
+                        Text("Track Invoice")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.black)
+                            .padding()
+                    } else {
+                        Image("logo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: screenWidth/1.25, alignment: .center)
+                    }
+                    
+                        
                     if eta > -1 {
                         Spacer()
                         VStack(alignment: .center){
@@ -114,8 +123,8 @@ struct TrackView: View {
                                 HStack{
                                     ExDivider()
                                 }
-                                Button("En transito", action: {
-                                    isPresented.toggle()
+                                Button("Enviado", action: {
+                                    togglePopUp(index: 1)
                                 })
                                     .foregroundColor(.white)
                                     .padding()
@@ -129,7 +138,7 @@ struct TrackView: View {
                                     ExDivider()
                                 }
                                 Button("Almacen RD", action: {
-                                    isPresented.toggle()
+                                    togglePopUp(index: 2)
                                 })
                                     .foregroundColor(.white)
                                     .padding()
@@ -143,7 +152,7 @@ struct TrackView: View {
                                     ExDivider()
                                 }
                                 Button("Entregando", action: {
-                                    isPresented.toggle()
+                                    togglePopUp(index: 3)
                                 })
                                     .foregroundColor(.white)
                                     .padding()
@@ -157,7 +166,7 @@ struct TrackView: View {
                                 }
                                 
                                 Button("Entregado", action: {
-                                    isPresented.toggle()
+                                    togglePopUp(index: 4)
                                 })
                                     .foregroundColor(.white)
                                     .padding()
@@ -204,9 +213,10 @@ struct TrackView: View {
                 .frame(minHeight: 0, maxHeight: .infinity)
                 HStack {
                     Image(systemName: "magnifyingglass")
-                    TextField("Search for invoice", text: $text)
+                    TextField("Search for your invoice ...", text: $text)
                         .onSubmit {
                             eta = getInvoiceStatus(invoice: text)
+                            tracking = true
                         }
                 }
                 .padding()
@@ -254,7 +264,7 @@ struct PopUpWindow: View {
                     
                     Text(message)
                         .multilineTextAlignment(.center)
-                        .font(Font.system(size: 16, weight: .semibold))
+                        .font(Font.system(size: 16, weight: .medium))
                         .padding(EdgeInsets(top: 20, leading: 25, bottom: 20, trailing: 25))
                         .foregroundColor(Color.black)
                     

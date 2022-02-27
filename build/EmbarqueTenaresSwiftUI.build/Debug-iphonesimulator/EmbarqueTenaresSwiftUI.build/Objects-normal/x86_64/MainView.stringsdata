@@ -8,15 +8,15 @@
       },
       {
         "comment": "",
-        "key": "Locations"
-      },
-      {
-        "comment": "",
         "key": "Rates"
       },
       {
         "comment": "",
         "key": "FAQs"
+      },
+      {
+        "comment": "",
+        "key": "Locations"
       }
     ]
   },

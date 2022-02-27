@@ -19,6 +19,7 @@
 		1EE474C027C40FFD00861E5C /* DominicanRepublicLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474BF27C40FFD00861E5C /* DominicanRepublicLocationView.swift */; };
 		1EE474C227C41EBE00861E5C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474C127C41EBE00861E5C /* Color.swift */; };
 		1EE474C427C58F7900861E5C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474C327C58F7900861E5C /* ProgressBar.swift */; };
+		1EE474C627CBF08B00861E5C /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474C527CBF08B00861E5C /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		1EE474BF27C40FFD00861E5C /* DominicanRepublicLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominicanRepublicLocationView.swift; sourceTree = "<group>"; };
 		1EE474C127C41EBE00861E5C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		1EE474C327C58F7900861E5C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		1EE474C527CBF08B00861E5C /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				1EE474A927C4050500861E5C /* Assets.xcassets */,
 				1EE474AB27C4050500861E5C /* Preview Content */,
 				1EE474C327C58F7900861E5C /* ProgressBar.swift */,
+				1EE474C527CBF08B00861E5C /* Image.swift */,
 			);
 			path = EmbarqueTenaresSwiftUI;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				1EE474B827C4081000861E5C /* RatesView.swift in Sources */,
 				1EE474BC27C4082E00861E5C /* LocationsView.swift in Sources */,
 				1EE474C427C58F7900861E5C /* ProgressBar.swift in Sources */,
+				1EE474C627CBF08B00861E5C /* Image.swift in Sources */,
 				1EE474C227C41EBE00861E5C /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

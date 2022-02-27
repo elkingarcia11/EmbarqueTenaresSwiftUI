@@ -19,10 +19,6 @@ struct MainView: View {
                 .tabItem {
                     Label("Track", systemImage: "magnifyingglass.circle.fill")
                 }
-            LocationsView()
-                .tabItem {
-                    Label("Locations", systemImage: "building.2.crop.circle")
-                }
             
             RatesView()
                 .tabItem {
@@ -33,6 +29,11 @@ struct MainView: View {
                 .tabItem {
                     Label("FAQs", systemImage: "questionmark.circle")
                 }
+            
+        LocationsView()
+            .tabItem {
+                Label("Locations", systemImage: "building.2.crop.circle")
+            }
         }
         .accentColor(.accent)
         .padding(.bottom, 9.0)

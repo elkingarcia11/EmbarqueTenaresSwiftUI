@@ -835,6 +835,178 @@
         },
         {
           "kind": "Var",
+          "name": "tracking",
+          "printedName": "tracking",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Bool",
+              "printedName": "Swift.Bool",
+              "usr": "s:Sb"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV8trackingSbvp",
+          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV8trackingSbvp",
+          "moduleName": "EmbarqueTenaresSwiftUI",
+          "declAttributes": [
+            "ProjectedValueProperty",
+            "Custom"
+          ],
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Bool",
+                  "printedName": "Swift.Bool",
+                  "usr": "s:Sb"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV8trackingSbvg",
+              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV8trackingSbvg",
+              "moduleName": "EmbarqueTenaresSwiftUI",
+              "implicit": true,
+              "accessorKind": "get"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Set",
+              "printedName": "Set()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                },
+                {
+                  "kind": "TypeNominal",
+                  "name": "Bool",
+                  "printedName": "Swift.Bool",
+                  "usr": "s:Sb"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV8trackingSbvs",
+              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV8trackingSbvs",
+              "moduleName": "EmbarqueTenaresSwiftUI",
+              "implicit": true,
+              "accessorKind": "set"
+            },
+            {
+              "kind": "Accessor",
+              "name": "Modify",
+              "printedName": "Modify()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Void",
+                  "printedName": "()"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV8trackingSbvM",
+              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV8trackingSbvM",
+              "moduleName": "EmbarqueTenaresSwiftUI",
+              "implicit": true,
+              "accessorKind": "_modify"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "$tracking",
+          "printedName": "$tracking",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Binding",
+              "printedName": "SwiftUI.Binding<Swift.Bool>",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Bool",
+                  "printedName": "Swift.Bool",
+                  "usr": "s:Sb"
+                }
+              ],
+              "usr": "s:7SwiftUI7BindingV"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV9$tracking0cD07BindingVySbGvp",
+          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV9$tracking0cD07BindingVySbGvp",
+          "moduleName": "EmbarqueTenaresSwiftUI",
+          "implicit": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Binding",
+                  "printedName": "SwiftUI.Binding<Swift.Bool>",
+                  "children": [
+                    {
+                      "kind": "TypeNominal",
+                      "name": "Bool",
+                      "printedName": "Swift.Bool",
+                      "usr": "s:Sb"
+                    }
+                  ],
+                  "usr": "s:7SwiftUI7BindingV"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV9$tracking0cD07BindingVySbGvg",
+              "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV9$tracking0cD07BindingVySbGvg",
+              "moduleName": "EmbarqueTenaresSwiftUI",
+              "implicit": true,
+              "accessorKind": "get"
+            }
+          ]
+        },
+        {
+          "kind": "Var",
+          "name": "_tracking",
+          "printedName": "_tracking",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "State",
+              "printedName": "SwiftUI.State<Swift.Bool>",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Bool",
+                  "printedName": "Swift.Bool",
+                  "usr": "s:Sb"
+                }
+              ],
+              "usr": "s:7SwiftUI5StateV"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV9_tracking33_FCBFFDCB2A08BD2D0A70FCF449D802FDLL0cD05StateVySbGvp",
+          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV9_tracking33_FCBFFDCB2A08BD2D0A70FCF449D802FDLL0cD05StateVySbGvp",
+          "moduleName": "EmbarqueTenaresSwiftUI",
+          "implicit": true,
+          "isInternal": true,
+          "declAttributes": [
+            "HasInitialValue",
+            "HasStorage"
+          ],
+          "fixedbinaryorder": 2,
+          "hasStorage": true
+        },
+        {
+          "kind": "Var",
           "name": "isPresented",
           "printedName": "isPresented",
           "children": [
@@ -1002,7 +1174,7 @@
             "HasInitialValue",
             "HasStorage"
           ],
-          "fixedbinaryorder": 2,
+          "fixedbinaryorder": 3,
           "hasStorage": true
         },
         {
@@ -1174,7 +1346,7 @@
             "HasInitialValue",
             "HasStorage"
           ],
-          "fixedbinaryorder": 3,
+          "fixedbinaryorder": 4,
           "hasStorage": true
         },
         {
@@ -1346,7 +1518,7 @@
             "HasInitialValue",
             "HasStorage"
           ],
-          "fixedbinaryorder": 4,
+          "fixedbinaryorder": 5,
           "hasStorage": true
         },
         {
@@ -1379,7 +1551,7 @@
             "HasInitialValue",
             "HasStorage"
           ],
-          "fixedbinaryorder": 5,
+          "fixedbinaryorder": 6,
           "hasStorage": true
         },
         {
@@ -1412,7 +1584,7 @@
             "HasInitialValue",
             "HasStorage"
           ],
-          "fixedbinaryorder": 6,
+          "fixedbinaryorder": 7,
           "hasStorage": true
         },
         {
@@ -1584,7 +1756,7 @@
             "HasInitialValue",
             "HasStorage"
           ],
-          "fixedbinaryorder": 7,
+          "fixedbinaryorder": 8,
           "hasStorage": true
         },
         {
@@ -1756,7 +1928,7 @@
             "HasInitialValue",
             "HasStorage"
           ],
-          "fixedbinaryorder": 8,
+          "fixedbinaryorder": 9,
           "hasStorage": true
         },
         {
@@ -2036,13 +2208,20 @@
         {
           "kind": "Constructor",
           "name": "init",
-          "printedName": "init(isPresented:popUpTitle:popUpMessage:eta:showPopUp:)",
+          "printedName": "init(tracking:isPresented:popUpTitle:popUpMessage:eta:showPopUp:)",
           "children": [
             {
               "kind": "TypeNominal",
               "name": "TrackView",
               "printedName": "EmbarqueTenaresSwiftUI.TrackView",
               "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV"
+            },
+            {
+              "kind": "TypeNominal",
+              "name": "Bool",
+              "printedName": "Swift.Bool",
+              "hasDefaultArg": true,
+              "usr": "s:Sb"
             },
             {
               "kind": "TypeNominal",
@@ -2081,8 +2260,8 @@
             }
           ],
           "declKind": "Constructor",
-          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV11isPresented10popUpTitle0iJ7Message3eta07showPopJ0ACSb_S2SSiSbtcfc",
-          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV11isPresented10popUpTitle0iJ7Message3eta07showPopJ0ACSb_S2SSiSbtcfc",
+          "usr": "s:22EmbarqueTenaresSwiftUI9TrackViewV8tracking11isPresented10popUpTitle0jK7Message3eta07showPopK0ACSb_SbS2SSiSbtcfc",
+          "mangledName": "$s22EmbarqueTenaresSwiftUI9TrackViewV8tracking11isPresented10popUpTitle0jK7Message3eta07showPopK0ACSb_SbS2SSiSbtcfc",
           "moduleName": "EmbarqueTenaresSwiftUI",
           "implicit": true,
           "init_kind": "Designated"
@@ -4012,6 +4191,137 @@
       "printedName": "_Concurrency",
       "declKind": "Import",
       "moduleName": "EmbarqueTenaresSwiftUI"
+    },
+    {
+      "kind": "Import",
+      "name": "Foundation",
+      "printedName": "Foundation",
+      "declKind": "Import",
+      "moduleName": "EmbarqueTenaresSwiftUI"
+    },
+    {
+      "kind": "Import",
+      "name": "SwiftOnoneSupport",
+      "printedName": "SwiftOnoneSupport",
+      "declKind": "Import",
+      "moduleName": "EmbarqueTenaresSwiftUI"
+    },
+    {
+      "kind": "Import",
+      "name": "SwiftUI",
+      "printedName": "SwiftUI",
+      "declKind": "Import",
+      "moduleName": "EmbarqueTenaresSwiftUI"
+    },
+    {
+      "kind": "Import",
+      "name": "_Concurrency",
+      "printedName": "_Concurrency",
+      "declKind": "Import",
+      "moduleName": "EmbarqueTenaresSwiftUI"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "Image",
+      "printedName": "Image",
+      "children": [
+        {
+          "kind": "Var",
+          "name": "logo",
+          "printedName": "logo",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Image",
+              "printedName": "SwiftUI.Image",
+              "usr": "s:7SwiftUI5ImageV"
+            }
+          ],
+          "declKind": "Var",
+          "usr": "s:7SwiftUI5ImageV015EmbarqueTenaresaB0E4logoACvpZ",
+          "mangledName": "$s7SwiftUI5ImageV015EmbarqueTenaresaB0E4logoACvpZ",
+          "moduleName": "EmbarqueTenaresSwiftUI",
+          "static": true,
+          "declAttributes": [
+            "HasInitialValue",
+            "HasStorage"
+          ],
+          "isLet": true,
+          "hasStorage": true,
+          "accessors": [
+            {
+              "kind": "Accessor",
+              "name": "Get",
+              "printedName": "Get()",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Image",
+                  "printedName": "SwiftUI.Image",
+                  "usr": "s:7SwiftUI5ImageV"
+                }
+              ],
+              "declKind": "Accessor",
+              "usr": "s:7SwiftUI5ImageV015EmbarqueTenaresaB0E4logoACvgZ",
+              "mangledName": "$s7SwiftUI5ImageV015EmbarqueTenaresaB0E4logoACvgZ",
+              "moduleName": "EmbarqueTenaresSwiftUI",
+              "static": true,
+              "implicit": true,
+              "declAttributes": [
+                "Transparent"
+              ],
+              "accessorKind": "get"
+            }
+          ]
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:7SwiftUI5ImageV",
+      "mangledName": "$s7SwiftUI5ImageV",
+      "moduleName": "SwiftUI",
+      "intro_Macosx": "10.15",
+      "intro_iOS": "13.0",
+      "intro_tvOS": "13.0",
+      "intro_watchOS": "6.0",
+      "declAttributes": [
+        "Frozen",
+        "Available",
+        "Available",
+        "Available",
+        "Available"
+      ],
+      "isExternal": true,
+      "conformances": [
+        {
+          "kind": "Conformance",
+          "name": "Equatable",
+          "printedName": "Equatable",
+          "usr": "s:SQ",
+          "mangledName": "$sSQ"
+        },
+        {
+          "kind": "Conformance",
+          "name": "View",
+          "printedName": "View",
+          "children": [
+            {
+              "kind": "TypeWitness",
+              "name": "Body",
+              "printedName": "Body",
+              "children": [
+                {
+                  "kind": "TypeNominal",
+                  "name": "Never",
+                  "printedName": "Swift.Never",
+                  "usr": "s:s5NeverO"
+                }
+              ]
+            }
+          ],
+          "usr": "s:7SwiftUI4ViewP",
+          "mangledName": "$s7SwiftUI4ViewP"
+        }
+      ]
     },
     {
       "kind": "TypeDecl",
