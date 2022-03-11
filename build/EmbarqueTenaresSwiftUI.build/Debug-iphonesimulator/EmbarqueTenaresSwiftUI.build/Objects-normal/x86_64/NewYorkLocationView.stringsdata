@@ -1,12 +1,5 @@
 {
   "source": "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/NewYorkLocationView.swift",
-  "tables": {
-    "Localizable": [
-      {
-        "comment": "",
-        "key": "NY Location Page"
-      }
-    ]
-  },
+  "tables": {},
   "version": 1
 }

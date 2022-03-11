@@ -9,10 +9,7 @@ import Foundation
 import SwiftUI
 
 
-struct TrackView: View {
-    let screenWidth = UIScreen.main.bounds.size.width
-    let screenHeight = UIScreen.main.bounds.size.height
-    @State var tracking = false
+struct TrackView: View {    @State var tracking = false
     @State var isPresented = false
     @State var popUpTitle = ""
     @State var popUpMessage = ""

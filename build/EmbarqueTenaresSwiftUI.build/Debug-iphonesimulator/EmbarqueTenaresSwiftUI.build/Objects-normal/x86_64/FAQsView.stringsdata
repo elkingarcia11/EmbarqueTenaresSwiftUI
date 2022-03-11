@@ -1,12 +1,5 @@
 {
   "source": "/Users/elkingarcia/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUI/FAQsView.swift",
-  "tables": {
-    "Localizable": [
-      {
-        "comment": "",
-        "key": "FAQs Page"
-      }
-    ]
-  },
+  "tables": {},
   "version": 1
 }
