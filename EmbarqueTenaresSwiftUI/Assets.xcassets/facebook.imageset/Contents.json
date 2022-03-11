@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "whatsapp2.png",
+      "filename" : "fb.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "whatsapp2-1.png",
+      "filename" : "fb-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "whatsapp2-2.png",
+      "filename" : "fb-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

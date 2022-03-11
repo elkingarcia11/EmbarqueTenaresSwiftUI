@@ -216,7 +216,7 @@ struct TrackView: View {    @State var tracking = false
                             tracking = true
                         }
                 }
-                .padding()
+                .padding(.all)
                 .background(Color.light)
                 .cornerRadius(40)
                 .frame(width: screenWidth/1.1)

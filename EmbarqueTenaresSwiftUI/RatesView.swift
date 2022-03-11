@@ -97,7 +97,6 @@ struct RatesRow: View {
     
     var body: some View {
         ZStack(alignment: .leading) {
-            
             Color.white
             HStack {
                 ZStack {
