@@ -22,11 +22,11 @@ struct DominicanRepublicLocationView: View {
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     .padding(.leading)
-
-                    Link("San Marcos #10, Puerto Plata, RD 57000", destination: URL(string:"https://goo.gl/maps/k1N2CKedA8Awaa9MA")!)
-                        .foregroundColor(.accent)
-                .frame(maxWidth: .infinity)
-                .multilineTextAlignment(.leading)
+                
+                Link("San Marcos #10, Puerto Plata, RD 57000", destination: URL(string:"https://goo.gl/maps/k1N2CKedA8Awaa9MA")!)
+                    .foregroundColor(.accent)
+                    .frame(maxWidth: .infinity)
+                    .multilineTextAlignment(.leading)
             }
             .padding(.bottom)
             .frame(maxWidth: .infinity)

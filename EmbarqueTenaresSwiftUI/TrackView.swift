@@ -1,290 +1,143 @@
 //
-//  TrackView.swift
+//  TrackViewTwo.swift
 //  EmbarqueTenaresSwiftUI
 //
-//  Created by Elkin Garcia on 2/21/22.
+//  Created by Elkin Garcia on 3/14/22.
 //
 
-import Foundation
 import SwiftUI
 
+// get eta time from db
 struct TrackView: View {
     
-    @State var tracking = false
+    @State var eta: Float = 25
+    @State var progressValue: Float = 12/25
+    @State var daysLeft: Int = 13
     
+    @State var searchStatus = -1
     
-    @State var isPresented = false
-    @State var popUpTitle = ""
-    @State var popUpMessage = ""
     @State private var text = ""
     
-    @State private var finalInvoice = ""
     
-    @State var eta: Int = -1
-    
-    @State var showPopUp = false
-
+    let track : LocalizedStringKey = "track"
+    let edoa : LocalizedStringKey = "edoa"
+    let etaFootnote : LocalizedStringKey = "etaFootnote"
+    let search : LocalizedStringKey = "search"
+    let errorMsg1 : LocalizedStringKey = "errorMsg1"
+    let errorMsg2 : LocalizedStringKey = "errorMsg2"
     
     func getInvoiceStatus(invoice : String) -> Int {
-        // Fetch invoice
-        // RETURN int representing status
-        /**
-         RANK OF ETAS:
-         -2 - invoice doesn't exist
-         0 - ALM-NY / DEV-NY
-         1 - EN TRANSITO
-         2 - ALM-RD / DEV-RD
-         3 - CONDUCE
-         4 - ENTREGADO
-         */
-        
-        //18-30 days
-        // alm ny 1-3 days
-        // en transito 4-19
-        // rd 2-4 days
-        // conduce 1-2 days
-        // if entregado
-        let newInv = invoice.filter{ Set("0123456789").contains($0) }
-        finalInvoice = newInv
-        if let r = Int(finalInvoice) {
-            return r
-        } else {
-            return -2
-        }
+        return 1
     }
     
-    func togglePopUp(index : Int) {
-        switch index {
-        case 0:
-            popUpTitle = "Almacen NY"
-            popUpMessage = "The shipment is currently at our New York warehouse. Estimated days left: 21 to 25 days (Time will vary depending on the season)"
-        case 1:
-            popUpTitle = "Enviado"
-            popUpMessage = "The shipment is on its way to the Dominican Republic. Estimated days left: 4 to 20 days (Time will vary depending on the season)"
-        case 2:
-            popUpTitle = "Almacen RD"
-            popUpMessage = "The shipment is currently at our Dominican Republic warehouse. Estimated days left: 2 to 4 days (Time will vary depending on the season)"
-        case 3:
-            popUpTitle = "Entregando"
-            popUpMessage = "The shipment is currently being delivered to your Dominican Republic address. Estimated days left: 0 to 2 days (Time will vary depending on the season)"
-        case 4:
-            popUpTitle = "Entregado"
-            popUpMessage = "The shipment has been delivered to your Dominican Republic Address. Thank you for choosing and trusting us!"
-        default:
-            print("")
-            
-        }
-        
-        isPresented.toggle()
-    }
+    /*
+     @State var daysElapsed: Float
+     @State var dateOfInvoice: String
+     @State var todaysDate: String
+     */
+    /*
+     init() {
+     // get eta from db
+     eta = 25
+     // get date of invoice from db
+     dateOfInvoice = "2022-2-20"
+     
+     // get today's date
+     
+     // calculate difference in days
+     
+     // date of invoice should be less then or equal to todays date - > so smallest number 0, largest number is anything over eta >, which would indicate deliverd
+     }
+     // calculate days between today and date of invoice and put it over eta from db to get time left as decimal*/
+    //progressValue = 1/25
     
-    var body: some View {
-        ZStack{
-            
-            VStack(alignment: .center) {
-                VStack{
-                    if tracking {
-                        Text("Track Invoice")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.black)
-                            .padding()
-                    } else {
-                        Image("logo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: screenWidth/1.25, alignment: .center)
-                    }
-                    
-                        
-                    if eta > -1 {
-                        Spacer()
-                        VStack(alignment: .center){
-                            Text(finalInvoice)
-                                .frame(width: screenWidth/2, height: screenHeight/16)
-                                .background(Color.positive)
-                                .foregroundColor(.white)
-                                .font(.headline)
-                                .cornerRadius(25)
-                            VStack{
-                                HStack{
-                                    ExDivider()
-                                }
-                                Button("Almacen NY", action: {
-                                    togglePopUp(index: 0)
-                                })
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .font(.subheadline)
-                                    .frame(width: screenWidth/2, height: screenHeight/16)
-                                    .background(Color.primary)
-                                    .cornerRadius(25)
-                                    .disabled(eta == 0 ? false : true)
-                                
-                                HStack{
-                                    ExDivider()
-                                }
-                                Button("Enviado", action: {
-                                    togglePopUp(index: 1)
-                                })
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .font(.subheadline)
-                                    .frame(width: screenWidth/2, height: screenHeight/16)
-                                    .background(eta > 0 ? Color.primary : Color.gray)
-                                    .cornerRadius(25)
-                                    .disabled(eta == 1 ? false : true)
-                                
-                                HStack{
-                                    ExDivider()
-                                }
-                                Button("Almacen RD", action: {
-                                    togglePopUp(index: 2)
-                                })
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .font(.subheadline)
-                                    .frame(width: screenWidth/2, height: screenHeight/16)
-                                    .background(eta > 1 ? Color.primary : Color.gray)
-                                    .cornerRadius(25)
-                                    .disabled(eta == 2 ? false : true)
-                                
-                                HStack{
-                                    ExDivider()
-                                }
-                                Button("Entregando", action: {
-                                    togglePopUp(index: 3)
-                                })
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .font(.subheadline)
-                                    .frame(width: screenWidth/2, height: screenHeight/16)
-                                    .background(eta > 2 ? Color.primary : Color.gray)
-                                    .cornerRadius(25)
-                                    .disabled(eta == 3 ? false : true)
-                                HStack{
-                                    ExDivider()
-                                }
-                                
-                                Button("Entregado", action: {
-                                    togglePopUp(index: 4)
-                                })
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .font(.subheadline)
-                                    .frame(width: screenWidth/2, height: screenHeight/16)
-                                    .background(eta > 3 ? Color.primary : Color.gray)
-                                    .cornerRadius(25)
-                                    .disabled(eta == 4 ? false : true)
-                            }
-                        }
-                        .frame(width: screenWidth)
-                        .padding(.vertical)
-                    }
-                    if eta == -2 {
-                        VStack(alignment: .center){
-                            Text(finalInvoice)
-                                .frame(width: screenWidth/1.4, height: screenHeight/16)
-                                .background(Color.positive)
-                                .foregroundColor(.white)
-                                .font(.headline)
-                                .cornerRadius(25)
-                            HStack{
-                                ExDivider()
-                            }
-                            Text("ERROR")
-                                .frame(width: screenWidth/1.4, height: screenHeight/16)
-                                .background(Color.primary)
-                                .foregroundColor(.white)
-                                .font(.headline)
-                                .cornerRadius(25)
-                            HStack{
-                                ExDivider()
-                            }
-                            Text("Invoice could not be found")
-                                .frame(width: screenWidth/1.4, height: screenHeight/16)
-                                .background(Color.primary)
-                                .foregroundColor(.white)
-                                .font(.headline)
-                                .cornerRadius(25)
-                        }
-                        .padding(.vertical, 100.0)
-                    }
-                }
-                .frame(minHeight: 0, maxHeight: .infinity)
-                HStack {
-                    Image(systemName: "magnifyingglass")
-                    TextField("Search for your invoice ...", text: $text)
-                        .onSubmit {
-                            eta = getInvoiceStatus(invoice: text)
-                            tracking = true
-                        }
-                }
-                .padding(.all)
-                .background(Color.light)
-                .frame(width: screenWidth)
-            }
-            
-            PopUpWindow(title: popUpTitle, message: popUpMessage, buttonText: "OK", show: $isPresented)
-        }
-    }
-}
-
-struct ExDivider: View {
-    let color: Color = .gray
-    let width: CGFloat = 1.5
-    var body: some View {
-        Rectangle()
-            .fill(color)
-            .frame(width: width)
-            .edgesIgnoringSafeArea(.horizontal)
-    }
-}
-
-struct PopUpWindow: View {
-    var title: String
-    var message: String
-    var buttonText: String
-    @Binding var show: Bool
     
     var body: some View {
         ZStack {
-            if show {
-                // PopUp background color
-                Color.black.opacity(show ? 0.3 : 0).edgesIgnoringSafeArea(.all)
-                
-                // PopUp Window
-                VStack(alignment: .center, spacing: 0) {
-                    Text(title)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 54, alignment: .center)
-                        .font(Font.system(size: 23, weight: .semibold))
-                        .foregroundColor(Color.white)
-                        .background(Color.primary)
-                    
-                    Text(message)
+            VStack{
+                if searchStatus == 1 {
+                    Spacer()
+                    Text(edoa)
+                        .font(.title)
+                        .padding(.bottom)
+                    Text("December 3rd, 2022")
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                    ProgressBar(progress: self.$progressValue, daysLeft: daysLeft)
+                        .frame(width: 150.0, height: 150.0)
+                        .padding(40.0)
+                    Spacer()
+                    Text(etaFootnote)
+                        .font(.footnote)
                         .multilineTextAlignment(.center)
-                        .font(Font.system(size: 16, weight: .medium))
-                        .padding(EdgeInsets(top: 20, leading: 25, bottom: 20, trailing: 25))
-                        .foregroundColor(Color.black)
-                    
-                    Button(action: {
-                        // Dismiss the PopUp
-                        withAnimation(.linear(duration: 0.3)) {
-                            show = false
-                        }
-                    }, label: {
-                        Text(buttonText)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 54, alignment: .center)
-                            .foregroundColor(Color.white)
-                            .background(Color.primary)
-                            .font(Font.system(size: 23, weight: .semibold))
-                    }).buttonStyle(PlainButtonStyle())
+                        .padding(.bottom)
+                    Spacer()
                 }
-                .frame(maxWidth: 300)
-                .border(Color.white, width: 2)
-                .background(Color.white)
+                
+            if searchStatus == -1 {
+                Spacer()
+                Image("logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: screenWidth/1.25, alignment: .center)
+            }
+            if searchStatus == -2 {
+                Spacer()
+                Text("ERROR")
+                    .font(.title)
+                    .padding(.bottom)
+                HStack(alignment: .center){
+                    Text(errorMsg1).font(.subheadline)
+                    Text(text).bold().font(.subheadline)
+                    Text(errorMsg2).font(.subheadline)
+                }
+                Spacer()
+            }
+            Spacer()
+            HStack {
+                Image(systemName: "magnifyingglass")
+                TextField(search, text: $text)
+                    .onSubmit {
+                        searchStatus = getInvoiceStatus(invoice: text)
+                    }
+            }
+            .padding(.all)
+            .background(Color.light)
+            .frame(width: screenWidth)
+            }
+        }
+    }
+    
+    func incrementProgress() {
+        let randomValue = Float([0.012, 0.022, 0.034, 0.016, 0.11].randomElement()!)
+        self.progressValue += randomValue
+    }
+}
+
+struct ProgressBar: View {
+    @Binding var progress: Float
+    @State var daysLeft: Int
+    let daysL : LocalizedStringKey = "daysLeft"
+    
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(lineWidth: 20.0)
+                .opacity(0.3)
+                .foregroundColor(Color.primary)
+            
+            Circle()
+                .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
+                .stroke(style: StrokeStyle(lineWidth: 20.0, lineCap: .round, lineJoin: .round))
+                .foregroundColor(Color.primary)
+                .rotationEffect(Angle(degrees: 270.0))
+            VStack{
+                Text("\(daysLeft)")
+                    .font(.title)
+                    .bold()
+                Text(daysL)
+                    .font(.title2)
+                
             }
         }
     }

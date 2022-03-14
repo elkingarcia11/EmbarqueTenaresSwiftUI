@@ -23,17 +23,13 @@ struct NewYorkLocationView: View {
                     .multilineTextAlignment(.leading)
                     .padding(.leading)
                 
-                Menu("2249 Washington Ave, Bronx, NY 10457") {
-                    Link("Apple Maps", destination: URL(string:"https://maps.apple.com/?address=2249%20Washington%20Ave,%20Bronx,%20NY%20%2010457,%20United%20States&auid=17742287495673550732&ll=40.854555,-73.893979&lsp=9902&q=Embarque%20Tenares&_ext=CjMKBQgEEOIBCgQIBRADCgUIBhDfAQoECAoQAAoECFIQAwoECFUQEAoECFkQAwoFCKQBEAESJimZVlT/zGxEQDHSvxqymHlSwDkXLHpb821EQEHYNPkb1nhSwFAE")!)
-                        .font(.title)
-                        .foregroundColor(.accent)
-                    Link("Google Maps", destination: URL(string:"https://goo.gl/maps/RUVQUFbiPr6J113z5")!)
-                        .font(.title)
-                        .foregroundColor(.accent)
-                }
-                .frame(maxWidth: .infinity)
-                .multilineTextAlignment(.leading)
+                
+                Link("2249 Washington Ave, Bronx, NY 10457", destination: URL(string:"https://goo.gl/maps/RUVQUFbiPr6J113z5")!)
+                    .foregroundColor(.accent)
+                    .frame(maxWidth: .infinity)
+                    .multilineTextAlignment(.leading)
             }
+            .padding(.bottom, 2.0)
             .frame(maxWidth: .infinity)
             
             // Hours

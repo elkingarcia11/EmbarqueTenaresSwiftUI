@@ -33,21 +33,19 @@ struct LocationsView: View {
         VStack{
             
             Spacer()
-            
-            Image(systemName: "building.2")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 40, height: 40, alignment: .center)
-                .foregroundColor(.dark)
+            Picker("Locations", selection: $selectedLocation) {
+                Text("New York").tag(0)
+                Text("Dominican Republic").tag(1)
+            }
             
             Spacer()
             
             if selectedLocation == 0 {
                 NewYorkLocationView()
-                    .frame(height: screenHeight*0.5)
+                    .frame(height: screenHeight*0.6)
             } else {
                 DominicanRepublicLocationView()
-                    .frame(height: screenHeight*0.5)
+                    .frame(height: screenHeight*0.6)
             }
             
             Spacer()
@@ -55,10 +53,6 @@ struct LocationsView: View {
             SocialMediaFooter()
             
             Spacer()
-            Picker("Locations", selection: $selectedLocation) {
-                Text("New York").tag(0)
-                Text("Dominican Republic").tag(1)
-            }
         }.pickerStyle(.segmented)
     }
 }

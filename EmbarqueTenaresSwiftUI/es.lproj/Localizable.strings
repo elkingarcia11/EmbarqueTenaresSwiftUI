@@ -1,0 +1,44 @@
+/*
+  Localizable.strings
+  EmbarqueTenaresSwiftUI
+
+  Created by Elkin Garcia on 3/14/22.
+  
+*/
+
+"track" = "Rastrear";
+"rates" = "Precios";
+"locations" = "Sucursales";
+"faqs" = "Preguntas";
+
+"edoa" = "Estimated Date of Arrival";
+"etaFootnote" = "*El número de días restantes es un estimado y está sujeto a cambios.";
+"daysLeft" = "días restantes*";
+
+"errorMsg1" = "Factura";
+"errorMsg2" = "no pudo ser encontrado.";
+"search" = "Busca tu factura ...";
+
+"box" = "Cajas";
+"barrel" = "Barriles";
+"tv" = "TV";
+"furniture" = "Mueblería";
+"appliance" = "Electrodomesticos";
+"whatsapp" = "Para más precios, enviar imágenes a nuestro WhatsApp";
+
+"ny" = "Nueva York";
+"dr" = "República Dominicana";
+"address" = "Dirección:";
+"hours" = "Horas:";
+"phone" = "Teléfono:";
+"email" = "Correo electrónico:";
+
+"monday" = "lunes";
+"tuesday" = "martes";
+"wednesday" = "miércoles";
+"thursday" = "jueves";
+"friday" = "viernes";
+"saturday" = "sábado";
+"sunday" = "domingo";
+"closed" = "Cerrado";
+"closedDaily" = "Cerrada para almuerzo de 12PM-2PM";

@@ -16,6 +16,11 @@ struct MainView: View {
     
     @State var title = "Embarque Tenares"
     
+    let track : LocalizedStringKey = "track"
+    let rates : LocalizedStringKey = "rates"
+    let faqs : LocalizedStringKey = "faqs"
+    let locations : LocalizedStringKey = "locations"
+    
     init() {
         UITabBar.appearance().backgroundColor = .white
         UITabBar.appearance().barTintColor = .white
@@ -23,49 +28,30 @@ struct MainView: View {
         UIToolbar.appearance().backgroundColor = .green
         
     }
-    
-    func updateTab(item: Int) {
-        if item == 0 {
-            title = "Track"
-            selectedTab = 0
-        } else if item == 1 {
-            title = "Rates"
-            selectedTab = 1
-        } else if item == 2 {
-            title = "FAQs"
-            selectedTab = 2
-        } else if item == 3 {
-            title = "Locations"
-            selectedTab = 3
-        }
-    }
-    
+
     var body: some View {
         NavigationView {
             TabView(selection: $selectedTab) {
                 TrackView()
                     .tabItem {
-                        Label("Track", systemImage: "magnifyingglass.circle.fill")
+                        Label(track, systemImage: "magnifyingglass.circle.fill")
                     }
                     .tag(0)
                 
                 RatesView()
                     .tabItem {
-                        Label("Rates", systemImage: "dollarsign.circle")
+                        Label(rates, systemImage: "dollarsign.circle")
                     }.tag(1)
                 
                 LocationsView()
                     .tabItem {
-                        Label("Locations", systemImage: "building.2.crop.circle")
+                        Label(locations, systemImage: "building.2.crop.circle")
                     }.tag(3)
                 
                 FAQsView()
                     .tabItem {
-                        Label("FAQs", systemImage: "questionmark.circle")
+                        Label(faqs, systemImage: "questionmark.circle")
                     }.tag(2)
-            }
-            .onChange(of: selectedTab) { newValue in
-                updateTab(item: newValue)
             }
             .navigationBarTitle(title, displayMode: .inline)
             .navigationBarItems(

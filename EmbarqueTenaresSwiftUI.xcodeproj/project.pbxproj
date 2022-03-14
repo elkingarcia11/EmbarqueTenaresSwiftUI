@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E2E552527DFA66800F25C10 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E552427DFA66800F25C10 /* TrackView.swift */; };
+		1E2E552827DFC22D00F25C10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E2E552A27DFC22D00F25C10 /* Localizable.strings */; };
 		1EE474A627C4050100861E5C /* EmbarqueTenaresSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474A527C4050100861E5C /* EmbarqueTenaresSwiftUIApp.swift */; };
 		1EE474A827C4050100861E5C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474A727C4050100861E5C /* MainView.swift */; };
 		1EE474AA27C4050500861E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EE474A927C4050500861E5C /* Assets.xcassets */; };
 		1EE474AD27C4050500861E5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EE474AC27C4050500861E5C /* Preview Assets.xcassets */; };
-		1EE474B627C407FA00861E5C /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474B527C407FA00861E5C /* TrackView.swift */; };
 		1EE474B827C4081000861E5C /* RatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474B727C4081000861E5C /* RatesView.swift */; };
 		1EE474BA27C4082100861E5C /* FAQsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474B927C4082100861E5C /* FAQsView.swift */; };
 		1EE474BC27C4082E00861E5C /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474BB27C4082E00861E5C /* LocationsView.swift */; };
@@ -22,12 +23,14 @@
 
 /* Begin PBXFileReference section */
 		1E2E552327DBB4A200F25C10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1E2E552427DFA66800F25C10 /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
+		1E2E552927DFC22D00F25C10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1E2E552B27DFC22F00F25C10 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1EE474A227C4050100861E5C /* EmbarqueTenaresSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmbarqueTenaresSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE474A527C4050100861E5C /* EmbarqueTenaresSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbarqueTenaresSwiftUIApp.swift; sourceTree = "<group>"; };
 		1EE474A727C4050100861E5C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1EE474A927C4050500861E5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EE474AC27C4050500861E5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1EE474B527C407FA00861E5C /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		1EE474B727C4081000861E5C /* RatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesView.swift; sourceTree = "<group>"; };
 		1EE474B927C4082100861E5C /* FAQsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsView.swift; sourceTree = "<group>"; };
 		1EE474BB27C4082E00861E5C /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
@@ -69,7 +72,8 @@
 				1E2E552327DBB4A200F25C10 /* Info.plist */,
 				1EE474A527C4050100861E5C /* EmbarqueTenaresSwiftUIApp.swift */,
 				1EE474A727C4050100861E5C /* MainView.swift */,
-				1EE474B527C407FA00861E5C /* TrackView.swift */,
+				1E2E552A27DFC22D00F25C10 /* Localizable.strings */,
+				1E2E552427DFA66800F25C10 /* TrackView.swift */,
 				1EE474B727C4081000861E5C /* RatesView.swift */,
 				1EE474B927C4082100861E5C /* FAQsView.swift */,
 				1EE474BB27C4082E00861E5C /* LocationsView.swift */,
@@ -132,6 +136,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 1EE4749927C4050100861E5C;
 			productRefGroup = 1EE474A327C4050100861E5C /* Products */;
@@ -149,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EE474AD27C4050500861E5C /* Preview Assets.xcassets in Resources */,
+				1E2E552827DFC22D00F25C10 /* Localizable.strings in Resources */,
 				1EE474AA27C4050500861E5C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,8 +169,8 @@
 				1EE474A827C4050100861E5C /* MainView.swift in Sources */,
 				1EE474A627C4050100861E5C /* EmbarqueTenaresSwiftUIApp.swift in Sources */,
 				1EE474C027C40FFD00861E5C /* DominicanRepublicLocationView.swift in Sources */,
+				1E2E552527DFA66800F25C10 /* TrackView.swift in Sources */,
 				1EE474BE27C40FEF00861E5C /* NewYorkLocationView.swift in Sources */,
-				1EE474B627C407FA00861E5C /* TrackView.swift in Sources */,
 				1EE474BA27C4082100861E5C /* FAQsView.swift in Sources */,
 				1EE474B827C4081000861E5C /* RatesView.swift in Sources */,
 				1EE474BC27C4082E00861E5C /* LocationsView.swift in Sources */,
@@ -173,6 +179,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1E2E552A27DFC22D00F25C10 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E2E552927DFC22D00F25C10 /* en */,
+				1E2E552B27DFC22F00F25C10 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1EE474AE27C4050500861E5C /* Debug */ = {
