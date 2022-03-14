@@ -21,7 +21,7 @@ struct MainView: View {
         UITabBar.appearance().barTintColor = .white
         UIToolbar.appearance().barTintColor = .yellow
         UIToolbar.appearance().backgroundColor = .green
-
+        
     }
     
     func updateTab(item: Int) {
@@ -49,20 +49,20 @@ struct MainView: View {
                     }
                     .tag(0)
                 
-                RatesView(title: "Rates")
+                RatesView()
                     .tabItem {
                         Label("Rates", systemImage: "dollarsign.circle")
                     }.tag(1)
-                
-                FAQsView()
-                    .tabItem {
-                        Label("FAQs", systemImage: "questionmark.circle")
-                    }.tag(2)
                 
                 LocationsView()
                     .tabItem {
                         Label("Locations", systemImage: "building.2.crop.circle")
                     }.tag(3)
+                
+                FAQsView()
+                    .tabItem {
+                        Label("FAQs", systemImage: "questionmark.circle")
+                    }.tag(2)
             }
             .onChange(of: selectedTab) { newValue in
                 updateTab(item: newValue)

@@ -34,7 +34,6 @@ struct NewYorkLocationView: View {
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.leading)
             }
-            .padding(.vertical)
             .frame(maxWidth: .infinity)
             
             // Hours
@@ -81,6 +80,7 @@ struct NewYorkLocationView: View {
                     }
                     
                 }
+                .padding(.top)
                 .frame(maxWidth: .infinity)
                 
             }
@@ -113,11 +113,10 @@ struct NewYorkLocationView: View {
                     .frame(maxWidth: .infinity)
                 
             }
-            .padding(.bottom)
             .frame(maxWidth: .infinity)
             
         }.padding(.vertical)
-            .frame(width: screenWidth-10, alignment: .center)
+            .frame(width: screenWidth-10, height: screenHeight/2, alignment: .center)
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
                     .stroke(Color.accent, lineWidth: 1.5)

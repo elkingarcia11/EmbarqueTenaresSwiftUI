@@ -8,8 +8,11 @@
 import Foundation
 import SwiftUI
 
-
-struct TrackView: View {    @State var tracking = false
+struct TrackView: View {
+    
+    @State var tracking = false
+    
+    
     @State var isPresented = false
     @State var popUpTitle = ""
     @State var popUpMessage = ""
@@ -20,6 +23,7 @@ struct TrackView: View {    @State var tracking = false
     @State var eta: Int = -1
     
     @State var showPopUp = false
+
     
     func getInvoiceStatus(invoice : String) -> Int {
         // Fetch invoice
@@ -218,8 +222,7 @@ struct TrackView: View {    @State var tracking = false
                 }
                 .padding(.all)
                 .background(Color.light)
-                .cornerRadius(40)
-                .frame(width: screenWidth/1.1)
+                .frame(width: screenWidth)
             }
             
             PopUpWindow(title: popUpTitle, message: popUpMessage, buttonText: "OK", show: $isPresented)

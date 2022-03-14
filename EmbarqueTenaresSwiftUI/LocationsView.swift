@@ -12,30 +12,42 @@ import SwiftUI
 
 struct LocationsView: View {
     
-    @State private var selectedLocation: Int = 1
+    @State private var selectedLocation: Int = 0
+    
+    init() {
+        
+        //and this changes the color for the whole "bar" background
+        UISegmentedControl.appearance().backgroundColor = UIColor(Color.lightAccent)
+        //this changes the "thumb" that selects between items
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color.accent)
+
+        //this will change the font size
+        UISegmentedControl.appearance().setTitleTextAttributes([.font : UIFont.preferredFont(forTextStyle: .largeTitle)], for: .normal)
+
+        //these lines change the text color for various states
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor:UIColor.black], for: .normal)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+    }
     
     var body: some View {
         VStack{
-            
-            Picker("Locations", selection: $selectedLocation) {
-                Text("New York").tag(0)
-                Text("Dominican Republic").tag(1)
-            }
             
             Spacer()
             
             Image(systemName: "building.2")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 75, height: 75, alignment: .center)
+                .frame(width: 40, height: 40, alignment: .center)
                 .foregroundColor(.dark)
             
             Spacer()
             
             if selectedLocation == 0 {
                 NewYorkLocationView()
+                    .frame(height: screenHeight*0.5)
             } else {
                 DominicanRepublicLocationView()
+                    .frame(height: screenHeight*0.5)
             }
             
             Spacer()
@@ -43,7 +55,10 @@ struct LocationsView: View {
             SocialMediaFooter()
             
             Spacer()
-            
+            Picker("Locations", selection: $selectedLocation) {
+                Text("New York").tag(0)
+                Text("Dominican Republic").tag(1)
+            }
         }.pickerStyle(.segmented)
     }
 }

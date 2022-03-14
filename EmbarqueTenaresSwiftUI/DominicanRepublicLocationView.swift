@@ -28,7 +28,7 @@ struct DominicanRepublicLocationView: View {
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.leading)
             }
-            .padding(.vertical)
+            .padding(.bottom)
             .frame(maxWidth: .infinity)
             
             // Hours
@@ -60,7 +60,7 @@ struct DominicanRepublicLocationView: View {
                     VStack(alignment: .leading){
                         Text("8AM-5PM")
                             .fontWeight( weekday == 2 ?.bold : .regular)
-                        Text("8AM-65PM")
+                        Text("8AM-6PM")
                             .fontWeight( weekday == 3 ?.bold : .regular)
                         Text("8AM-5PM")
                             .fontWeight( weekday == 4 ?.bold : .regular)
@@ -76,11 +76,10 @@ struct DominicanRepublicLocationView: View {
                 }
                 .frame(maxWidth: .infinity)
             }
-            .padding(.bottom)
+            .padding(.bottom, 2.0)
             
             Text("Closed daily for lunch 12PM-2PM")
                 .fontWeight(.bold)
-                .italic()
                 .multilineTextAlignment(.center)
                 .padding([.leading, .bottom, .trailing])
                 .frame(maxWidth: .infinity)
@@ -112,7 +111,6 @@ struct DominicanRepublicLocationView: View {
                     .frame(maxWidth: .infinity)
                 
             }
-            .padding(.bottom)
             .frame(maxWidth: .infinity)
             
         }.padding(.vertical)
