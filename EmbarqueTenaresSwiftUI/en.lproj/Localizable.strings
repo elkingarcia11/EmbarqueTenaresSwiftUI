@@ -19,11 +19,6 @@
 "errorMsg2" = "could not be found.";
 "search" = "Search for your invoice ...";
 
-"box" = "Boxes";
-"barrel" = "Barrels";
-"tv" = "TV";
-"furniture" = "Furniture";
-"appliance" = "Appliances";
 "whatsapp" = "For more prices, send images to our WhatsApp";
 
 "ny" = "New York";
@@ -41,4 +36,4 @@
 "saturday" = "Saturday";
 "sunday" = "Sunday";
 "closed" = "Closed";
-"closedDaily" = "Closed daily for lunch 12PM-2PM";
+"drAddress" = "San Marcos #10, Puerto Plata, DR 57000";

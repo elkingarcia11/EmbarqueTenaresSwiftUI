@@ -55,6 +55,8 @@ var data = [
 
 struct RatesView: View {
     
+    let whatsapp : LocalizedStringKey = "whatsapp"
+    
     var categories : [String] = ["Boxes","Barrels","TV","Furniture", "Appliances"]
     
     @State var d = data
@@ -97,7 +99,7 @@ struct RatesView: View {
                     .aspectRatio(contentMode: .fit)
                     .padding([.top, .leading, .bottom])
                     .frame(width: 75, height: 75)
-                Text("For more prices, send images to our WhatsApp")
+                Text(whatsapp)
                     .font(.footnote)
                     .fontWeight(.bold)
                     .foregroundColor(Color.black)

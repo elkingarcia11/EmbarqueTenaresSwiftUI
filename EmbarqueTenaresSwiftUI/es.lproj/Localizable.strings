@@ -19,11 +19,6 @@
 "errorMsg2" = "no pudo ser encontrado.";
 "search" = "Busca tu factura ...";
 
-"box" = "Cajas";
-"barrel" = "Barriles";
-"tv" = "TV";
-"furniture" = "Mueblería";
-"appliance" = "Electrodomesticos";
 "whatsapp" = "Para más precios, enviar imágenes a nuestro WhatsApp";
 
 "ny" = "Nueva York";
@@ -42,3 +37,4 @@
 "sunday" = "domingo";
 "closed" = "Cerrado";
 "closedDaily" = "Cerrada para almuerzo de 12PM-2PM";
+"drAddress" = "San Marcos #10, Puerto Plata, RD 57000";

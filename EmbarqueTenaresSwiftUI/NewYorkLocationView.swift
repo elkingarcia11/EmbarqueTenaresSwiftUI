@@ -14,11 +14,25 @@ import MapKit
 struct NewYorkLocationView: View {
     let weekday = Calendar.current.component(.weekday, from: Date())
     
+    let address : LocalizedStringKey = "address"
+    let hours : LocalizedStringKey = "hours"
+    let phone : LocalizedStringKey = "phone"
+    let email : LocalizedStringKey = "email"
+    
+    let monday : LocalizedStringKey = "monday"
+    let tuesday : LocalizedStringKey = "tuesday"
+    let wednesday : LocalizedStringKey = "wednesday"
+    let thursday : LocalizedStringKey = "thursday"
+    let friday : LocalizedStringKey = "friday"
+    let saturday : LocalizedStringKey = "saturday"
+    let sunday : LocalizedStringKey = "sunday"
+    let closed : LocalizedStringKey = "closed"
+    
     var body: some View {
         VStack{
             
             HStack(alignment: .top){
-                Text("Address:")
+                Text(address)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     .padding(.leading)
@@ -34,26 +48,26 @@ struct NewYorkLocationView: View {
             
             // Hours
             HStack(alignment: .top){
-                Text("Hours:")
+                Text(hours)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     .padding(.leading)
                 
                 HStack {
                     VStack(alignment: .leading){
-                        Text("Monday")
+                        Text(monday)
                             .fontWeight( weekday == 2 ?.bold : .regular)
-                        Text("Tuesday")
+                        Text(tuesday)
                             .fontWeight( weekday == 3 ?.bold : .regular)
-                        Text("Wednesday")
+                        Text(wednesday)
                             .fontWeight( weekday == 4 ?.bold : .regular)
-                        Text("Thursday")
+                        Text(thursday)
                             .fontWeight( weekday == 5 ?.bold : .regular)
-                        Text("Friday")
+                        Text(friday)
                             .fontWeight( weekday == 6 ?.bold : .regular)
-                        Text("Saturday")
+                        Text(saturday)
                             .fontWeight( weekday == 7 ?.bold : .regular)
-                        Text("Sunday")
+                        Text(sunday)
                             .fontWeight( weekday == 1 ?.bold : .regular)
                     }
                     .padding(.trailing)
@@ -71,7 +85,7 @@ struct NewYorkLocationView: View {
                             .fontWeight( weekday == 6 ?.bold : .regular)
                         Text("8AM-6PM")
                             .fontWeight( weekday == 7 ?.bold : .regular)
-                        Text("Closed")
+                        Text(closed)
                             .fontWeight( weekday == 1 ?.bold : .regular)
                     }
                     
@@ -85,7 +99,7 @@ struct NewYorkLocationView: View {
             // Phone
             HStack(alignment: .top){
                 
-                Text("Phone:")
+                Text(phone)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     .padding(.leading)
@@ -100,7 +114,7 @@ struct NewYorkLocationView: View {
             // Email
             HStack(alignment: .top){
                 
-                Text("Email:")
+                Text(email)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     .padding(.leading)

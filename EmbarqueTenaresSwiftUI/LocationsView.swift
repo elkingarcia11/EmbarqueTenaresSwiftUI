@@ -14,6 +14,10 @@ struct LocationsView: View {
     
     @State private var selectedLocation: Int = 0
     
+    
+    let ny : LocalizedStringKey = "ny"
+    let dr : LocalizedStringKey = "dr"
+    
     init() {
         
         //and this changes the color for the whole "bar" background
@@ -34,8 +38,8 @@ struct LocationsView: View {
             
             Spacer()
             Picker("Locations", selection: $selectedLocation) {
-                Text("New York").tag(0)
-                Text("Dominican Republic").tag(1)
+                Text(ny).tag(0)
+                Text(dr).tag(1)
             }
             
             Spacer()
