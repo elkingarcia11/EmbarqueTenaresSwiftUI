@@ -15,7 +15,7 @@ struct MainView: View {
     @State var selectedTab = 0
     
     @State var title = "Embarque Tenares"
-    
+    @State var lang = "es"
     let track : LocalizedStringKey = "track"
     let rates : LocalizedStringKey = "rates"
     let faqs : LocalizedStringKey = "faqs"
@@ -28,7 +28,7 @@ struct MainView: View {
         UIToolbar.appearance().backgroundColor = .green
         
     }
-
+    
     var body: some View {
         NavigationView {
             TabView(selection: $selectedTab) {
@@ -56,14 +56,16 @@ struct MainView: View {
             .navigationBarTitle(title, displayMode: .inline)
             .navigationBarItems(
                 trailing:
-                    Button(action: {
-                        print("Edit button pressed...")
-                    }) {
+                    Menu {
+                        Button("English", action: {lang = "en"})
+                        Button("Español", action: {lang = "es"})
+                    } label: {
                         Image(systemName: "globe.americas.fill").imageScale(.large)
                     }
             )
             .accentColor(.accent)
             .padding(.bottom, 9.0)
-        }
+        }.environment(\.locale, Locale(identifier: lang))
+
     }
 }

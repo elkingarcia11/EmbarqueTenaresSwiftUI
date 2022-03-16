@@ -12,7 +12,7 @@
 "faqs" = "FAQs";
 
 "edoa" = "Estimated Date of Arrival";
-"etaFootnote" = "*The number of day left is an estimate and subject to change.";
+"etaFootnote" = "*The number of days left is an estimate and subject to change.";
 "daysLeft" = "days left*";
 "error" = "Error";
 "errorMsg1" = "Invoice ";
@@ -36,4 +36,5 @@
 "saturday" = "Saturday";
 "sunday" = "Sunday";
 "closed" = "Closed";
+"closedDaily" = "Closed for lunch from 12PM-2PM";
 "drAddress" = "San Marcos #10, Puerto Plata, DR 57000";
