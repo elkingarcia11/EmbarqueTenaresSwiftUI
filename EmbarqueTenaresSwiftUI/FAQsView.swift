@@ -50,8 +50,10 @@ struct FAQsView: View {
     
     let questions: [Row] = [row1, row1, row1, row1, row1,row1, row1, row1, row1, row1,row1, row1, row1, row1, row1,row1, row1, row1, row1, row1,row1, row1, row1, row1, row1,]
     
+    
+    
     init() {
-       UITableView.appearance().backgroundColor = .white
+        UITableView.appearance().backgroundColor = .white
     }
     
     var body: some View {
@@ -61,6 +63,7 @@ struct FAQsView: View {
             }
             .listStyle(.plain)
             Spacer()
+            
         }
     }
 }
