@@ -41,26 +41,34 @@ struct DominicanRepublicLocationView: View {
     var body: some View {
         VStack{
             
-            HStack(alignment: .top){
+            
+            Image(systemName: "building.2")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding(.vertical)
+                .frame(width: 75, height: 75)
+                .foregroundColor(.dark)
+            
+            VStack{
                 Text(address)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
-                    .padding(.leading)
+                    .padding(.top, 20.0)
                 
                 Link(drAddress, destination: URL(string:"https://goo.gl/maps/k1N2CKedA8Awaa9MA")!)
+                    .padding(.top, 2.0)
                     .foregroundColor(.accent)
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.leading)
             }
-            .padding(.bottom)
-            .frame(maxWidth: .infinity)
+            .padding([.leading, .bottom, .trailing])
             
             // Hours
-            HStack(alignment: .top){
+            VStack{
                 Text(hours)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
-                    .padding(.leading)
+                    .padding(.bottom, 2.0)
                 
                 HStack {
                     VStack(alignment: .leading){
@@ -99,49 +107,41 @@ struct DominicanRepublicLocationView: View {
                     }
                 }
                 .frame(maxWidth: .infinity)
+                
+                Text(closedDaily)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 2.0)
             }
-            .padding(.bottom, 2.0)
-            
-            Text(closedDaily)
-                .fontWeight(.bold)
-                .multilineTextAlignment(.center)
-                .padding([.leading, .bottom, .trailing])
-                .frame(maxWidth: .infinity)
+            .padding([.leading, .bottom, .trailing])
             
             // Phone
-            HStack(alignment: .top){
-                
+            VStack{
                 Text(phone)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
-                    .padding(.leading)
+                    .padding(.bottom, 2.0)
                 
                 Link ("(809) 970-0007", destination: URL (string: "tel:8099700007")!)
                     .frame(maxWidth: .infinity)
                 
             }
-            .padding(.bottom)
+            .padding([.leading, .bottom, .trailing])
             .frame(maxWidth: .infinity)
             
             // Email
-            HStack(alignment: .top){
-                
+            VStack{
                 Text(email)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
-                    .padding(.leading)
+                    .padding(.bottom, 2.0)
                 
                 Link ("rd@embarquetenares.com", destination: URL (string: "mailto:rd@embarquetenares.com")!)
                     .frame(maxWidth: .infinity)
                 
             }
-            .frame(maxWidth: .infinity)
-            
-        }.padding(.vertical)
-            .frame(width: screenWidth-10, alignment: .center)
-            .overlay(
-                RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color.accent, lineWidth: 1.5)
-            )
+            .padding(.horizontal)
+        }
+        .padding()
     }
 }

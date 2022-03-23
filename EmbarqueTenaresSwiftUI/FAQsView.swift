@@ -8,48 +8,13 @@
 import Foundation
 import SwiftUI
 
-struct Row: Identifiable {
-    
-    let id = UUID()
-    
-    let text: String
-    
-    var answer: [Row]?
-    
-}
-
-
-
 struct FAQsView: View {
+    
+    @StateObject var faqsViewModel = FAQsViewModel()
     
     let screenHeight = UIScreen.main.bounds.height
     
     let screenWidth = UIScreen.main.bounds.width
-    
-    // some example websites
-    
-    
-    
-    static let answerText = "Response Response Response Response Response Response Response Response Response Response Response Response Response Response Response Response Response Response Response Response Response Response Response."
-    
-    
-    
-    static let answerItem = Row(text: answerText)
-    
-    
-    
-    static let question = "Question Question Question Question Question Question Question Question Question ?"
-    
-    
-    
-    // some example groups
-    
-    static let row1 = Row(text: question, answer: [answerItem])
-    
-    
-    
-    let questions: [Row] = [row1, row1, row1, row1, row1,row1, row1, row1, row1, row1,row1, row1, row1, row1, row1,row1, row1, row1, row1, row1,row1, row1, row1, row1, row1,]
-    
     
     
     init() {
@@ -57,13 +22,61 @@ struct FAQsView: View {
     }
     
     var body: some View {
-        VStack{
-            List(questions, children: \.answer) { row in
-                Text(row.text)
+        ScrollView{
+            VStack(spacing: 0) {
+                ForEach(faqsViewModel.faqs_published){ faq in
+                    CollapsibleRow(
+                        question: faq.q,
+                        answer: faq.a
+                    )
+                    .frame(maxWidth: .infinity)
+                }
             }
+            .frame(maxWidth: .infinity)
             .listStyle(.plain)
-            Spacer()
-            
+        }
+    }
+    
+}
+
+struct CollapsibleRow : View {
+    @State var question: String
+    @State var answer: String
+    
+    @State private var collapsed: Bool = true
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            Divider()
+            Button(
+                action: { self.collapsed.toggle() },
+                label: {
+                    HStack(alignment: .center) {
+                        Text(self.question)
+                            .padding(.all)
+                        
+                        Spacer(minLength: 0)
+                        Image(systemName: self.collapsed ? "chevron.right" : "chevron.down")
+                            .padding(.trailing)
+                            .frame(width: screenWidth/15)
+                            .foregroundColor(Color.accent)
+                    }
+                    .padding(.bottom, 1)
+                    .background(Color.white.opacity(0.01))
+                }
+            )
+            .buttonStyle(PlainButtonStyle())
+            VStack {
+                HStack {
+                    Text(self.answer)
+                        .padding(.all)
+                }
+                .frame(maxWidth: .infinity)
+                .background(Color.light)
+            }
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: collapsed ? 0 : .none)
+            .clipped()
+            .transition(.slide)
         }
     }
 }

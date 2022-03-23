@@ -31,27 +31,34 @@ struct NewYorkLocationView: View {
     var body: some View {
         VStack{
             
-            HStack(alignment: .top){
+            Image(systemName: "building.2")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding(.vertical)
+                .frame(width: 75, height: 75)
+                .foregroundColor(.dark)
+            
+            VStack{
                 Text(address)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
-                    .padding(.leading)
+                    .padding(.top, 20.0)
                 
                 
                 Link("2249 Washington Ave, Bronx, NY 10457", destination: URL(string:"https://goo.gl/maps/RUVQUFbiPr6J113z5")!)
+                    .padding(.top, 2.0)
                     .foregroundColor(.accent)
                     .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.leading)
             }
-            .padding(.bottom, 2.0)
-            .frame(maxWidth: .infinity)
+            .padding([.leading, .bottom, .trailing])
             
             // Hours
-            HStack(alignment: .top){
+            VStack{
                 Text(hours)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
-                    .padding(.leading)
+                    .padding(.bottom, 2.0)
                 
                 HStack {
                     VStack(alignment: .leading){
@@ -88,48 +95,37 @@ struct NewYorkLocationView: View {
                         Text(closed)
                             .fontWeight( weekday == 1 ?.bold : .regular)
                     }
-                    
                 }
-                .padding(.top)
-                .frame(maxWidth: .infinity)
-                
             }
-            .padding(.bottom)
+            .padding([.leading, .bottom, .trailing])
             
             // Phone
-            HStack(alignment: .top){
-                
+            VStack{
                 Text(phone)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
-                    .padding(.leading)
+                    .padding(.bottom, 2.0)
                 
                 Link ("(718) 562-1300", destination: URL (string: "tel:7185621300")!)
                     .frame(maxWidth: .infinity)
                 
             }
-            .padding(.bottom)
+            .padding([.leading, .bottom, .trailing])
             .frame(maxWidth: .infinity)
             
             // Email
-            HStack(alignment: .top){
-                
+            VStack{
                 Text(email)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
-                    .padding(.leading)
+                    .padding(.bottom, 2.0)
                 
                 Link ("ny@embarquetenares.com", destination: URL (string: "mailto:ny@embarquetenares.com")!)
                     .frame(maxWidth: .infinity)
                 
             }
-            .frame(maxWidth: .infinity)
-            
-        }.padding(.vertical)
-            .frame(width: screenWidth-10, height: screenHeight/2, alignment: .center)
-            .overlay(
-                RoundedRectangle(cornerRadius: 16)
-                    .stroke(Color.accent, lineWidth: 1.5)
-            )
+            .padding(.horizontal)
+        }
+        .padding()
     }
 }

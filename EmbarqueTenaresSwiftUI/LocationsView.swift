@@ -35,28 +35,20 @@ struct LocationsView: View {
     
     var body: some View {
         VStack{
-            
-            Spacer()
             Picker("Locations", selection: $selectedLocation) {
                 Text(ny).tag(0)
                 Text(dr).tag(1)
             }
             
-            Spacer()
-            
             if selectedLocation == 0 {
                 NewYorkLocationView()
-                    .frame(height: screenHeight*0.6)
             } else {
                 DominicanRepublicLocationView()
-                    .frame(height: screenHeight*0.6)
             }
             
             Spacer()
             
             SocialMediaFooter()
-            
-            Spacer()
         }.pickerStyle(.segmented)
     }
 }
@@ -114,6 +106,7 @@ struct SocialMediaFooter : View {
             
             Spacer()
         }
+        .padding(.bottom, 15.0)
         .frame(width: screenWidth)
         
     }

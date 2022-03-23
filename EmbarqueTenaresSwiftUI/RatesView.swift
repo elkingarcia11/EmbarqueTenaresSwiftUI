@@ -142,7 +142,8 @@ struct Collapsible<Content: View>: View {
                     Text(label)
                         .fontWeight(.bold)
                     Spacer(minLength: 0)
-                    Image(systemName: self.collapsed ? "chevron.down" : "chevron.up")
+                    Image(systemName: self.collapsed ? "chevron.right" : "chevron.down")
+                        .frame(width: screenWidth/15)
                 }
                 .background(Color.white.opacity(0.1))
             }

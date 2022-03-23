@@ -188,7 +188,6 @@ struct ProgressBar: View {
                 .stroke(lineWidth: 20.0)
                 .opacity(0.3)
                 .foregroundColor(Color.primary)
-            
             Circle()
                 .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
                 .stroke(style: StrokeStyle(lineWidth: 20.0, lineCap: .round, lineJoin: .round))
@@ -200,7 +199,6 @@ struct ProgressBar: View {
                     .bold()
                 Text(daysL)
                     .font(.title2)
-                
             }
         }
     }
