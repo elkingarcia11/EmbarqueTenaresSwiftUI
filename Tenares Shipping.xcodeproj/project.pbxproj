@@ -35,6 +35,9 @@
 		1E1E5DDB27EA366D00BCC00A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DDA27EA366D00BCC00A /* FirebaseStorage */; };
 		1E1E5DDD27EA366D00BCC00A /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DDC27EA366D00BCC00A /* FirebaseStorageCombine-Community */; };
 		1E1E5DDF27EA366D00BCC00A /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DDE27EA366D00BCC00A /* FirebaseStorageSwift-Beta */; };
+		1E1E5DE127ECF79800BCC00A /* RatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1E5DE027ECF79800BCC00A /* RatesModel.swift */; };
+		1E1E5DE327ECF8F800BCC00A /* RatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1E5DE227ECF8F800BCC00A /* RatesViewModel.swift */; };
+		1E1E5DE527EF765100BCC00A /* ErrorTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1E5DE427EF765000BCC00A /* ErrorTypes.swift */; };
 		1E2E552527DFA66800F25C10 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E552427DFA66800F25C10 /* TrackView.swift */; };
 		1E2E552827DFC22D00F25C10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E2E552A27DFC22D00F25C10 /* Localizable.strings */; };
 		1EC528F127E281DC00650843 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1EC528F027E281DC00650843 /* FirebaseAnalytics */; };
@@ -77,10 +80,13 @@
 		1EE474C027C40FFD00861E5C /* DominicanRepublicLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474BF27C40FFD00861E5C /* DominicanRepublicLocationView.swift */; };
 		1EE474C227C41EBE00861E5C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474C127C41EBE00861E5C /* Color.swift */; };
 		1EFE3DA127E8F2ED0021F8D6 /* FAQsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFE3DA027E8F2ED0021F8D6 /* FAQsViewModel.swift */; };
-		1EFE3DA327E8FC750021F8D6 /* FAQs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFE3DA227E8FC750021F8D6 /* FAQs.swift */; };
+		1EFE3DA327E8FC750021F8D6 /* FAQsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFE3DA227E8FC750021F8D6 /* FAQsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E1E5DE027ECF79800BCC00A /* RatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesModel.swift; sourceTree = "<group>"; };
+		1E1E5DE227ECF8F800BCC00A /* RatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModel.swift; sourceTree = "<group>"; };
+		1E1E5DE427EF765000BCC00A /* ErrorTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTypes.swift; sourceTree = "<group>"; };
 		1E2E552327DBB4A200F25C10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1E2E552427DFA66800F25C10 /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		1E2E552927DFC22D00F25C10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -98,7 +104,7 @@
 		1EE474BF27C40FFD00861E5C /* DominicanRepublicLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominicanRepublicLocationView.swift; sourceTree = "<group>"; };
 		1EE474C127C41EBE00861E5C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		1EFE3DA027E8F2ED0021F8D6 /* FAQsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsViewModel.swift; sourceTree = "<group>"; };
-		1EFE3DA227E8FC750021F8D6 /* FAQs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQs.swift; sourceTree = "<group>"; };
+		1EFE3DA227E8FC750021F8D6 /* FAQsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,7 +225,9 @@
 		1EFE3D9D27E8E31E0021F8D6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1EFE3DA227E8FC750021F8D6 /* FAQs.swift */,
+				1EFE3DA227E8FC750021F8D6 /* FAQsModel.swift */,
+				1E1E5DE027ECF79800BCC00A /* RatesModel.swift */,
+				1E1E5DE427EF765000BCC00A /* ErrorTypes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,6 +235,7 @@
 		1EFE3D9E27E8E3230021F8D6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1E1E5DE227ECF8F800BCC00A /* RatesViewModel.swift */,
 				1EFE3DA027E8F2ED0021F8D6 /* FAQsViewModel.swift */,
 			);
 			path = ViewModel;
@@ -375,11 +384,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E1E5DE327ECF8F800BCC00A /* RatesViewModel.swift in Sources */,
 				1EE474A827C4050100861E5C /* MainView.swift in Sources */,
 				1EE474A627C4050100861E5C /* EmbarqueTenaresSwiftUIApp.swift in Sources */,
 				1EE474C027C40FFD00861E5C /* DominicanRepublicLocationView.swift in Sources */,
+				1E1E5DE127ECF79800BCC00A /* RatesModel.swift in Sources */,
 				1E2E552527DFA66800F25C10 /* TrackView.swift in Sources */,
-				1EFE3DA327E8FC750021F8D6 /* FAQs.swift in Sources */,
+				1E1E5DE527EF765100BCC00A /* ErrorTypes.swift in Sources */,
+				1EFE3DA327E8FC750021F8D6 /* FAQsModel.swift in Sources */,
 				1EFE3DA127E8F2ED0021F8D6 /* FAQsViewModel.swift in Sources */,
 				1EE474BE27C40FEF00861E5C /* NewYorkLocationView.swift in Sources */,
 				1EE474BA27C4082100861E5C /* FAQsView.swift in Sources */,

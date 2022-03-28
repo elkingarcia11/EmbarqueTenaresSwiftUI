@@ -9,57 +9,12 @@
 import Foundation
 import SwiftUI
 
-struct ListData: Identifiable,Hashable {
-    var id = UUID()
-    var category: String
-    var description: String
-    var price: String
-}
-
-/**
- icons - box, barrels, tv, furniture, appliances
- */
-
-var data = [
-    ListData(category: "Boxes", description: "18X18X28 CON COMIDA", price: "$85"),
-    ListData(category: "Boxes", description: "18x18x28 con ropa usada", price: "$85"),
-    ListData(category: "Boxes", description: "18x18x28 con comida y ropa usada", price: "$85"),
-    ListData(category: "Boxes", description: "18x18x28 de comida y/o ropa usada", price: "$110"),
-    ListData(category: "Barrels", description: "de 55 galones con comida y/o ropa usada", price: "$125"),
-    ListData(category: "Barrels", description: "de 77 galones con comida y/o ropa usada", price: "$150"),
-    ListData(category: "TV", description: "de 32 pulgada", price: "$192"),
-    ListData(category: "TV", description: "de 36 pulgada", price: "$216"),
-    ListData(category: "TV", description: "de 42 pulgada", price: "$252"),
-    ListData(category: "TV", description: "de 43 pulgada", price: "$387"),
-    ListData(category: "TV", description: "de 50 pulgada", price: "$470"),
-    ListData(category: "TV", description: "de 55 pulgada", price: "$495"),
-    ListData(category: "TV", description: "de 65 pulgada", price: "$585"),
-    ListData(category: "TV", description: "de 75 pulgada", price: "$675"),
-    ListData(category: "Furniture", description: "Mattress twin", price: "85"),
-    ListData(category: "Furniture", description: "Mattress y base twin", price: "85"),
-    ListData(category: "Furniture", description: "Mattress queen", price: "85"),
-    ListData(category: "Furniture", description: "Mattress y base queen", price: "85"),
-    ListData(category: "Furniture", description: "Mattress king", price: "85"),
-    ListData(category: "Furniture", description: "Mattress y base king", price: "85"),
-    ListData(category: "Furniture", description: "Mueble de 1 asiento", price: "150+"),
-    ListData(category: "Furniture", description: "Mueble de 2 asientos", price: "300+"),
-    ListData(category: "Furniture", description: "Mueble de 3 asientos", price: "450+"),
-    ListData(category: "Furniture", description: "Silla de rueda cerrada", price: "60"),
-    ListData(category: "Furniture", description: "Silla de rueda electrica", price: "150"),
-    ListData(category: "Appliances", description: "Lavadora", price: "250+"),
-    ListData(category: "Appliances", description: "Secadora", price: "250+"),
-    ListData(category: "Appliances", description: "Nevera con puerta arriba y abajo", price: "350+"),
-    ListData(category: "Appliances", description: "Nevera con 2 puerta arriba y 1 abajo", price: "500+"),
-    ListData(category: "Appliances", description: "Estufa", price: "250+"),
-]
-
 struct RatesView: View {
+    
+    @StateObject var ratesViewModel = RatesViewModel()
     
     let whatsapp : LocalizedStringKey = "whatsapp"
     
-    var categories : [String] = ["Boxes","Barrels","TV","Furniture", "Appliances"]
-    
-    @State var d = data
     
     func openWhatsapp(){
         @Environment(\.openURL) var openURL
@@ -69,23 +24,22 @@ struct RatesView: View {
         }
     }
     
+    // LOCALE CHANGE LOGIC
     var body: some View {
         VStack(alignment: .leading){
             List {
-                ForEach(0..<categories.count-1) { index in
-                    Collapsible(label: categories[index]){
-                        ForEach(data) { listData in
-                            if listData.category == categories[index] {
-                                Divider()
-                                HStack(alignment: .center){
-                                    Text(listData.description)
-                                        .padding([.top, .trailing])
-                                    Spacer()
-                                    PricePill(price: listData.price)
-                                        .padding(.top)
-                                }
-                                .padding(.bottom)
+                ForEach(ratesViewModel.catsAndItems) { catAndItem in
+                    Collapsible(label: catAndItem.category.name_en){
+                        ForEach(catAndItem.items) { item in
+                            Divider()
+                            HStack(alignment: .center){
+                                Text(item.name_en)
+                                    .padding([.top, .trailing])
+                                Spacer()
+                                PricePill(price: item.price)
+                                    .padding(.top)
                             }
+                            .padding(.bottom)
                         }
                     }
                 }
@@ -148,7 +102,7 @@ struct Collapsible<Content: View>: View {
                 .background(Color.white.opacity(0.1))
             }
             )
-                .buttonStyle(PlainButtonStyle())
+            .buttonStyle(PlainButtonStyle())
             self.content()
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: collapsed ? 0 : .none, alignment: .top) // <- added `alignment` here
                 .clipped() // Comment to see the overlap

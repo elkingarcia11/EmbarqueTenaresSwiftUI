@@ -11,6 +11,7 @@ import FirebaseAuth
 
 @main
 struct EmbarqueTenaresSwiftUIApp: App {
+    /*
     init() {
         FirebaseApp.configure()
         Auth.auth().signIn(withEmail: "elkingarcia.11@gmail.com", password: "Ee041195!") { result, err in
@@ -20,7 +21,7 @@ struct EmbarqueTenaresSwiftUIApp: App {
                 print("LOGIN SUCCESSFUL")
             }
         }
-    }
+    }*/
     
     var body: some Scene {
         WindowGroup {

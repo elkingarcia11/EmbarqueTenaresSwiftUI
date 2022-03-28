@@ -1,10 +1,3 @@
-//
-//  FAQs.swift
-//  Tenares Shipping
-//
-//  Created by Elkin Garcia on 3/21/22.
-//
-
 import Foundation
 
 // Each db entry will be 
