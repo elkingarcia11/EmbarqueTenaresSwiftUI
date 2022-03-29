@@ -6,32 +6,36 @@ class RatesViewModel: ObservableObject {
     
     @Published var categories = [Category]()
     @Published var catsAndItems = [CategoryAndItems]()
+    @Published var isLoading = false
     
     init(){
         Task {
             self.fetchCategories()
         }
-        self.fetchItems()
     }
     private func fetchCategories() {
+        isLoading = true
         // Get a reference to database
         let db = Firestore.firestore()
         
         // Read documents at specific path -- Get categories
         db.collection("rates").getDocuments { snapshot, error in
-            // Check for errors
-            if error == nil {
-                // No errors
-                if let snapshot = snapshot {
-                    // Get all the documents and create [Items]
-                    self.categories = snapshot.documents.map{
-                        d in
-                        return Category(id: Int(d.documentID) ?? 0, name_en: d["name_en"] as? String ?? "", name_es: d["name_es"] as? String ?? "")
+            DispatchQueue.main.async {
+                // Check for errors
+                if error == nil {
+                    // No errors
+                    if let snapshot = snapshot {
+                        // Get all the documents and create [Items]
+                        self.categories = snapshot.documents.map{
+                            d in
+                            return Category(id: Int(d.documentID) ?? 0, name_en: d["name_en"] as? String ?? "", name_es: d["name_es"] as? String ?? "")
+                        }
+                        self.fetchItems()
                     }
-                    self.fetchItems()
+                } else {
+                    //ERROR
                 }
-            } else {
-                //ERROR
+                self.isLoading = false
             }
         }
     }

@@ -18,32 +18,38 @@ class FAQsViewModel: ObservableObject {
     
     @Published var faqs_published: [QandA] = []
     
+    @Published var isLoading = false
+    
     init(){
         self.fetchFAQs()
     }
 
     
     private func fetchFAQs(){
+        isLoading = true
         // Get a reference to database
         let db = Firestore.firestore()
         
         // Read documents at specific path
         db.collection("faqs").getDocuments { snapshot, error in
-            // Check for errors
-            if error == nil {
-                // No errors
-                print("NO ERRORS RETRIEVING DB")
-                if let snapshot = snapshot {
-                    // Get all the documents and create FAQs
-                    self.faqs = snapshot.documents.map{
-                        d in
-                        return FAQs(id: Int(d.documentID) ?? 0, q_en: d["q_en"] as? String ?? "", q_es: d["q_es"] as? String ?? "", a_en: d["a_en"] as? String ?? "", a_es: d["a_es"] as? String ?? "")
+            DispatchQueue.main.async {
+                // Check for errors
+                if error == nil {
+                    // No errors
+                    print("NO ERRORS RETRIEVING DB")
+                    if let snapshot = snapshot {
+                        // Get all the documents and create FAQs
+                        self.faqs = snapshot.documents.map{
+                            d in
+                            return FAQs(id: Int(d.documentID) ?? 0, q_en: d["q_en"] as? String ?? "", q_es: d["q_es"] as? String ?? "", a_en: d["a_en"] as? String ?? "", a_es: d["a_es"] as? String ?? "")
+                        }
+                        
+                        self.setupQandA()
                     }
-                    
-                    self.setupQandA()
+                } else {
+                    print("ERROR RETRIEVING DB")
                 }
-            } else {
-                print("ERROR RETRIEVING DB")
+                self.isLoading = false
             }
         }
     }

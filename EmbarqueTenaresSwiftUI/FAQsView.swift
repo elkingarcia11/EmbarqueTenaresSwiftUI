@@ -24,6 +24,13 @@ struct FAQsView: View {
     var body: some View {
         ScrollView{
             VStack(spacing: 0) {
+                if faqsViewModel.isLoading{
+                    Spacer()
+                    ProgressView()
+                        .padding(.top)
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .scaleEffect(2)
+                }
                 ForEach(faqsViewModel.faqs_published){ faq in
                     CollapsibleRow(
                         question: faq.q,

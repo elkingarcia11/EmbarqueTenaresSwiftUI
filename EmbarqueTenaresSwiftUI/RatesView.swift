@@ -27,23 +27,31 @@ struct RatesView: View {
     // LOCALE CHANGE LOGIC
     var body: some View {
         VStack(alignment: .leading){
+            
             List {
-                ForEach(ratesViewModel.catsAndItems) { catAndItem in
-                    Collapsible(label: catAndItem.category.name_en){
-                        ForEach(catAndItem.items) { item in
-                            Divider()
-                            HStack(alignment: .center){
-                                Text(item.name_en)
-                                    .padding([.top, .trailing])
-                                Spacer()
-                                PricePill(price: item.price)
-                                    .padding(.top)
+                if ratesViewModel.isLoading{
+                    Spacer()
+                    ProgressView()
+                        .padding(.top)
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .scaleEffect(3)
+                } else {
+                    ForEach(ratesViewModel.catsAndItems) { catAndItem in
+                        Collapsible(label: catAndItem.category.name_en){
+                            ForEach(catAndItem.items) { item in
+                                Divider()
+                                HStack(alignment: .center){
+                                    Text(item.name_en)
+                                        .padding([.top, .trailing])
+                                    Spacer()
+                                    PricePill(price: item.price)
+                                        .padding(.top)
+                                }
+                                .padding(.bottom)
                             }
-                            .padding(.bottom)
                         }
                     }
                 }
-                
             }
             .frame(maxWidth: .infinity)
             .listStyle(.plain)

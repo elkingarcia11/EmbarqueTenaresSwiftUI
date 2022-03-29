@@ -25,46 +25,53 @@ struct TrackView: View {
     var body: some View {
         ZStack {
             VStack{
-                if trackViewModel.searchStatus == 1 {
+                if trackViewModel.isLoading{
                     Spacer()
-                    Text(edoa)
-                        .font(.title)
-                        .padding(.bottom)
-                    Text(trackViewModel.arrivalDate)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .padding(.bottom)
-                    ProgressBar(progress: $trackViewModel.progressValue, daysLeft: trackViewModel.daysLeft)
-                        .frame(width: 150.0, height: 150.0)
-                        .padding(40.0)
-                    Spacer()
-                    Text(etaFootnote)
-                        .font(.footnote)
-                        .fontWeight(.bold)
-                        .italic()
-                        .multilineTextAlignment(.center)
-                        .padding([.leading, .bottom, .trailing])
-                    Spacer()
-                }
-                
-                if trackViewModel.searchStatus == -2 {
-                    Spacer()
-                    Image("logo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: screenWidth/1.25, alignment: .center)
-                }
-                if trackViewModel.searchStatus == -1 {
-                    Spacer()
-                    Text("ERROR")
-                        .font(.title)
-                        .padding(.bottom)
-                    HStack(alignment: .center){
-                        Text(errorMsg1).font(.subheadline)
-                        Text(text).bold().font(.subheadline)
-                        Text(errorMsg2).font(.subheadline)
+                    ProgressView()
+                        .padding(.top)
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .scaleEffect(3)
+                } else{
+                    if trackViewModel.searchStatus == -2 {
+                        Spacer()
+                        Image("logo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: screenWidth/1.25, alignment: .center)
                     }
-                    Spacer()
+                    if trackViewModel.searchStatus == 1 {
+                        Spacer()
+                        Text(edoa)
+                            .font(.title)
+                            .padding(.bottom)
+                        Text(trackViewModel.arrivalDate)
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .padding(.bottom)
+                        ProgressBar(progress: $trackViewModel.progressValue, daysLeft: trackViewModel.daysLeft)
+                            .frame(width: 150.0, height: 150.0)
+                            .padding(40.0)
+                        Spacer()
+                        Text(etaFootnote)
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                            .italic()
+                            .multilineTextAlignment(.center)
+                            .padding([.leading, .bottom, .trailing])
+                        Spacer()
+                    }
+                    if trackViewModel.searchStatus == -1 {
+                        Spacer()
+                        Text("ERROR")
+                            .font(.title)
+                            .padding(.bottom)
+                        HStack(alignment: .center){
+                            Text(errorMsg1).font(.subheadline)
+                            Text(text).bold().font(.subheadline)
+                            Text(errorMsg2).font(.subheadline)
+                        }
+                        Spacer()
+                    }
                 }
                 Spacer()
                 HStack {

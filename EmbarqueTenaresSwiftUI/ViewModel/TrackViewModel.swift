@@ -1,10 +1,3 @@
-//
-//  TrackViewModel.swift
-//  Tenares Shipping
-//
-//  Created by Elkin Garcia on 3/28/22.
-//
-
 import Foundation
 
 import Combine
@@ -28,21 +21,27 @@ class TrackViewModel: ObservableObject {
     @Published private var error_1 : String = ""
     @Published private var error_2 : String = ""
     
+    @Published var isLoading = false
+    
     private func fetchEtaDay(){
+        self.isLoading = true
         let db = Firestore.firestore()
         let docRef = db.collection("eta").document("eta_days")
         
         docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                self.deliveryTime = document.get("days") as? Int ?? -1
-            }
-            if self.deliveryTime == -1 {
-                
-                self.error_1 = "Failed to calculate estimated time of arrival"
-                self.error_2 = ""
-                self.searchStatus = -1
-            } else {
-                self.calculateETA()
+            DispatchQueue.main.async{
+                if let document = document, document.exists {
+                    self.deliveryTime = document.get("days") as? Int ?? -1
+                }
+                if self.deliveryTime == -1 {
+                    
+                    self.error_1 = "Failed to calculate estimated time of arrival"
+                    self.error_2 = ""
+                    self.searchStatus = -1
+                } else {
+                    self.calculateETA()
+                }
+                self.isLoading = false
             }
         }
     }
