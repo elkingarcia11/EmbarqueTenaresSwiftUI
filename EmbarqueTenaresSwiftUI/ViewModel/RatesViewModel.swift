@@ -1,12 +1,14 @@
 import Combine
 import Firebase
-
+import SwiftUI
 
 class RatesViewModel: ObservableObject {
     
     @Published var categories = [Category]()
     @Published var catsAndItems = [CategoryAndItems]()
     @Published var isLoading = false
+    
+    @Published var errorMsg : LocalizedStringKey = ""
     
     init(){
         Task {
@@ -33,7 +35,7 @@ class RatesViewModel: ObservableObject {
                         self.fetchItems()
                     }
                 } else {
-                    //ERROR
+                    self.errorMsg = "error_rates"
                 }
                 self.isLoading = false
             }
@@ -59,7 +61,7 @@ class RatesViewModel: ObservableObject {
                     }
                     self.catsAndItems.append(CategoryAndItems(id: category.id, category: category, items: rateItems))
                 } else {
-                    // ERROR
+                    self.errorMsg = "error_rates"
                 }
             }
         }

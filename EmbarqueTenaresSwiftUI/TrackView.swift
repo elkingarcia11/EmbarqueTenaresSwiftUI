@@ -15,8 +15,6 @@ struct TrackView: View {
     let edoa : LocalizedStringKey = "edoa"
     let etaFootnote : LocalizedStringKey = "etaFootnote"
     let search : LocalizedStringKey = "search"
-    let errorMsg1 : LocalizedStringKey = "errorMsg1"
-    let errorMsg2 : LocalizedStringKey = "errorMsg2"
     
     @State private var text = ""
     @StateObject var trackViewModel = TrackViewModel()
@@ -66,9 +64,7 @@ struct TrackView: View {
                             .font(.title)
                             .padding(.bottom)
                         HStack(alignment: .center){
-                            Text(errorMsg1).font(.subheadline)
-                            Text(text).bold().font(.subheadline)
-                            Text(errorMsg2).font(.subheadline)
+                            Text(trackViewModel.errorMsg).font(.subheadline)
                         }
                         Spacer()
                     }

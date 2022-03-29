@@ -1,12 +1,6 @@
-//
-//  FAQsViewModel.swift
-//  Tenares Shipping
-//
-//  Created by Elkin Garcia on 3/21/22.
-//
-
 import Combine
 import Firebase
+import SwiftUI
 
 class FAQsViewModel: ObservableObject {
     
@@ -19,6 +13,8 @@ class FAQsViewModel: ObservableObject {
     @Published var faqs_published: [QandA] = []
     
     @Published var isLoading = false
+    
+    @Published var errorMsg : LocalizedStringKey = ""
     
     init(){
         self.fetchFAQs()
@@ -35,8 +31,6 @@ class FAQsViewModel: ObservableObject {
             DispatchQueue.main.async {
                 // Check for errors
                 if error == nil {
-                    // No errors
-                    print("NO ERRORS RETRIEVING DB")
                     if let snapshot = snapshot {
                         // Get all the documents and create FAQs
                         self.faqs = snapshot.documents.map{
@@ -47,7 +41,7 @@ class FAQsViewModel: ObservableObject {
                         self.setupQandA()
                     }
                 } else {
-                    print("ERROR RETRIEVING DB")
+                    self.errorMsg = "error_rates"
                 }
                 self.isLoading = false
             }

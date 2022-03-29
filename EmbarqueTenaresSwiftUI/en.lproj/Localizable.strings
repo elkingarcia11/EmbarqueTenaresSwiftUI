@@ -38,3 +38,9 @@
 "closed" = "Closed";
 "closedDaily" = "Closed for lunch from 12PM-2PM";
 "drAddress" = "San Marcos #10, Puerto Plata, DR 57000";
+
+"error_eta1" = "Failed to calculate estimated time of arrival. Call our offices for more information";
+"error_eta2" = "Failed to retrieve invoice information. Call our offices for more information";
+"error_eta3" = "Invoice is invalid. Please enter a valid invoice number.";
+"error_faqs" = "Our servers are currently down. Call our offices if you have any questions!";
+"error_rates" = "Our servers are currently down. Call our offices or message us on WhatsApp if you are interested in pricing estimates";

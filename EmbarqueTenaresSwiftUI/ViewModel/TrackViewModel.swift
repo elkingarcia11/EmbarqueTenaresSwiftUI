@@ -2,6 +2,8 @@ import Foundation
 
 import Combine
 import Firebase
+import SwiftUI
+
 
 class TrackViewModel: ObservableObject {
     
@@ -18,10 +20,10 @@ class TrackViewModel: ObservableObject {
     @Published private var originalDate : String = ""
     @Published var arrivalDate : String = ""
     
-    @Published private var error_1 : String = ""
-    @Published private var error_2 : String = ""
     
     @Published var isLoading = false
+    
+    @Published var errorMsg : LocalizedStringKey = ""
     
     private func fetchEtaDay(){
         self.isLoading = true
@@ -34,9 +36,7 @@ class TrackViewModel: ObservableObject {
                     self.deliveryTime = document.get("days") as? Int ?? -1
                 }
                 if self.deliveryTime == -1 {
-                    
-                    self.error_1 = "Failed to calculate estimated time of arrival"
-                    self.error_2 = ""
+                    self.errorMsg = "error_eta1"
                     self.searchStatus = -1
                 } else {
                     self.calculateETA()
@@ -52,8 +52,6 @@ class TrackViewModel: ObservableObject {
         
         // TURN original date string INTO DATE OBJECT
         if let ogDate = dateFormatter.date(from: self.originalDate){// CALCULATE ARRIVAL DATE
-            
-            print("DELIVERY TIME:\(self.deliveryTime)")
             if let arrDate = Calendar.current.date(byAdding: .day, value: self.deliveryTime, to: ogDate) {
                 // TURN ARRIVAL DATE INTO STRING TO PRESENT IN VIEW
                 let stringFormatter = DateFormatter()
@@ -69,14 +67,12 @@ class TrackViewModel: ObservableObject {
                 }
                 self.searchStatus = 1
             } else {
-                error_1 = "Failed to calculate estimated time of arrival"
-                error_2 = ""
+                self.errorMsg = "error_eta1"
                 self.searchStatus = -1
             }
         }
         else {
-            error_1 = "Failed to calculate estimated time of arrival"
-            error_2 = ""
+            self.errorMsg = "error_eta1"
             self.searchStatus = -1
         }
     }
@@ -90,22 +86,16 @@ class TrackViewModel: ObservableObject {
                     // If succesfully connected to my db and retrieve eta day
                     self.fetchEtaDay()
                 } else {
-                    // throw error
-                    error_1 = "Failed to retrieve invoice information"
-                    error_2 = ""
+                    self.errorMsg = "error_eta2"
                     self.searchStatus = -1
                 }
             } else {
-                // throw error
-                error_1 = "Invoice is invalid. Please enter a valid invoice number."
-                error_2 = ""
+                self.errorMsg = "error_eta3"
                 self.searchStatus = -1
             }
             
         } else {
-            // throw error
-            error_1 = "Invoice is invalid. Please enter a valid invoice number."
-            error_2 = ""
+            self.errorMsg = "error_eta3"
             self.searchStatus = -1
         }
         
