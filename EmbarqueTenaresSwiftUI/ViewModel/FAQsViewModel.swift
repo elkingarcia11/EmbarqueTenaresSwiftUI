@@ -18,31 +18,10 @@ class FAQsViewModel: ObservableObject {
     
     @Published var faqs_published: [QandA] = []
     
-    private var refHandle: DatabaseHandle?
-    
     init(){
         self.fetchFAQs()
-        //self.fetchFAQSTest()
-        // TURN JSON INTO LIST OF FAQS OBJECTS
-        
-        // For each item in FAQs fetched from db, make two QandA arrays for each language
-        /*            for i in 0 ... faqs.count - 1 {
-         let q_en = QandA(faqs[i].q_en, faqs[i].a_en)
-         let q_es = QandA(faqs[i].q_es, faqs[i].a_es)
-         questions_en.append(q_en)
-         questions_es.append(q_es)
-         }*/
     }
-    
-    private func fetchFAQSTest(){
-        let o = FAQs(id: 0, q_en: "YOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOO", q_es: "YOO", a_en: "YOO", a_es: "YOO")
-        let i = FAQs(id: 1, q_en: "YOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOO", q_es: "YOO", a_en: "YOO", a_es: "YOO")
-        let a = FAQs(id: 2, q_en: "YOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOO", q_es: "YOO", a_en: "YOO", a_es: "YOO")
-        let e = FAQs(id: 3, q_en: "YOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOO", q_es: "YOO", a_en: "YOO", a_es: "YOO")
-        let u = FAQs(id: 4, q_en: "YOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOOYOO", q_es: "YOO", a_en: "YOO", a_es: "YOO")
-        faqs = [o,i,a,e,u]
-        
-    }
+
     
     private func fetchFAQs(){
         // Get a reference to database

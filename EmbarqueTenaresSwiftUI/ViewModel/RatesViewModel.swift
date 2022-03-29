@@ -7,8 +7,6 @@ class RatesViewModel: ObservableObject {
     @Published var categories = [Category]()
     @Published var catsAndItems = [CategoryAndItems]()
     
-    private var refHandle: DatabaseHandle?
-    
     init(){
         Task {
             self.fetchCategories()

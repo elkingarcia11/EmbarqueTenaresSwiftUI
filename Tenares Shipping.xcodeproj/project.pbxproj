@@ -38,6 +38,7 @@
 		1E1E5DE127ECF79800BCC00A /* RatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1E5DE027ECF79800BCC00A /* RatesModel.swift */; };
 		1E1E5DE327ECF8F800BCC00A /* RatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1E5DE227ECF8F800BCC00A /* RatesViewModel.swift */; };
 		1E1E5DE527EF765100BCC00A /* ErrorTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1E5DE427EF765000BCC00A /* ErrorTypes.swift */; };
+		1E1E5DEC27F23B2300BCC00A /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1E5DEB27F23B2300BCC00A /* TrackViewModel.swift */; };
 		1E2E552527DFA66800F25C10 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E552427DFA66800F25C10 /* TrackView.swift */; };
 		1E2E552827DFC22D00F25C10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E2E552A27DFC22D00F25C10 /* Localizable.strings */; };
 		1EC528F127E281DC00650843 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1EC528F027E281DC00650843 /* FirebaseAnalytics */; };
@@ -87,6 +88,7 @@
 		1E1E5DE027ECF79800BCC00A /* RatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesModel.swift; sourceTree = "<group>"; };
 		1E1E5DE227ECF8F800BCC00A /* RatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModel.swift; sourceTree = "<group>"; };
 		1E1E5DE427EF765000BCC00A /* ErrorTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTypes.swift; sourceTree = "<group>"; };
+		1E1E5DEB27F23B2300BCC00A /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
 		1E2E552327DBB4A200F25C10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1E2E552427DFA66800F25C10 /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		1E2E552927DFC22D00F25C10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			children = (
 				1E1E5DE227ECF8F800BCC00A /* RatesViewModel.swift */,
 				1EFE3DA027E8F2ED0021F8D6 /* FAQsViewModel.swift */,
+				1E1E5DEB27F23B2300BCC00A /* TrackViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E1E5DEC27F23B2300BCC00A /* TrackViewModel.swift in Sources */,
 				1E1E5DE327ECF8F800BCC00A /* RatesViewModel.swift in Sources */,
 				1EE474A827C4050100861E5C /* MainView.swift in Sources */,
 				1EE474A627C4050100861E5C /* EmbarqueTenaresSwiftUIApp.swift in Sources */,
