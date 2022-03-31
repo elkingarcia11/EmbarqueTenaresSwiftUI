@@ -2,7 +2,6 @@ import Foundation
 import SwiftUI
 
 struct RatesView: View {
-    
     @Binding var lang: String
     @StateObject var ratesViewModel = RatesViewModel()
     

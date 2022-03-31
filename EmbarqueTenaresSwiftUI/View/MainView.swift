@@ -36,7 +36,7 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             TabView(selection: $selectedTab) {
-                TrackView()
+                TrackView(lang: $lang)
                     .tabItem {
                         Label(track, systemImage: "magnifyingglass.circle.fill")
                     }

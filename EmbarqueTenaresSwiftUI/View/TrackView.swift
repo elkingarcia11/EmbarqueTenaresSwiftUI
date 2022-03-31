@@ -10,6 +10,7 @@ import Foundation
 
 // get eta time from db
 struct TrackView: View {
+    @Binding var lang: String
     
     let track : LocalizedStringKey = "track"
     let edoa : LocalizedStringKey = "edoa"
@@ -42,10 +43,17 @@ struct TrackView: View {
                         Text(edoa)
                             .font(.title)
                             .padding(.bottom)
-                        Text(trackViewModel.arrivalDate)
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .padding(.bottom)
+                        if lang == "es"{
+                            Text(trackViewModel.arrivalDate_es)
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .padding(.bottom)
+                        } else {
+                            Text(trackViewModel.arrivalDate_en)
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .padding(.bottom)
+                        }
                         ProgressBar(progress: $trackViewModel.progressValue, daysLeft: trackViewModel.daysLeft)
                             .frame(width: 150.0, height: 150.0)
                             .padding(40.0)

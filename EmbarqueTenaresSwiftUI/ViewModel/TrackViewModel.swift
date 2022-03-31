@@ -15,10 +15,9 @@ class TrackViewModel: ObservableObject {
     
     @Published var daysLeft: Int = 0
     
-    
-    
     @Published private var originalDate : String = ""
-    @Published var arrivalDate : String = ""
+    @Published var arrivalDate_en : String = ""
+    @Published var arrivalDate_es : String = ""
     
     
     @Published var isLoading = false
@@ -79,7 +78,10 @@ class TrackViewModel: ObservableObject {
                 let stringFormatter = DateFormatter()
                 stringFormatter.dateStyle = .long
                 stringFormatter.timeStyle = .none
-                arrivalDate = stringFormatter.string(from: arrDate)
+                stringFormatter.locale = Locale(identifier: "es_US")
+                arrivalDate_es = stringFormatter.string(from: arrDate)
+                stringFormatter.locale = Locale(identifier: "en_US")
+                arrivalDate_en = stringFormatter.string(from: arrDate)
                 daysLeft = Int(Date().distance(to: arrDate))/60/60/24+1
                 
                 if daysLeft <= 0 {

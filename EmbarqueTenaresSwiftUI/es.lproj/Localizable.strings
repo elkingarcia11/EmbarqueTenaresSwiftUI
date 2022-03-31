@@ -11,7 +11,7 @@
 "locations" = "Sucursales";
 "faqs" = "Preguntas";
 
-"edoa" = "Estimated Date of Arrival";
+"edoa" = "Fecha de llegada estimada";
 "etaFootnote" = "*El número de días restantes es un estimado y está sujeto a cambios.";
 "daysLeft" = "días restantes*";
 

@@ -202,13 +202,6 @@
 				1EC5292827E283B900650843 /* GoogleService-Info.plist */,
 				1E2E552A27DFC22D00F25C10 /* Localizable.strings */,
 				1EE474A527C4050100861E5C /* EmbarqueTenaresSwiftUIApp.swift */,
-				1EE474A727C4050100861E5C /* MainView.swift */,
-				1E2E552427DFA66800F25C10 /* TrackView.swift */,
-				1EE474B727C4081000861E5C /* RatesView.swift */,
-				1EE474B927C4082100861E5C /* FAQsView.swift */,
-				1EE474BB27C4082E00861E5C /* LocationsView.swift */,
-				1EE474BD27C40FEF00861E5C /* NewYorkLocationView.swift */,
-				1EE474BF27C40FFD00861E5C /* DominicanRepublicLocationView.swift */,
 				1EE474C127C41EBE00861E5C /* Color.swift */,
 				1EE474A927C4050500861E5C /* Assets.xcassets */,
 				1EE474AB27C4050500861E5C /* Preview Content */,
@@ -246,6 +239,13 @@
 		1EFE3D9F27E8E3270021F8D6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1EE474A727C4050100861E5C /* MainView.swift */,
+				1E2E552427DFA66800F25C10 /* TrackView.swift */,
+				1EE474B727C4081000861E5C /* RatesView.swift */,
+				1EE474B927C4082100861E5C /* FAQsView.swift */,
+				1EE474BB27C4082E00861E5C /* LocationsView.swift */,
+				1EE474BD27C40FEF00861E5C /* NewYorkLocationView.swift */,
+				1EE474BF27C40FFD00861E5C /* DominicanRepublicLocationView.swift */,
 				1E1E5DE427EF765000BCC00A /* ErrorView.swift */,
 			);
 			path = View;
