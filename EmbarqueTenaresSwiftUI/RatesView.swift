@@ -19,74 +19,78 @@ struct RatesView: View {
     
     // LOCALE CHANGE LOGIC
     var body: some View {
-        VStack(alignment: .leading){
-            
-            List {
-                if ratesViewModel.isLoading{
-                    Spacer()
-                    ProgressView()
-                        .padding(.top)
-                        .progressViewStyle(CircularProgressViewStyle())
-                        .scaleEffect(3)
-                } else {
-                    if lang == "en"{
-                        ForEach(ratesViewModel.catsAndItems) { catAndItem in
-                            Collapsible(image: catAndItem.category.name_en, label: catAndItem.category.name_en){
-                                ForEach(catAndItem.items) { item in
-                                    Divider()
-                                    HStack(alignment: .center){
-                                        Text(item.name_en)
-                                            .padding([.top, .trailing])
-                                        Spacer()
-                                        PricePill(price: item.price)
-                                            .padding(.top)
-                                    }
-                                    .padding(.bottom)
-                                }
-                            }
-                        }
+        ZStack{
+            if ratesViewModel.isLoading{
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .scaleEffect(3)
+            } else {
+                VStack(alignment: .leading){
+                    if ratesViewModel.statusCode == -1 {
+                        ErrorView(errorMsg: ratesViewModel.errorMsg)
                     } else {
-                        ForEach(ratesViewModel.catsAndItems) { catAndItem in
-                            Collapsible(image: catAndItem.category.name_en, label: catAndItem.category.name_es){
-                                ForEach(catAndItem.items) { item in
-                                    Divider()
-                                    HStack(alignment: .center){
-                                        Text(item.name_es)
-                                            .padding([.top, .trailing])
-                                        Spacer()
-                                        PricePill(price: item.price)
-                                            .padding(.top)
+                        List {
+                            if lang == "en"{
+                                ForEach(ratesViewModel.catsAndItems) { catAndItem in
+                                    Collapsible(image: catAndItem.category.name_en, label: catAndItem.category.name_en){
+                                        ForEach(catAndItem.items) { item in
+                                            Divider()
+                                            HStack(alignment: .center){
+                                                Text(item.name_en)
+                                                    .padding([.top, .trailing])
+                                                Spacer()
+                                                PricePill(price: item.price)
+                                                    .padding(.top)
+                                            }
+                                            .padding(.bottom)
+                                        }
                                     }
-                                    .padding(.bottom)
+                                }
+                            } else {
+                                ForEach(ratesViewModel.catsAndItems) { catAndItem in
+                                    Collapsible(image: catAndItem.category.name_en, label: catAndItem.category.name_es){
+                                        ForEach(catAndItem.items) { item in
+                                            Divider()
+                                            HStack(alignment: .center){
+                                                Text(item.name_es)
+                                                    .padding([.top, .trailing])
+                                                Spacer()
+                                                PricePill(price: item.price)
+                                                    .padding(.top)
+                                            }
+                                            .padding(.bottom)
+                                        }
+                                    }
                                 }
                             }
                         }
+                        .frame(maxWidth: .infinity)
+                        .listStyle(.plain)
+                        
+                    }
+                    HStack(alignment: .center){
+                        Image("whatsapp")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding([.top, .leading, .bottom])
+                            .frame(width: 75, height: 75)
+                        Text(whatsapp)
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.black)
+                            .multilineTextAlignment(.center)
+                            .padding([.top, .bottom, .trailing])
+                            .frame(maxWidth: .infinity)
+                    }
+                    .frame(width: screenWidth)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 1)
+                            .stroke(Color.accent, lineWidth: 1)
+                    )
+                    .onTapGesture{
+                        openWhatsapp()
                     }
                 }
-            }
-            .frame(maxWidth: .infinity)
-            .listStyle(.plain)
-            HStack(alignment: .center){
-                Image("whatsapp")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding([.top, .leading, .bottom])
-                    .frame(width: 75, height: 75)
-                Text(whatsapp)
-                    .font(.footnote)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.black)
-                    .multilineTextAlignment(.center)
-                    .padding([.top, .bottom, .trailing])
-                    .frame(maxWidth: .infinity)
-            }
-            .frame(width: screenWidth)
-            .overlay(
-                RoundedRectangle(cornerRadius: 1)
-                    .stroke(Color.accent, lineWidth: 1)
-            )
-            .onTapGesture{
-                openWhatsapp()
             }
         }
     }
@@ -95,7 +99,7 @@ struct RatesView: View {
 struct Collapsible<Content: View>: View {
     var image: String
     var label: String
-
+    
     var content: () -> Content
     init(image: String, label: String, @ViewBuilder _ content: @escaping () -> Content) {
         self.image = image

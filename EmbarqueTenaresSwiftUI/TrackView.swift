@@ -59,14 +59,7 @@ struct TrackView: View {
                         Spacer()
                     }
                     if trackViewModel.searchStatus == -1 {
-                        Spacer()
-                        Text("ERROR")
-                            .font(.title)
-                            .padding(.bottom)
-                        HStack(alignment: .center){
-                            Text(trackViewModel.errorMsg).font(.subheadline)
-                        }
-                        Spacer()
+                        ErrorView(errorMsg: trackViewModel.errorMsg)
                     }
                 }
                 Spacer()
@@ -115,3 +108,6 @@ struct ProgressBar: View {
         .frame(maxWidth: .infinity)
     }
 }
+
+
+

@@ -23,7 +23,29 @@ class TrackViewModel: ObservableObject {
     
     @Published var isLoading = false
     
-    @Published var errorMsg : LocalizedStringKey = ""
+    @Published var errorMsg : String = ""
+    
+    func getETA(invoice : String){
+        // Check if invoice is number && > 0
+        if let i = Int(invoice) {
+            if i > 0 {
+                // If successfully connected to hector's db and retrieved invoice
+                if self.fetchInvoiceDate(invoice: invoice) {
+                    // If succesfully connected to my db and retrieve eta day
+                    self.fetchEtaDay()
+                } else {
+                    self.errorMsg = "error_eta2"
+                    self.searchStatus = -1
+                }
+            } else {
+                self.errorMsg = "error_eta3"
+                self.searchStatus = -1
+            }
+        } else {
+            self.errorMsg = "error_eta3"
+            self.searchStatus = -1
+        }
+    }
     
     private func fetchEtaDay(){
         self.isLoading = true
@@ -77,29 +99,7 @@ class TrackViewModel: ObservableObject {
         }
     }
     
-    func getETA(invoice : String){
-        // Check if invoice is number && > 0
-        if let i = Int(invoice) {
-            if i > 0 {
-                // If successfully connected to hector's db and retrieved invoice
-                if self.fetchInvoiceDate(invoice: invoice) {
-                    // If succesfully connected to my db and retrieve eta day
-                    self.fetchEtaDay()
-                } else {
-                    self.errorMsg = "error_eta2"
-                    self.searchStatus = -1
-                }
-            } else {
-                self.errorMsg = "error_eta3"
-                self.searchStatus = -1
-            }
-            
-        } else {
-            self.errorMsg = "error_eta3"
-            self.searchStatus = -1
-        }
-        
-    }
+
     
     private func fetchInvoiceDate(invoice : String) -> Bool {
         /* CONNECT TO HECTORS DB

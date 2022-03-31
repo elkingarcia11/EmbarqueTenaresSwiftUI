@@ -14,38 +14,42 @@ struct FAQsView: View {
     @Binding var lang: String
     
     var body: some View {
-        ScrollView{
-            VStack(spacing: 0) {
-                if faqsViewModel.isLoading{
-                    Spacer()
-                    ProgressView()
-                        .padding(.top)
-                        .progressViewStyle(CircularProgressViewStyle())
-                        .scaleEffect(2)
-                }
-                if lang == "es" {
-                    ForEach(faqsViewModel.faqs_es){ faq in
-                        CollapsibleRow(
-                            question: faq.q,
-                            answer: faq.a
-                        )
-                        .frame(maxWidth: .infinity)
-                    }
+        ZStack{
+            if faqsViewModel.isLoading{
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .scaleEffect(2)
+            } else {
+                if faqsViewModel.statusCode == -1 {
+                    ErrorView(errorMsg: faqsViewModel.errorMsg)
                 } else {
-                    ForEach(faqsViewModel.faqs_en){ faq in
-                        CollapsibleRow(
-                            question: faq.q,
-                            answer: faq.a
-                        )
+                    ScrollView{
+                        VStack(spacing: 0) {
+                            if lang == "es" {
+                                ForEach(faqsViewModel.faqs_es){ faq in
+                                    CollapsibleRow(
+                                        question: faq.q,
+                                        answer: faq.a
+                                    )
+                                    .frame(maxWidth: .infinity)
+                                }
+                            } else {
+                                ForEach(faqsViewModel.faqs_en){ faq in
+                                    CollapsibleRow(
+                                        question: faq.q,
+                                        answer: faq.a
+                                    )
+                                    .frame(maxWidth: .infinity)
+                                }
+                            }
+                        }
                         .frame(maxWidth: .infinity)
+                        .listStyle(.plain)
                     }
                 }
             }
-            .frame(maxWidth: .infinity)
-            .listStyle(.plain)
         }
     }
-    
 }
 
 struct CollapsibleRow : View {

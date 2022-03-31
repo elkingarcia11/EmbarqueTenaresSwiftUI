@@ -8,7 +8,8 @@ class RatesViewModel: ObservableObject {
     @Published var catsAndItems = [CategoryAndItems]()
     @Published var isLoading = false
     
-    @Published var errorMsg : LocalizedStringKey = ""
+    @Published var errorMsg : String = ""
+    @Published var statusCode : Int = -2
     
     init(){
         self.fetchCategories()
@@ -32,8 +33,13 @@ class RatesViewModel: ObservableObject {
                             return Category(id: Int(d.documentID) ?? 0, name_en: d["name_en"] as? String ?? "", name_es: d["name_es"] as? String ?? "")
                         }
                         self.fetchItems()
+                        self.statusCode = 1
+                    } else {
+                        self.statusCode = -1
+                        self.errorMsg = "error_rates"
                     }
                 } else {
+                    self.statusCode = -1
                     self.errorMsg = "error_rates"
                 }
                 self.isLoading = false
@@ -57,9 +63,14 @@ class RatesViewModel: ObservableObject {
                             d in
                             return Item(id: Int(d.documentID) ?? 0, name_en: d["name_en"] as? String ?? "", name_es: d["name_es"] as? String ?? "", price:  d["price"] as? String ?? "")
                         }
+                        self.statusCode = 1
+                    } else {
+                        self.statusCode = -1
+                        self.errorMsg = "error_rates"
                     }
                     self.catsAndItems.append(CategoryAndItems(id: category.id, category: category, items: rateItems))
                 } else {
+                    self.statusCode = -1
                     self.errorMsg = "error_rates"
                 }
             }

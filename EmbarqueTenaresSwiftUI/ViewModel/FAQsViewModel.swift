@@ -14,8 +14,8 @@ class FAQsViewModel: ObservableObject {
     
     @Published var isLoading = false
     
-    @Published var errorMsg : LocalizedStringKey = ""
-    
+    @Published var errorMsg : String = ""
+    @Published var statusCode : Int = -2
     init(){
         self.fetchFAQs()
     }
@@ -39,7 +39,9 @@ class FAQsViewModel: ObservableObject {
                         
                         self.setupQandA()
                     }
+                    self.statusCode = 1
                 } else {
+                    self.statusCode = -1
                     self.errorMsg = "error_rates"
                 }
                 self.isLoading = false
