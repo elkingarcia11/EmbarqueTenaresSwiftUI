@@ -17,8 +17,6 @@ struct EmbarqueTenaresSwiftUIApp: App {
         Auth.auth().signIn(withEmail: "elkingarcia.11@gmail.com", password: "Ee041195!") { result, err in
             if let err = err {
                 print(err.localizedDescription)
-            } else {
-                print("LOGIN SUCCESSFUL")
             }
         }
     }

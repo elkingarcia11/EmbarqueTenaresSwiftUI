@@ -11,10 +11,9 @@ class RatesViewModel: ObservableObject {
     @Published var errorMsg : LocalizedStringKey = ""
     
     init(){
-        Task {
-            self.fetchCategories()
-        }
+        self.fetchCategories()
     }
+    
     private func fetchCategories() {
         isLoading = true
         // Get a reference to database

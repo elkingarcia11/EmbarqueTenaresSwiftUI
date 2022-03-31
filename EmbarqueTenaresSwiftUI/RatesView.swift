@@ -1,16 +1,9 @@
-//
-//  RatesView.swift
-//  EmbarqueTenaresSwiftUI
-//
-//  Created by Elkin Garcia on 2/21/22.
-//
-
-
 import Foundation
 import SwiftUI
 
 struct RatesView: View {
     
+    @Binding var lang: String
     @StateObject var ratesViewModel = RatesViewModel()
     
     let whatsapp : LocalizedStringKey = "whatsapp"
@@ -36,18 +29,36 @@ struct RatesView: View {
                         .progressViewStyle(CircularProgressViewStyle())
                         .scaleEffect(3)
                 } else {
-                    ForEach(ratesViewModel.catsAndItems) { catAndItem in
-                        Collapsible(label: catAndItem.category.name_en){
-                            ForEach(catAndItem.items) { item in
-                                Divider()
-                                HStack(alignment: .center){
-                                    Text(item.name_en)
-                                        .padding([.top, .trailing])
-                                    Spacer()
-                                    PricePill(price: item.price)
-                                        .padding(.top)
+                    if lang == "en"{
+                        ForEach(ratesViewModel.catsAndItems) { catAndItem in
+                            Collapsible(image: catAndItem.category.name_en, label: catAndItem.category.name_en){
+                                ForEach(catAndItem.items) { item in
+                                    Divider()
+                                    HStack(alignment: .center){
+                                        Text(item.name_en)
+                                            .padding([.top, .trailing])
+                                        Spacer()
+                                        PricePill(price: item.price)
+                                            .padding(.top)
+                                    }
+                                    .padding(.bottom)
                                 }
-                                .padding(.bottom)
+                            }
+                        }
+                    } else {
+                        ForEach(ratesViewModel.catsAndItems) { catAndItem in
+                            Collapsible(image: catAndItem.category.name_en, label: catAndItem.category.name_es){
+                                ForEach(catAndItem.items) { item in
+                                    Divider()
+                                    HStack(alignment: .center){
+                                        Text(item.name_es)
+                                            .padding([.top, .trailing])
+                                        Spacer()
+                                        PricePill(price: item.price)
+                                            .padding(.top)
+                                    }
+                                    .padding(.bottom)
+                                }
                             }
                         }
                     }
@@ -82,9 +93,12 @@ struct RatesView: View {
 }
 
 struct Collapsible<Content: View>: View {
+    var image: String
     var label: String
+
     var content: () -> Content
-    init(label: String, @ViewBuilder _ content: @escaping () -> Content) {
+    init(image: String, label: String, @ViewBuilder _ content: @escaping () -> Content) {
+        self.image = image
         self.label = label
         self.content = content
     }
@@ -96,7 +110,7 @@ struct Collapsible<Content: View>: View {
                 self.collapsed.toggle()
             }, label: {
                 HStack {
-                    Image(label)
+                    Image(image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding(.vertical)

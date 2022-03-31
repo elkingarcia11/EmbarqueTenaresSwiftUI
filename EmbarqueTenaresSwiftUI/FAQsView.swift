@@ -11,15 +11,7 @@ import SwiftUI
 struct FAQsView: View {
     
     @StateObject var faqsViewModel = FAQsViewModel()
-    
-    let screenHeight = UIScreen.main.bounds.height
-    
-    let screenWidth = UIScreen.main.bounds.width
-    
-    
-    init() {
-        UITableView.appearance().backgroundColor = .white
-    }
+    @Binding var lang: String
     
     var body: some View {
         ScrollView{
@@ -31,12 +23,22 @@ struct FAQsView: View {
                         .progressViewStyle(CircularProgressViewStyle())
                         .scaleEffect(2)
                 }
-                ForEach(faqsViewModel.faqs_published){ faq in
-                    CollapsibleRow(
-                        question: faq.q,
-                        answer: faq.a
-                    )
-                    .frame(maxWidth: .infinity)
+                if lang == "es" {
+                    ForEach(faqsViewModel.faqs_es){ faq in
+                        CollapsibleRow(
+                            question: faq.q,
+                            answer: faq.a
+                        )
+                        .frame(maxWidth: .infinity)
+                    }
+                } else {
+                    ForEach(faqsViewModel.faqs_en){ faq in
+                        CollapsibleRow(
+                            question: faq.q,
+                            answer: faq.a
+                        )
+                        .frame(maxWidth: .infinity)
+                    }
                 }
             }
             .frame(maxWidth: .infinity)

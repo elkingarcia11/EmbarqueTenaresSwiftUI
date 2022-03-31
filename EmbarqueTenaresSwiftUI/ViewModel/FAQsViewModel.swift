@@ -19,7 +19,6 @@ class FAQsViewModel: ObservableObject {
     init(){
         self.fetchFAQs()
     }
-
     
     private func fetchFAQs(){
         isLoading = true
@@ -52,18 +51,6 @@ class FAQsViewModel: ObservableObject {
         for i in 0...faqs.count-1 {
             faqs_en.append(QandA(id: i, q: faqs[i].q_en, a: faqs[i].a_en))
             faqs_es.append(QandA(id: i, q: faqs[i].q_es, a: faqs[i].a_es))
-        }
-        
-        updateFAQsLanguage()
-    }
-    
-    private func updateFAQsLanguage(){
-        let langStr = Locale.current.languageCode
-        
-        if langStr == "es"{
-            faqs_published = faqs_es
-        } else {
-            faqs_published = faqs_en
         }
     }
 }

@@ -7,17 +7,20 @@
 
 import SwiftUI
 import UIKit
-
+import NaturalLanguage
+import CoreML
 
 let screenWidth = UIScreen.main.bounds.size.width
 let screenHeight = UIScreen.main.bounds.size.height
 
 struct MainView: View {
     
+    
     @State var selectedTab = 0
     
     @State var title = "Embarque Tenares"
-    @State var lang = "es"
+    @State(initialValue: "es") var lang: String
+    
     let track : LocalizedStringKey = "track"
     let rates : LocalizedStringKey = "rates"
     let faqs : LocalizedStringKey = "faqs"
@@ -28,7 +31,6 @@ struct MainView: View {
         UITabBar.appearance().barTintColor = .white
         UIToolbar.appearance().barTintColor = .yellow
         UIToolbar.appearance().backgroundColor = .green
-        
     }
     
     var body: some View {
@@ -40,7 +42,7 @@ struct MainView: View {
                     }
                     .tag(0)
                 
-                RatesView()
+                RatesView(lang: $lang)
                     .tabItem {
                         Label(rates, systemImage: "dollarsign.circle")
                     }.tag(1)
@@ -50,7 +52,7 @@ struct MainView: View {
                         Label(locations, systemImage: "building.2.crop.circle")
                     }.tag(3)
                 
-                FAQsView()
+                FAQsView(lang: $lang)
                     .tabItem {
                         Label(faqs, systemImage: "questionmark.circle")
                     }.tag(2)
@@ -59,15 +61,15 @@ struct MainView: View {
             .navigationBarItems(
                 trailing:
                     Menu {
-                        Button("English", action: {lang = "en"})
-                        Button("Español", action: {lang = "es"})
+                        Button("English", action: {self.lang = "en"})
+                        Button("Español", action: {self.lang = "es"})
                     } label: {
                         Image(systemName: "globe.americas.fill").imageScale(.large)
                     }
             )
             .accentColor(.accent)
             .padding(.bottom, 9.0)
-        }.environment(\.locale, Locale(identifier: lang))
+        }.environment(\.locale, Locale(identifier: self.lang))
 
     }
 }
