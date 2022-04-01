@@ -14,9 +14,8 @@ let screenWidth = UIScreen.main.bounds.size.width
 let screenHeight = UIScreen.main.bounds.size.height
 
 struct MainView: View {
-    
-    
-    @State var selectedTab = 0
+    @State var selectedTab: Int = 0
+    @State var resetTrack : Bool = false
     
     @State var title = "Embarque Tenares"
     @State(initialValue: "es") var lang: String
@@ -35,8 +34,15 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
-            TabView(selection: $selectedTab) {
-                TrackView(lang: $lang)
+            TabView(selection: Binding<Int>(
+                get: {
+                    selectedTab
+                }, set: {
+                    selectedTab = $0
+                    resetTrack = true //<< when pressing Tab Bar Reset Navigation View
+                }))
+            {
+                TrackView(lang: $lang, shouldReset: $resetTrack)
                     .tabItem {
                         Label(track, systemImage: "magnifyingglass.circle.fill")
                     }

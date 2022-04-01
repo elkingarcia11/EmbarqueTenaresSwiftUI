@@ -11,6 +11,7 @@ import Foundation
 // get eta time from db
 struct TrackView: View {
     @Binding var lang: String
+    @Binding var shouldReset: Bool
     
     let track : LocalizedStringKey = "track"
     let edoa : LocalizedStringKey = "edoa"
@@ -82,6 +83,12 @@ struct TrackView: View {
                 .background(Color.light)
                 .frame(width: screenWidth)
             }
+        }
+        .onChange(of: shouldReset) {
+            newValue in
+            shouldReset = false
+            text = ""
+            trackViewModel.searchStatus = -2
         }
     }
 }
