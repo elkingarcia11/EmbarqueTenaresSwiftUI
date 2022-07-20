@@ -14,6 +14,9 @@ let screenWidth = UIScreen.main.bounds.size.width
 let screenHeight = UIScreen.main.bounds.size.height
 
 struct MainView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
+    
     @State var selectedTab: Int = 0
     @State var resetTrack : Bool = false
     
@@ -26,10 +29,7 @@ struct MainView: View {
     let locations : LocalizedStringKey = "locations"
     
     init() {
-        UITabBar.appearance().backgroundColor = .white
         UITabBar.appearance().barTintColor = .white
-        UIToolbar.appearance().barTintColor = .yellow
-        UIToolbar.appearance().backgroundColor = .green
     }
     
     var body: some View {
@@ -63,7 +63,6 @@ struct MainView: View {
                         Label(faqs, systemImage: "questionmark.circle")
                     }.tag(2)
             }
-            .navigationBarTitle(title, displayMode: .inline)
             .navigationBarItems(
                 trailing:
                     Menu {
@@ -75,7 +74,7 @@ struct MainView: View {
             )
             .accentColor(.accent)
             .padding(.bottom, 9.0)
-        }.environment(\.locale, Locale(identifier: self.lang))
-
+        }
+        .environment(\.locale, Locale(identifier: self.lang))
     }
 }

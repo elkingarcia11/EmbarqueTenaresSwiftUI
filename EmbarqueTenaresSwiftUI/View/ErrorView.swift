@@ -10,7 +10,7 @@ struct ErrorView : View {
     var body : some View {
         VStack{
             Spacer()
-            Text("ERROR")
+            Text("Error")
                 .font(.title)
                 .padding(.bottom)
             HStack(alignment: .center){

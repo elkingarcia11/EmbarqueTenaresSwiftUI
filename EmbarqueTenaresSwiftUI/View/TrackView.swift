@@ -18,28 +18,26 @@ struct TrackView: View {
     let etaFootnote : LocalizedStringKey = "etaFootnote"
     let search : LocalizedStringKey = "search"
     
-    @State private var text = ""
+    @State private var text : String = ""
     @StateObject var trackViewModel = TrackViewModel()
-    
     
     var body: some View {
         ZStack {
             VStack{
-                if trackViewModel.isLoading{
+                if trackViewModel.state == .loading {
                     Spacer()
                     ProgressView()
                         .padding(.top)
                         .progressViewStyle(CircularProgressViewStyle())
                         .scaleEffect(3)
-                } else{
-                    if trackViewModel.searchStatus == -2 {
+                } else {
+                    if trackViewModel.state == .na {
                         Spacer()
                         Image("logo")
                             .resizable()
                             .scaledToFit()
                             .frame(width: screenWidth/1.25, alignment: .center)
-                    }
-                    if trackViewModel.searchStatus == 1 {
+                    } else if trackViewModel.state == .successful {
                         Spacer()
                         Text(edoa)
                             .font(.title)
@@ -66,21 +64,34 @@ struct TrackView: View {
                             .multilineTextAlignment(.center)
                             .padding([.leading, .bottom, .trailing])
                         Spacer()
-                    }
-                    if trackViewModel.searchStatus == -1 {
+                    } else if trackViewModel.state == .failed {
                         ErrorView(errorMsg: trackViewModel.errorMsg)
                     }
                 }
                 Spacer()
                 HStack {
-                    Image(systemName: "magnifyingglass")
-                    TextField(search, text: $text)
+                    HStack{
+                        Image(systemName: "magnifyingglass")
+                                .foregroundColor(Color(.systemGray3))
+                        TextField(search, text: $text)
                         .onSubmit {
-                            trackViewModel.getETA(invoice: text)
+                            Task {
+                                do {
+                                    await trackViewModel.resetVars()
+                                    try await trackViewModel.login()
+                                    try await trackViewModel.getETA(invoiceNumber: self.text)
+                                } catch {
+                                    trackViewModel.state = .failed
+                                    trackViewModel.errorMsg = error.localizedDescription
+                                }
+                            }
                         }
+                    }
+                    .padding(.all)
+                    .background(Color(.systemGray6))
+                    .frame(width: screenWidth)
                 }
-                .padding(.all)
-                .background(Color.light)
+                .padding()
                 .frame(width: screenWidth)
             }
         }
@@ -88,7 +99,9 @@ struct TrackView: View {
             newValue in
             shouldReset = false
             text = ""
-            trackViewModel.searchStatus = -2
+            Task {
+                await trackViewModel.resetVars()
+            }
         }
     }
 }

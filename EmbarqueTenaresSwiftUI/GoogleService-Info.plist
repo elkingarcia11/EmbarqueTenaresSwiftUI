@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>78890756100-a0eei0nqsb3oth4vp1qc8kkbvr2bq96a.apps.googleusercontent.com</string>
+	<string>78890756100-14nt27fh2apq4k0n4948uaunl0adbrom.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.78890756100-a0eei0nqsb3oth4vp1qc8kkbvr2bq96a</string>
+	<string>com.googleusercontent.apps.78890756100-14nt27fh2apq4k0n4948uaunl0adbrom</string>
 	<key>API_KEY</key>
 	<string>AIzaSyC4-_uMU7TpQYit7BKpfhtfAZuMsloZesY</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>elkingarcia.EmbarqueTenaresSwiftUI</string>
+	<string>com.embarquetenares.TenaresShipping</string>
 	<key>PROJECT_ID</key>
 	<string>embarquetenares-4073b</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:78890756100:ios:ae78166fa39bf859d3ed51</string>
+	<string>1:78890756100:ios:f5e1ec3555aa5bd0d3ed51</string>
+	<key>DATABASE_URL</key>
+	<string>https://embarquetenares-4073b-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>
