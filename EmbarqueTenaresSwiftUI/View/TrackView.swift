@@ -15,6 +15,7 @@ struct TrackView: View {
     
     let track : LocalizedStringKey = "track"
     let edoa : LocalizedStringKey = "edoa"
+    let invoice : LocalizedStringKey = "invoice"
     let etaFootnote : LocalizedStringKey = "etaFootnote"
     let search : LocalizedStringKey = "search"
     
@@ -38,13 +39,22 @@ struct TrackView: View {
                             .scaledToFit()
                             .frame(width: screenWidth/1.25, alignment: .center)
                     } else if trackViewModel.state == .successful {
-                        Spacer()
                         Text(edoa)
                             .font(.title)
-                            .padding(.bottom)
+                            .fontWeight(.bold)
+                        Spacer()
+                        HStack {
+                            Text(invoice)
+                                .font(.title2)
+                            Text(text)
+                                .font(.title2)
+                                .fontWeight(.bold)
+                        }
+                        .padding(.bottom)
+                        
                         if lang == "es"{
                             Text(trackViewModel.arrivalDate_es)
-                                .font(.title2)
+                                .font(.title3)
                                 .fontWeight(.bold)
                                 .padding(.bottom)
                         } else {
@@ -62,7 +72,7 @@ struct TrackView: View {
                             .fontWeight(.bold)
                             .italic()
                             .multilineTextAlignment(.center)
-                            .padding([.leading, .bottom, .trailing])
+                            .padding([.leading, .bottom, .trailing], 20.0)
                         Spacer()
                     } else if trackViewModel.state == .failed {
                         ErrorView(errorMsg: trackViewModel.errorMsg)

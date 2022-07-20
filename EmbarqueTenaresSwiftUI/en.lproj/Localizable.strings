@@ -11,6 +11,7 @@
 "locations" = "Locations";
 "faqs" = "FAQs";
 
+"invoice" = "Invoice no.";
 "edoa" = "Estimated Date of Arrival";
 "etaFootnote" = "*The number of days left is an estimate and subject to change.";
 "daysLeft" = "days left*";

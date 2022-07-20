@@ -180,10 +180,9 @@ final class TrackViewModel: ObservableObject {
                 self.daysLeft = Int(Date().distance(to: arrDate))/60/60/24+1
                 
                 if self.daysLeft <= 0 {
-                    self.progressValue = 1
-                } else {
-                    self.progressValue = Float(1-(Float(daysLeft)/Float(deliveryTime)))
+                    self.daysLeft = 0
                 }
+                self.progressValue = Float(1-(Float(daysLeft)/Float(deliveryTime)))
                 self.state = .successful
             } else {
                 self.state = .failed
