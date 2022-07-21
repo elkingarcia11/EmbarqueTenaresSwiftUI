@@ -14,6 +14,7 @@ struct LocationsView: View {
     
     @State private var selectedLocation: Int = 0
     
+    let locations : LocalizedStringKey = "locations"
     
     let ny : LocalizedStringKey = "ny"
     let dr : LocalizedStringKey = "dr"
@@ -34,7 +35,7 @@ struct LocationsView: View {
     }
     
     var body: some View {
-        VStack{
+        VStack(alignment: .leading){
             Picker("Locations", selection: $selectedLocation) {
                 Text(ny).tag(0)
                 Text(dr).tag(1)
@@ -49,7 +50,9 @@ struct LocationsView: View {
             Spacer()
             
             SocialMediaFooter()
-        }.pickerStyle(.segmented)
+        }
+        .pickerStyle(.segmented)
+        .navigationTitle(locations)
     }
 }
 
@@ -106,7 +109,7 @@ struct SocialMediaFooter : View {
             
             Spacer()
         }
-        .padding(.bottom, 15.0)
+        .padding(.bottom, 30.0)
         .frame(width: screenWidth)
         
     }

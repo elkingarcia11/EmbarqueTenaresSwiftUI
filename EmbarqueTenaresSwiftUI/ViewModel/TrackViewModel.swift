@@ -68,7 +68,7 @@ final class TrackViewModel: ObservableObject {
             let logInResponse = result.response[0]
             self.authToken = logInResponse.token
         } else {
-            throw APIError.apiError("Failed to fetch token: \(statuscode)")
+            throw APIError.apiError("Failed to fetch token")
         }
     }
     
@@ -120,7 +120,7 @@ final class TrackViewModel: ObservableObject {
             }
             try await self.fetchDeliveryTime()
         } else {
-            throw APIError.apiError("Error while fetching invoice: \(statuscode)")
+            throw APIError.apiError("Error while fetching invoice")
         }
     }
     

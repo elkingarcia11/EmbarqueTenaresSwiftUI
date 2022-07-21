@@ -5,14 +5,14 @@
   Created by Elkin Garcia on 3/14/22.
   
 */
-
+"" = "";
 "track" = "Track";
 "rates" = "Rates";
 "locations" = "Locations";
 "faqs" = "FAQs";
 
 "invoice" = "Invoice no.";
-"edoa" = "Estimated Date of Arrival";
+"edoa" = "Estimated date of delivery";
 "etaFootnote" = "*The number of days left is an estimate and subject to change.";
 "daysLeft" = "days left*";
 "error" = "Error";

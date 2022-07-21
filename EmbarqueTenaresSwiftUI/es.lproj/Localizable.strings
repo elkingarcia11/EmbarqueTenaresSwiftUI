@@ -6,13 +6,14 @@
   
 */
 
+"" = "";
 "track" = "Rastrear";
 "rates" = "Precios";
 "locations" = "Sucursales";
 "faqs" = "Preguntas";
 
 "invoice" = "No. de factura";
-"edoa" = "Fecha de llegada estimada";
+"edoa" = "Fecha de entrega estimada";
 "etaFootnote" = "*El número de días restantes es un estimado y está sujeto a cambios.";
 "daysLeft" = "días restantes*";
 

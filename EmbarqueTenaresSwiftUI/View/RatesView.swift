@@ -6,7 +6,7 @@ struct RatesView: View {
     @StateObject var ratesViewModel = RatesViewModel()
     
     let whatsapp : LocalizedStringKey = "whatsapp"
-    
+    let rates : LocalizedStringKey = "rates"
     
     func openWhatsapp(){
         @Environment(\.openURL) var openURL
@@ -79,7 +79,6 @@ struct RatesView: View {
                             .foregroundColor(Color.black)
                             .multilineTextAlignment(.center)
                             .padding([.top, .bottom, .trailing])
-                            .frame(maxWidth: .infinity)
                     }
                     .frame(width: screenWidth)
                     .overlay(
@@ -92,6 +91,7 @@ struct RatesView: View {
                 }
             }
         }
+        .navigationTitle(rates)
     }
 }
 

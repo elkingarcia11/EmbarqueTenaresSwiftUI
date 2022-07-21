@@ -29,51 +29,64 @@ struct MainView: View {
     let locations : LocalizedStringKey = "locations"
     
     init() {
-        UITabBar.appearance().barTintColor = .white
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.backgroundColor = UIColor(Color.light)
+        navBarAppearance.shadowColor = .clear
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().compactAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+        UINavigationBar.appearance().tintColor = UIColor.red
+        
+        UITabBar.appearance().backgroundColor = UIColor(Color.light)
+        
     }
     
     var body: some View {
         NavigationView {
-            TabView(selection: Binding<Int>(
-                get: {
-                    selectedTab
-                }, set: {
-                    selectedTab = $0
-                    resetTrack = true //<< when pressing Tab Bar Reset Navigation View
-                }))
-            {
-                TrackView(lang: $lang, shouldReset: $resetTrack)
-                    .tabItem {
-                        Label(track, systemImage: "magnifyingglass.circle.fill")
-                    }
-                    .tag(0)
-                
-                RatesView(lang: $lang)
-                    .tabItem {
-                        Label(rates, systemImage: "dollarsign.circle")
-                    }.tag(1)
-                
-                LocationsView()
-                    .tabItem {
-                        Label(locations, systemImage: "building.2.crop.circle")
-                    }.tag(3)
-                
-                FAQsView(lang: $lang)
-                    .tabItem {
-                        Label(faqs, systemImage: "questionmark.circle")
-                    }.tag(2)
+            ZStack{
+                Color.light.ignoresSafeArea()
+                TabView(selection: Binding<Int>(
+                    get: {
+                        selectedTab
+                    }, set: {
+                        selectedTab = $0
+                        resetTrack = true //<< when pressing Tab Bar Reset Navigation View
+                    }))
+                {
+                    TrackView(lang: $lang, shouldReset: $resetTrack)
+                        .tabItem {
+                            Label(track, systemImage: "magnifyingglass.circle.fill")
+                        }
+                        .tag(0)
+                    
+                    RatesView(lang: $lang)
+                        .tabItem {
+                            Label(rates, systemImage: "dollarsign.circle")
+                        }
+                        .tag(1)
+                    
+                    LocationsView()
+                        .tabItem {
+                            Label(locations, systemImage: "building.2.crop.circle")
+                        }.tag(3)
+                    
+                    FAQsView(lang: $lang)
+                        .tabItem {
+                            Label(faqs, systemImage: "questionmark.circle")
+                        }.tag(2)
+                }
+                .navigationBarItems(
+                    trailing:
+                        Menu {
+                            Button("English", action: {self.lang = "en"})
+                            Button("Español", action: {self.lang = "es"})
+                        } label: {
+                            Image(systemName: "globe.americas.fill").imageScale(.large)
+                        }
+                )
+                .navigationBarTitleDisplayMode(.inline)
+                .accentColor(.accent)
             }
-            .navigationBarItems(
-                trailing:
-                    Menu {
-                        Button("English", action: {self.lang = "en"})
-                        Button("Español", action: {self.lang = "es"})
-                    } label: {
-                        Image(systemName: "globe.americas.fill").imageScale(.large)
-                    }
-            )
-            .accentColor(.accent)
-            .padding(.bottom, 9.0)
         }
         .environment(\.locale, Locale(identifier: self.lang))
     }

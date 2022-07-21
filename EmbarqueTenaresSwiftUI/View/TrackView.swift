@@ -13,6 +13,8 @@ struct TrackView: View {
     @Binding var lang: String
     @Binding var shouldReset: Bool
     
+    @State var title : LocalizedStringKey = ""
+    let empty : LocalizedStringKey = ""
     let track : LocalizedStringKey = "track"
     let edoa : LocalizedStringKey = "edoa"
     let invoice : LocalizedStringKey = "invoice"
@@ -24,6 +26,7 @@ struct TrackView: View {
     
     var body: some View {
         ZStack {
+            Color.light
             VStack{
                 if trackViewModel.state == .loading {
                     Spacer()
@@ -39,9 +42,11 @@ struct TrackView: View {
                             .scaledToFit()
                             .frame(width: screenWidth/1.25, alignment: .center)
                     } else if trackViewModel.state == .successful {
+                        Spacer()
                         Text(edoa)
                             .font(.title)
                             .fontWeight(.bold)
+                            .padding(.top)
                         Spacer()
                         HStack {
                             Text(invoice)
@@ -82,38 +87,44 @@ struct TrackView: View {
                 HStack {
                     HStack{
                         Image(systemName: "magnifyingglass")
-                                .foregroundColor(Color(.systemGray3))
+                            .foregroundColor(Color(.systemGray3))
+                            .padding([.top, .leading, .bottom])
                         TextField(search, text: $text)
-                        .onSubmit {
-                            Task {
-                                do {
-                                    await trackViewModel.resetVars()
-                                    try await trackViewModel.login()
-                                    try await trackViewModel.getETA(invoiceNumber: self.text)
-                                } catch {
-                                    trackViewModel.state = .failed
-                                    trackViewModel.errorMsg = error.localizedDescription
+                                .padding(.vertical)
+                                .onSubmit {
+                                    Task {
+                                        do {
+                                            await trackViewModel.resetVars()
+                                            try await trackViewModel.login()
+                                            try await trackViewModel.getETA(invoiceNumber: self.text)
+                                            self.title = track
+                                        } catch {
+                                            trackViewModel.state = .failed
+                                            trackViewModel.errorMsg = error.localizedDescription
+                                            self.title = empty
+                                        }
+                                    }
                                 }
-                            }
-                        }
+                        
                     }
-                    .padding(.all)
-                    .background(Color(.systemGray6))
+                    .background(Color.white)
                     .frame(width: screenWidth)
                 }
-                .padding()
-                .frame(width: screenWidth)
+                .padding(.bottom)
             }
         }
+        .navigationTitle(title)
         .onChange(of: shouldReset) {
             newValue in
-            shouldReset = false
-            text = ""
+            self.shouldReset = false
+            self.text = ""
+            self.title = empty
             Task {
                 await trackViewModel.resetVars()
             }
         }
     }
+        
 }
 
 struct ProgressBar: View {
@@ -146,6 +157,3 @@ struct ProgressBar: View {
         .frame(maxWidth: .infinity)
     }
 }
-
-
-
