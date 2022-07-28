@@ -1,10 +1,3 @@
-//
-//  FAQsView.swift
-//  EmbarqueTenaresSwiftUI
-//
-//  Created by Elkin Garcia on 2/21/22.
-//
-
 import Foundation
 import SwiftUI
 
@@ -12,7 +5,6 @@ struct FAQsView: View {
     
     @StateObject var faqsViewModel = FAQsViewModel()
     @Binding var lang: String
-    let faqs : LocalizedStringKey = "faqs"
     
     var body: some View {
         ZStack{
@@ -50,7 +42,6 @@ struct FAQsView: View {
                 }
             }
         }
-        .navigationTitle(faqs)
     }
 }
 

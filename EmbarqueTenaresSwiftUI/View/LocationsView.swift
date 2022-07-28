@@ -1,10 +1,3 @@
-//
-//  LocationsView.swift
-//  EmbarqueTenaresSwiftUI
-//
-//  Created by Elkin Garcia on 2/21/22.
-//
-
 import Foundation
 import SwiftUI
 
@@ -13,8 +6,6 @@ import SwiftUI
 struct LocationsView: View {
     
     @State private var selectedLocation: Int = 0
-    
-    let locations : LocalizedStringKey = "locations"
     
     let ny : LocalizedStringKey = "ny"
     let dr : LocalizedStringKey = "dr"
@@ -36,7 +27,7 @@ struct LocationsView: View {
     
     var body: some View {
         VStack(alignment: .leading){
-            Picker("Locations", selection: $selectedLocation) {
+            Picker("locations", selection: $selectedLocation) {
                 Text(ny).tag(0)
                 Text(dr).tag(1)
             }
@@ -52,7 +43,6 @@ struct LocationsView: View {
             SocialMediaFooter()
         }
         .pickerStyle(.segmented)
-        .navigationTitle(locations)
     }
 }
 

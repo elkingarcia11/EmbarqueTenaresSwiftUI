@@ -1,26 +1,18 @@
-//
-//  TrackViewTwo.swift
-//  EmbarqueTenaresSwiftUI
-//
-//  Created by Elkin Garcia on 3/14/22.
-//
-
 import SwiftUI
 import Foundation
 
 // get eta time from db
 struct TrackView: View {
+    @Binding var title: LocalizedStringKey
     @Binding var lang: String
     @Binding var shouldReset: Bool
     
-    @State var title : LocalizedStringKey = ""
-    let empty : LocalizedStringKey = ""
-    let track : LocalizedStringKey = "track"
     let edoa : LocalizedStringKey = "edoa"
     let invoice : LocalizedStringKey = "invoice"
     let etaFootnote : LocalizedStringKey = "etaFootnote"
     let search : LocalizedStringKey = "search"
     
+    @State private var finalText : String = ""
     @State private var text : String = ""
     @StateObject var trackViewModel = TrackViewModel()
     
@@ -51,7 +43,7 @@ struct TrackView: View {
                         HStack {
                             Text(invoice)
                                 .font(.title2)
-                            Text(text)
+                            Text(finalText)
                                 .font(.title2)
                                 .fontWeight(.bold)
                         }
@@ -92,16 +84,16 @@ struct TrackView: View {
                         TextField(search, text: $text)
                                 .padding(.vertical)
                                 .onSubmit {
+                                    title = "track"
                                     Task {
                                         do {
                                             await trackViewModel.resetVars()
                                             try await trackViewModel.login()
                                             try await trackViewModel.getETA(invoiceNumber: self.text)
-                                            self.title = track
+                                            self.finalText = self.text
                                         } catch {
                                             trackViewModel.state = .failed
                                             trackViewModel.errorMsg = error.localizedDescription
-                                            self.title = empty
                                         }
                                     }
                                 }
@@ -110,15 +102,13 @@ struct TrackView: View {
                     .background(Color.white)
                     .frame(width: screenWidth)
                 }
-                .padding(.bottom)
             }
         }
-        .navigationTitle(title)
         .onChange(of: shouldReset) {
             newValue in
             self.shouldReset = false
             self.text = ""
-            self.title = empty
+            self.finalText = ""
             Task {
                 await trackViewModel.resetVars()
             }

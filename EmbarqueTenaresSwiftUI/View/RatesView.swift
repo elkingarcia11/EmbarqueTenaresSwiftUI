@@ -19,6 +19,7 @@ struct RatesView: View {
     // LOCALE CHANGE LOGIC
     var body: some View {
         ZStack{
+            Color.light
             if ratesViewModel.isLoading{
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
@@ -65,33 +66,32 @@ struct RatesView: View {
                         }
                         .frame(maxWidth: .infinity)
                         .listStyle(.plain)
-                        
                     }
-                    HStack(alignment: .center){
-                        Image("whatsapp")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .padding([.top, .leading, .bottom])
-                            .frame(width: 75, height: 75)
-                        Text(whatsapp)
-                            .font(.footnote)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.black)
-                            .multilineTextAlignment(.center)
-                            .padding([.top, .bottom, .trailing])
-                    }
-                    .frame(width: screenWidth)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 1)
-                            .stroke(Color.accent, lineWidth: 1)
-                    )
-                    .onTapGesture{
-                        openWhatsapp()
-                    }
+                        HStack(alignment: .center){
+                            Image("whatsapp")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .padding([.top, .leading, .bottom])
+                                .frame(width: 75, height: 75)
+                            Text(whatsapp)
+                                .font(.footnote)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.black)
+                                .multilineTextAlignment(.center)
+                                .padding([.top, .bottom, .trailing])
+                        }
+                        .frame(width: screenWidth)
+                        .background(Color.white)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 1)
+                                .stroke(Color.accent, lineWidth: 1)
+                        )
+                        .onTapGesture{
+                            openWhatsapp()
+                        }
                 }
             }
         }
-        .navigationTitle(rates)
     }
 }
 

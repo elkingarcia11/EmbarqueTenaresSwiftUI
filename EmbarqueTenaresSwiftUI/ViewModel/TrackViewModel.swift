@@ -132,7 +132,6 @@ final class TrackViewModel: ObservableObject {
             guard error == nil else {
                 self.state = .failed
                 self.errorMsg = "error_eta1"
-                print("1")
                 return
             }
             if let document = document, document.exists {
@@ -140,7 +139,6 @@ final class TrackViewModel: ObservableObject {
                 if self.deliveryTime == -1 {
                     self.state = .failed
                     self.errorMsg = "error_eta1"
-                    print("2")
                 } else {
                     self.calculateETA()
                 }
@@ -164,7 +162,6 @@ final class TrackViewModel: ObservableObject {
         dateFormatter.dateFormat = "YYYY-MM-dd"
         let range = self.pickUpDate.index(self.pickUpDate.startIndex, offsetBy: 10)..<self.pickUpDate.endIndex
         self.pickUpDate.removeSubrange(range)
-        print("pick up date", self.pickUpDate)
         // TURN original date string INTO DATE OBJECT
         if let pickupDate = dateFormatter.date(from: self.pickUpDate){
             // CALCULATE ARRIVAL DATE
@@ -187,12 +184,10 @@ final class TrackViewModel: ObservableObject {
             } else {
                 self.state = .failed
                 self.errorMsg = "error_eta1"
-                print("3")
             }
         } else {
             self.state = .failed
             self.errorMsg = "error_eta1"
-            print("4")
         }
     }
 }

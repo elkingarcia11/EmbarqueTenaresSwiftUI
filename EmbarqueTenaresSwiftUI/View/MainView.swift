@@ -16,17 +16,20 @@ let screenHeight = UIScreen.main.bounds.size.height
 struct MainView: View {
     
     @Environment(\.colorScheme) var colorScheme
-    
-    @State var selectedTab: Int = 0
+
+    @State private var selectedTab = 1
     @State var resetTrack : Bool = false
     
-    @State var title = "Embarque Tenares"
+    @State var title : LocalizedStringKey = "company"
     @State(initialValue: "es") var lang: String
     
+    let company : LocalizedStringKey = "company"
     let track : LocalizedStringKey = "track"
     let rates : LocalizedStringKey = "rates"
     let faqs : LocalizedStringKey = "faqs"
     let locations : LocalizedStringKey = "locations"
+    
+
     
     init() {
         let navBarAppearance = UINavigationBarAppearance()
@@ -36,7 +39,6 @@ struct MainView: View {
         UINavigationBar.appearance().compactAppearance = navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
         UINavigationBar.appearance().tintColor = UIColor.red
-        
         UITabBar.appearance().backgroundColor = UIColor(Color.light)
         
     }
@@ -45,35 +47,44 @@ struct MainView: View {
         NavigationView {
             ZStack{
                 Color.light.ignoresSafeArea()
-                TabView(selection: Binding<Int>(
-                    get: {
-                        selectedTab
-                    }, set: {
-                        selectedTab = $0
-                        resetTrack = true //<< when pressing Tab Bar Reset Navigation View
-                    }))
+                TabView(selection: $selectedTab)
                 {
-                    TrackView(lang: $lang, shouldReset: $resetTrack)
+                    TrackView(title: $title, lang: $lang, shouldReset: $resetTrack)
                         .tabItem {
                             Label(track, systemImage: "magnifyingglass.circle.fill")
                         }
-                        .tag(0)
+                        .tag(1)
                     
                     RatesView(lang: $lang)
                         .tabItem {
                             Label(rates, systemImage: "dollarsign.circle")
                         }
-                        .tag(1)
+                        .tag(2)
                     
                     LocationsView()
                         .tabItem {
                             Label(locations, systemImage: "building.2.crop.circle")
-                        }.tag(3)
+                        }
+                        .tag(3)
                     
                     FAQsView(lang: $lang)
                         .tabItem {
                             Label(faqs, systemImage: "questionmark.circle")
-                        }.tag(2)
+                        }
+                        .tag(4)
+                }
+                .navigationBarTitle(title, displayMode: .inline)
+                .onChange(of: selectedTab){ newState in
+                    resetTrack = true //<< when pressing Tab Bar Reset Navigation View
+                    if newState == 1 {
+                        title = "company"
+                    } else if newState == 2 {
+                        title = "rates"
+                    } else if newState == 3 {
+                        title = "locations"
+                    } else {
+                        title = "faqs"
+                    }
                 }
                 .navigationBarItems(
                     trailing:
@@ -84,7 +95,6 @@ struct MainView: View {
                             Image(systemName: "globe.americas.fill").imageScale(.large)
                         }
                 )
-                .navigationBarTitleDisplayMode(.inline)
                 .accentColor(.accent)
             }
         }
