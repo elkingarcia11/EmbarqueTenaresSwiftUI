@@ -42,6 +42,8 @@
 		1E2E552527DFA66800F25C10 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E552427DFA66800F25C10 /* TrackView.swift */; };
 		1E2E552827DFC22D00F25C10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E2E552A27DFC22D00F25C10 /* Localizable.strings */; };
 		1E40F1062857EA2B001DC2A4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40F1052857EA2B001DC2A4 /* Endpoint.swift */; };
+		1E6E551528995D4600ADA8F4 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E551428995D4600ADA8F4 /* SplashScreenView.swift */; };
+		1E6E5517289962E200ADA8F4 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E5516289962E200ADA8F4 /* Fonts.swift */; };
 		1EBD54522885A21F0007A77B /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBD54512885A21F0007A77B /* TrackModel.swift */; };
 		1EBD5454288701DE0007A77B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EBD5453288701DE0007A77B /* GoogleService-Info.plist */; };
 		1EBD54572888466B0007A77B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1EBD54562888466B0007A77B /* FirebaseAnalytics */; };
@@ -124,6 +126,8 @@
 		1E2E552927DFC22D00F25C10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1E2E552B27DFC22F00F25C10 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1E40F1052857EA2B001DC2A4 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		1E6E551428995D4600ADA8F4 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		1E6E5516289962E200ADA8F4 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		1EBD54512885A21F0007A77B /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
 		1EBD5453288701DE0007A77B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EE474A227C4050100861E5C /* Tenares Shipping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenares Shipping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,6 +288,7 @@
 				1E1E5DE027ECF79800BCC00A /* RatesModel.swift */,
 				1E40F1052857EA2B001DC2A4 /* Endpoint.swift */,
 				1EBD54512885A21F0007A77B /* TrackModel.swift */,
+				1E6E5516289962E200ADA8F4 /* Fonts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 				1EE474BD27C40FEF00861E5C /* NewYorkLocationView.swift */,
 				1EE474BF27C40FFD00861E5C /* DominicanRepublicLocationView.swift */,
 				1E1E5DE427EF765000BCC00A /* ErrorView.swift */,
+				1E6E551428995D4600ADA8F4 /* SplashScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -489,11 +495,13 @@
 				1E1E5DE527EF765100BCC00A /* ErrorView.swift in Sources */,
 				1EFE3DA327E8FC750021F8D6 /* FAQsModel.swift in Sources */,
 				1EFE3DA127E8F2ED0021F8D6 /* FAQsViewModel.swift in Sources */,
+				1E6E551528995D4600ADA8F4 /* SplashScreenView.swift in Sources */,
 				1E40F1062857EA2B001DC2A4 /* Endpoint.swift in Sources */,
 				1EE474BE27C40FEF00861E5C /* NewYorkLocationView.swift in Sources */,
 				1EE474BA27C4082100861E5C /* FAQsView.swift in Sources */,
 				1EE474B827C4081000861E5C /* RatesView.swift in Sources */,
 				1EE474BC27C4082E00861E5C /* LocationsView.swift in Sources */,
+				1E6E5517289962E200ADA8F4 /* Fonts.swift in Sources */,
 				1EE474C227C41EBE00861E5C /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
