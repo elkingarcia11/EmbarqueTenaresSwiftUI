@@ -49,10 +49,3 @@ struct SplashScreenView: View {
 // Baskerville-SemiBold
 //BodoniSvtyTwoOSITCTT-Book
 //BodoniSvtyTwoSCITCTT-Book
-/*
-struct SplashScreenView_Previews : PreviewProvider {
-    static var previews: some View {
-        SplashScreenView()
-    }
-}
-*/

@@ -14,7 +14,6 @@ let screenWidth = UIScreen.main.bounds.size.width
 let screenHeight = UIScreen.main.bounds.size.height
 
 struct MainView: View {
-    
     @Environment(\.colorScheme) var colorScheme
 
     @State private var selectedTab = 1
@@ -22,6 +21,8 @@ struct MainView: View {
     
     @State var title : LocalizedStringKey = "company"
     @State(initialValue: "es") var lang: String
+    
+    let fonts = Fonts()
     
     let company : LocalizedStringKey = "company"
     let track : LocalizedStringKey = "track"
@@ -40,7 +41,7 @@ struct MainView: View {
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
         UINavigationBar.appearance().tintColor = UIColor.red
         UITabBar.appearance().backgroundColor = UIColor(Color.light)
-        
+        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: fonts.one, size: 20)!]
     }
     
     var body: some View {
@@ -73,7 +74,18 @@ struct MainView: View {
                         }
                         .tag(4)
                 }
-                .navigationBarTitle(title, displayMode: .inline)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar{
+                    ToolbarItem(placement: .principal){
+                        Text(title)
+                            .font(Font.custom(fonts.one, size: 20))
+                            .fontWeight(.semibold)
+                            .onTapGesture {
+                                resetTrack = true
+                                selectedTab = 1
+                            }
+                    }
+                }
                 .onChange(of: selectedTab){ newState in
                     resetTrack = true //<< when pressing Tab Bar Reset Navigation View
                     if newState == 1 {
