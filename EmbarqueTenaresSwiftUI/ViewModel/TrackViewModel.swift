@@ -27,7 +27,6 @@ final class TrackViewModel: ObservableObject {
     @State var appId : String = ""
     
     public func retrieveApiKeyAndAppId() async throws {
-        if self.apiKey == "" || self.appId == "" {
             // Get a reference to database
             let db = Firestore.firestore()
             let docRef = db.collection("auth").document("login")
@@ -51,7 +50,6 @@ final class TrackViewModel: ObservableObject {
             if self.state == .failed {
                 throw APIError.unknown(errorMsg?.localizedDescription ?? "Error reading from database")
             }
-        }
     }
     
     public func login() async throws {
