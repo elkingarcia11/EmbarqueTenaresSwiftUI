@@ -23,11 +23,40 @@ final class TrackViewModel: ObservableObject {
     @Published var arrivalDate_es : String = ""
     
     
-    let apiKey = "922eb8994ce5de69ef5347f0"
-    let appId = "80cdea5d-f640-4128-b56b-44a377779fda"
+    @State var apiKey : String = ""
+    @State var appId : String = ""
+    
+    public func retrieveApiKeyAndAppId() async throws {
+        if self.apiKey == "" || self.appId == "" {
+            // Get a reference to database
+            let db = Firestore.firestore()
+            let docRef = db.collection("auth").document("login")
+            var errorMsg : Error?
+            docRef.getDocument { (document, error) in
+                   guard error == nil else {
+                       errorMsg = error
+                       self.state = .failed
+                       return
+                   }
+
+                   if let document = document, document.exists {
+                       let data = document.data()
+                       if let data = data {
+                           print("data", data)
+                           self.apiKey = data["Api-Key"] as? String ?? ""
+                           self.appId = data["App-Id"] as? String ?? ""
+                       }
+                   }
+            }
+            if self.state == .failed {
+                throw APIError.unknown(errorMsg?.localizedDescription ?? "Error reading from database")
+            }
+        }
+    }
     
     public func login() async throws {
         do {
+            try await retrieveApiKeyAndAppId()
             try await loadAndStoreToken()
         } catch {
             throw error
@@ -51,8 +80,8 @@ final class TrackViewModel: ObservableObject {
         
         // Set up headers for login request
         urlRequest.httpMethod = "POST"
-        urlRequest.setValue(appId, forHTTPHeaderField: "App-Id")
-        urlRequest.setValue(apiKey, forHTTPHeaderField: "Api-Key")
+        urlRequest.setValue(self.appId, forHTTPHeaderField: "App-Id")
+        urlRequest.setValue(self.apiKey, forHTTPHeaderField: "Api-Key")
         
         // Set up body for login request
         let body: [String: Any] = ["Username": "elkin", "Type":"MOBILE"]
@@ -68,7 +97,7 @@ final class TrackViewModel: ObservableObject {
             let logInResponse = result.response[0]
             self.authToken = logInResponse.token
         } else {
-            throw APIError.apiError("Failed to fetch token")
+            throw APIError.apiError("Failed to log in to database and retrieve token")
         }
     }
     
@@ -129,11 +158,6 @@ final class TrackViewModel: ObservableObject {
         let docRef = db.collection("eta").document("eta_days")
         
         docRef.getDocument { (document, error) in
-            guard error == nil else {
-                self.state = .failed
-                self.errorMsg = "error_eta1"
-                return
-            }
             if let document = document, document.exists {
                 self.deliveryTime = document.get("days") as? Int ?? -1
                 if self.deliveryTime == -1 {
@@ -142,6 +166,10 @@ final class TrackViewModel: ObservableObject {
                 } else {
                     self.calculateETA()
                 }
+            } else {
+                self.state = .failed
+                self.errorMsg = "error_eta1"
+                return
             }
         }
     }

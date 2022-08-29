@@ -1,25 +1,31 @@
 import SwiftUI
 import Firebase
+import FirebaseCore
+import FirebaseFirestore
 import FirebaseAuth
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    return true
+      return true
   }
 }
 
 @main
 struct EmbarqueTenaresSwiftUIApp: App {
+    @State var userID : FirebaseAuth.User?
+    
     init() {
+        var uID : FirebaseAuth.User?
         FirebaseApp.configure()
-        Auth.auth().signIn(withEmail: "elkingarcia.11@gmail.com", password: "Ee0401195!") { result, err in
-            if let err = err {
+        Auth.auth().signInAnonymously { authResult, error in
+            if let err = error {
                 print(err.localizedDescription)
             }
+            uID = authResult?.user
         }
+        userID = uID
     }
     
     // register app delegate for Firebase setup

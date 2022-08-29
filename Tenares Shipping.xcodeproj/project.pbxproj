@@ -240,6 +240,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E6E551828A400E700ADA8F4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		1EE4749927C4050100861E5C = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +266,7 @@
 		1EE474A427C4050100861E5C /* EmbarqueTenaresSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				1E6E551828A400E700ADA8F4 /* Service */,
 				1EFE3D9F27E8E3270021F8D6 /* View */,
 				1EFE3D9E27E8E3230021F8D6 /* ViewModel */,
 				1EFE3D9D27E8E31E0021F8D6 /* Model */,
