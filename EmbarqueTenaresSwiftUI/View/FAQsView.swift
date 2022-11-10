@@ -8,6 +8,7 @@ struct FAQsView: View {
     
     var body: some View {
         ZStack{
+            Color.light
             if faqsViewModel.isLoading{
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
@@ -16,15 +17,16 @@ struct FAQsView: View {
                 if faqsViewModel.statusCode == -1 {
                     ErrorView(errorMsg: faqsViewModel.errorMsg)
                 } else {
-                    ScrollView{
-                        VStack(spacing: 0) {
+                    VStack(spacing: 0){
+                        List{
                             if lang == "es" {
                                 ForEach(faqsViewModel.faqs_es){ faq in
                                     CollapsibleRow(
                                         question: faq.q,
                                         answer: faq.a
                                     )
-                                    .frame(maxWidth: .infinity)
+                                    .listRowBackground(Color.white)
+                                    .frame(width: screenWidth)
                                 }
                             } else {
                                 ForEach(faqsViewModel.faqs_en){ faq in
@@ -32,16 +34,19 @@ struct FAQsView: View {
                                         question: faq.q,
                                         answer: faq.a
                                     )
-                                    .frame(maxWidth: .infinity)
+                                    .frame(width: screenWidth)
                                 }
                             }
                         }
-                        .frame(maxWidth: .infinity)
+                        .frame(width: screenWidth, height: screenHeight/1.25)
                         .listStyle(.plain)
                     }
+                    .padding()
                 }
             }
         }
+        .background(Color.blue)
+        .frame(width: screenWidth, height: screenHeight)
     }
 }
 
@@ -53,36 +58,38 @@ struct CollapsibleRow : View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Divider()
             Button(
                 action: { self.collapsed.toggle() },
                 label: {
-                    HStack(alignment: .center) {
+                    HStack(alignment: .center, spacing: 0) {
                         Text(self.question)
-                            .padding(.all)
+                            .multilineTextAlignment(.leading)
+                            .padding()
                         
                         Spacer(minLength: 0)
+                        
                         Image(systemName: self.collapsed ? "chevron.right" : "chevron.down")
                             .padding(.trailing)
                             .frame(width: screenWidth/15)
                             .foregroundColor(Color.accent)
                     }
-                    .padding(.bottom, 1)
-                    .background(Color.white.opacity(0.01))
                 }
             )
             .buttonStyle(PlainButtonStyle())
-            VStack {
-                HStack {
+            VStack(spacing: 0) {
+                HStack(alignment: .center, spacing: 0) {
                     Text(self.answer)
-                        .padding(.all)
+                        .multilineTextAlignment(.leading)
+                        .padding()
+                        .frame(minWidth: screenWidth)
                 }
-                .frame(maxWidth: .infinity)
-                .background(Color.light)
+                .frame(minWidth: screenWidth)
             }
+            .background(Color.light)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: collapsed ? 0 : .none)
             .clipped()
             .transition(.slide)
         }
+        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
     }
 }

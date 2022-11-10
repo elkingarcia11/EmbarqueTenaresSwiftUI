@@ -25,7 +25,7 @@ struct RatesView: View {
                     .progressViewStyle(CircularProgressViewStyle())
                     .scaleEffect(3)
             } else {
-                VStack(alignment: .leading){
+                VStack(alignment: .leading, spacing: 0){
                     if ratesViewModel.statusCode == -1 {
                         ErrorView(errorMsg: ratesViewModel.errorMsg)
                     } else {
@@ -84,7 +84,7 @@ struct RatesView: View {
                         .background(Color.white)
                         .overlay(
                             RoundedRectangle(cornerRadius: 1)
-                                .stroke(Color.accent, lineWidth: 1)
+                                .stroke(Color.accent, lineWidth: 1.5)
                         )
                         .onTapGesture{
                             openWhatsapp()

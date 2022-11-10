@@ -19,14 +19,14 @@
 
 "errorMsg1" = "Factura";
 "errorMsg2" = "no pudo ser encontrado.";
-"search" = "Busca tu factura ...";
+"search" = "Rastrea tu factura (ej. 123456)";
 
 "whatsapp" = "Para más precios, enviar imágenes a nuestro WhatsApp";
 
 "ny" = "Nueva York";
 "dr" = "República Dominicana";
 "address" = "Dirección:";
-"hours" = "Horas:";
+"hours" = "Horario:";
 "phone" = "Teléfono:";
 "email" = "Correo electrónico:";
 

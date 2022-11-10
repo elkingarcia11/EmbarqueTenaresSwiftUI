@@ -41,7 +41,6 @@ final class TrackViewModel: ObservableObject {
                    if let document = document, document.exists {
                        let data = document.data()
                        if let data = data {
-                           print("data", data)
                            self.apiKey = data["Api-Key"] as? String ?? ""
                            self.appId = data["App-Id"] as? String ?? ""
                        }
@@ -88,14 +87,17 @@ final class TrackViewModel: ObservableObject {
         urlRequest.httpBody = jsonData
         
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        
         guard let statuscode = (response as? HTTPURLResponse)?.statusCode else { throw APIError.apiError("Failed to login")}
+        print("test")
         if(200...299).contains(statuscode){
             result = try JSONDecoder().decode(objectType, from: data)
             let logInResponse = result.response[0]
             self.authToken = logInResponse.token
         } else {
-            throw APIError.apiError("Failed to log in to database and retrieve token")
+            result = try JSONDecoder().decode(objectType, from: data)
+            let logInResponse = result.response[0]
+            print(logInResponse)
+            throw APIError.apiError("Error")
         }
     }
     

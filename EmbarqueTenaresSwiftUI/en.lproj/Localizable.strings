@@ -18,7 +18,7 @@
 "error" = "Error";
 "errorMsg1" = "Invoice ";
 "errorMsg2" = "could not be found.";
-"search" = "Search for your invoice ...";
+"search" = "Track your invoice (ex: 123456)";
 
 "whatsapp" = "For more prices, send images to our WhatsApp";
 

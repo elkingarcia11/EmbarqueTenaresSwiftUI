@@ -1,7 +1,9 @@
 import SwiftUI
+import AVKit
 
 struct ErrorView : View {
     @State var error : LocalizedStringKey
+    @State var player = AVPlayer()
     
     init(errorMsg : String){
         error = LocalizedStringKey(errorMsg)
@@ -10,14 +12,31 @@ struct ErrorView : View {
     var body : some View {
         VStack{
             Spacer()
+            
             Text("Error")
                 .font(.title)
-                .padding(.bottom)
+                .fontWeight(.semibold)
+                .foregroundColor(.black)
+                .padding(.bottom, 2.0)
+            
+            Image("sad_error")
+                .resizable()
+                .padding(.vertical)
+                .scaledToFit()
+                .frame(width: 175.0, height: 175.0)
+            
             HStack(alignment: .center){
-                Text(error).font(.subheadline).multilineTextAlignment(.center)
+                Text(error).font(.subheadline).fontWeight(.semibold).multilineTextAlignment(.center)
             }
-            .padding(.horizontal)
+            .padding([.top, .leading, .trailing], 5.0)
+            
             Spacer()
         }
+    }
+}
+
+struct ErrorView_Previews: PreviewProvider {
+    static var previews: some View {
+        ErrorView(errorMsg: "Failed to find invoice")
     }
 }

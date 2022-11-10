@@ -39,9 +39,7 @@ struct MainView: View {
         UINavigationBar.appearance().standardAppearance = navBarAppearance
         UINavigationBar.appearance().compactAppearance = navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-        UINavigationBar.appearance().tintColor = UIColor.red
         UITabBar.appearance().backgroundColor = UIColor(Color.light)
-        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: fonts.one, size: 20)!]
     }
     
     var body: some View {
@@ -74,19 +72,22 @@ struct MainView: View {
                         }
                         .tag(4)
                 }
+                .padding(.top)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar{
                     ToolbarItem(placement: .principal){
                         Text(title)
-                            .font(Font.custom(fonts.one, size: 20))
-                            .fontWeight(.semibold)
+                            .font(Font.custom(fonts.one, size: 26))
+                            .fontWeight(.regular)
                             .onTapGesture {
                                 resetTrack = true
                                 selectedTab = 1
+                                title = "company"
                             }
                     }
                 }
                 .onChange(of: selectedTab){ newState in
+                    UITabBar.appearance().backgroundColor = UIColor(Color.light)
                     resetTrack = true //<< when pressing Tab Bar Reset Navigation View
                     if newState == 1 {
                         title = "company"
@@ -111,5 +112,12 @@ struct MainView: View {
             }
         }
         .environment(\.locale, Locale(identifier: self.lang))
+    }
+}
+
+
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
     }
 }

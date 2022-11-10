@@ -33,8 +33,7 @@ struct DominicanRepublicLocationView: View {
     
     var body: some View {
         VStack{
-            
-            
+        
             Image(systemName: "building.2")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
