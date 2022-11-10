@@ -67,28 +67,28 @@ struct RatesView: View {
                         .frame(maxWidth: .infinity)
                         .listStyle(.plain)
                     }
-                        HStack(alignment: .center){
-                            Image("whatsapp")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .padding([.top, .leading, .bottom])
-                                .frame(width: 75, height: 75)
-                            Text(whatsapp)
-                                .font(.footnote)
-                                .fontWeight(.bold)
-                                .foregroundColor(Color.black)
-                                .multilineTextAlignment(.center)
-                                .padding([.top, .bottom, .trailing])
-                        }
-                        .frame(width: screenWidth)
-                        .background(Color.white)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 1)
-                                .stroke(Color.accent, lineWidth: 1.5)
-                        )
-                        .onTapGesture{
-                            openWhatsapp()
-                        }
+                    HStack(alignment: .center){
+                        Image("whatsapp")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding([.top, .leading, .bottom])
+                            .frame(width: 75, height: 75)
+                        Text(whatsapp)
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.black)
+                            .multilineTextAlignment(.center)
+                            .padding([.top, .bottom, .trailing])
+                    }
+                    .frame(width: screenWidth)
+                    .background(Color.white)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 1)
+                            .stroke(Color.accent, lineWidth: 1.5)
+                    )
+                    .onTapGesture{
+                        openWhatsapp()
+                    }
                 }
             }
         }
@@ -100,32 +100,36 @@ struct Collapsible<Content: View>: View {
     var label: String
     
     var content: () -> Content
+    
     init(image: String, label: String, @ViewBuilder _ content: @escaping () -> Content) {
         self.image = image
         self.label = label
         self.content = content
     }
+    
     @State private var collapsed: Bool = true
     
     var body: some View {
         VStack(spacing: 0) {
-            Button(action: {
-                self.collapsed.toggle()
-            }, label: {
-                HStack {
-                    Image(image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .padding(.vertical)
-                        .frame(width: 75, height: 75)
-                    Text(label)
-                        .fontWeight(.bold)
-                    Spacer(minLength: 0)
-                    Image(systemName: self.collapsed ? "chevron.right" : "chevron.down")
-                        .frame(width: screenWidth/15)
+            Button(
+                action: { self.collapsed.toggle() },
+                label: {
+                    HStack {
+                        Image(image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding(.vertical)
+                            .frame(width: 75, height: 75)
+                        
+                        Text(label)
+                            .fontWeight(.bold)
+                        
+                        Spacer(minLength: 0)
+                        
+                        Image(systemName: self.collapsed ? "chevron.right" : "chevron.down")
+                            .frame(width: screenWidth/15)
+                    }
                 }
-                .background(Color.white.opacity(0.1))
-            }
             )
             .buttonStyle(PlainButtonStyle())
             self.content()
