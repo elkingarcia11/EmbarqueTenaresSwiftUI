@@ -55,6 +55,33 @@ struct DominicanRepublicLocationView: View {
             }
             .padding([.leading, .bottom, .trailing])
             
+            // Phone
+            VStack{
+                Text(phone)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                    .padding(.bottom, 2.0)
+                
+                Link ("(809) 970-0007", destination: URL (string: "tel:8099700007")!)
+                    .frame(maxWidth: .infinity)
+                
+            }
+            .padding([.leading, .bottom, .trailing])
+            .frame(maxWidth: .infinity)
+            
+            // Email
+            VStack{
+                Text(email)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                    .padding(.bottom, 2.0)
+                
+                Link ("rd@embarquetenares.com", destination: URL (string: "mailto:rd@embarquetenares.com")!)
+                    .frame(maxWidth: .infinity)
+                
+            }
+            .padding([.leading, .bottom, .trailing])
+            
             // Hours
             VStack{
                 Text(hours)
@@ -106,33 +133,6 @@ struct DominicanRepublicLocationView: View {
                     .padding(.top, 2.0)
             }
             .padding([.leading, .bottom, .trailing])
-            
-            // Phone
-            VStack{
-                Text(phone)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.leading)
-                    .padding(.bottom, 2.0)
-                
-                Link ("(809) 970-0007", destination: URL (string: "tel:8099700007")!)
-                    .frame(maxWidth: .infinity)
-                
-            }
-            .padding([.leading, .bottom, .trailing])
-            .frame(maxWidth: .infinity)
-            
-            // Email
-            VStack{
-                Text(email)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.leading)
-                    .padding(.bottom, 2.0)
-                
-                Link ("rd@embarquetenares.com", destination: URL (string: "mailto:rd@embarquetenares.com")!)
-                    .frame(maxWidth: .infinity)
-                
-            }
-            .padding(.horizontal)
         }
         .padding()
     }

@@ -46,6 +46,33 @@ struct NewYorkLocationView: View {
             }
             .padding([.leading, .bottom, .trailing])
             
+            // Phone
+            VStack{
+                Text(phone)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                    .padding(.bottom, 2.0)
+                
+                Link ("(718) 562-1300", destination: URL (string: "tel:7185621300")!)
+                    .frame(maxWidth: .infinity)
+                
+            }
+            .padding([.leading, .bottom, .trailing])
+            .frame(maxWidth: .infinity)
+            
+            // Email
+            VStack{
+                Text(email)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                    .padding(.bottom, 2.0)
+                
+                Link ("ny@embarquetenares.com", destination: URL (string: "mailto:ny@embarquetenares.com")!)
+                    .frame(maxWidth: .infinity)
+                
+            }
+            .padding([.leading, .bottom, .trailing])
+            
             // Hours
             VStack{
                 Text(hours)
@@ -89,35 +116,8 @@ struct NewYorkLocationView: View {
                             .fontWeight( weekday == 1 ?.bold : .regular)
                     }
                 }
-            }
+            } // VStack
             .padding([.leading, .bottom, .trailing])
-            
-            // Phone
-            VStack{
-                Text(phone)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.leading)
-                    .padding(.bottom, 2.0)
-                
-                Link ("(718) 562-1300", destination: URL (string: "tel:7185621300")!)
-                    .frame(maxWidth: .infinity)
-                
-            }
-            .padding([.leading, .bottom, .trailing])
-            .frame(maxWidth: .infinity)
-            
-            // Email
-            VStack{
-                Text(email)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.leading)
-                    .padding(.bottom, 2.0)
-                
-                Link ("ny@embarquetenares.com", destination: URL (string: "mailto:ny@embarquetenares.com")!)
-                    .frame(maxWidth: .infinity)
-                
-            }
-            .padding(.horizontal)
         }
         .padding()
     }
