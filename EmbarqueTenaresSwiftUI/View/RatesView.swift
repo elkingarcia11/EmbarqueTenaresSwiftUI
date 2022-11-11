@@ -30,41 +30,23 @@ struct RatesView: View {
                         ErrorView(errorMsg: ratesViewModel.errorMsg)
                     } else {
                         List {
-                            if lang == "en"{
-                                ForEach(ratesViewModel.catsAndItems) { catAndItem in
-                                    Collapsible(image: catAndItem.category.name_en, label: catAndItem.category.name_en){
-                                        ForEach(catAndItem.items) { item in
-                                            Divider()
-                                            HStack(alignment: .center){
-                                                Text(item.name_en)
-                                                    .padding([.top, .trailing])
-                                                Spacer()
-                                                PricePill(price: item.price)
-                                                    .padding(.top)
-                                            }
-                                            .padding(.bottom)
+                            ForEach(ratesViewModel.catsAndItems) { catAndItem in
+                                Collapsible(image: catAndItem.category.name_en, label: lang == "en" ? catAndItem.category.name_en :catAndItem.category.name_es){
+                                    ForEach(catAndItem.items) { item in
+                                        Divider()
+                                        HStack(alignment: .center){
+                                            Text(lang == "en" ? item.name_en : item.name_es)
+                                                .padding(.horizontal)
+                                            Spacer()
+                                            PricePill(price: item.price)
+                                                .padding(.horizontal)
                                         }
-                                    }
-                                }
-                            } else {
-                                ForEach(ratesViewModel.catsAndItems) { catAndItem in
-                                    Collapsible(image: catAndItem.category.name_en, label: catAndItem.category.name_es){
-                                        ForEach(catAndItem.items) { item in
-                                            Divider()
-                                            HStack(alignment: .center){
-                                                Text(item.name_es)
-                                                    .padding([.top, .trailing])
-                                                Spacer()
-                                                PricePill(price: item.price)
-                                                    .padding(.top)
-                                            }
-                                            .padding(.bottom)
-                                        }
+                                        .frame(width: screenWidth)
+                                        .padding(.vertical)
                                     }
                                 }
                             }
-                        }
-                        .frame(maxWidth: .infinity)
+                        }.frame(maxWidth: .infinity)
                         .listStyle(.plain)
                     }
                     HStack(alignment: .center){
@@ -127,15 +109,19 @@ struct Collapsible<Content: View>: View {
                         Spacer(minLength: 0)
                         
                         Image(systemName: self.collapsed ? "chevron.right" : "chevron.down")
+                            .padding(.trailing)
                             .frame(width: screenWidth/15)
                     }
                 }
             )
             .buttonStyle(PlainButtonStyle())
             self.content()
+                .background(Color.light)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: collapsed ? 0 : .none, alignment: .top) // <- added `alignment` here
                 .clipped() // Comment to see the overlap
         }
+        .frame(width: screenWidth)
+        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
     }
 }
 

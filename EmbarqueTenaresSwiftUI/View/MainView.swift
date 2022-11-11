@@ -19,7 +19,7 @@ struct MainView: View {
     @State private var selectedTab = 1
     @State var resetTrack : Bool = false
     
-    @State var title : LocalizedStringKey = "company"
+    @State var title : LocalizedStringKey = ""
     @State(initialValue: "es") var lang: String
     
     let fonts = Fonts()
@@ -62,7 +62,12 @@ struct MainView: View {
                     
                     LocationsView()
                         .tabItem {
-                            Label(locations, systemImage: "building.2.crop.circle")
+                            VStack{
+                                Image(systemName: "building.2.crop.circle").imageScale(.small)
+                                    .foregroundColor(Color.black)
+                                Text(locations)
+                                    .font(.largeTitle)
+                            }
                         }
                         .tag(3)
                     
@@ -80,7 +85,7 @@ struct MainView: View {
                             .font(Font.custom(fonts.one, size: 26))
                             .fontWeight(.regular)
                             .onTapGesture {
-                                resetTrack = true
+                                self.resetTrack.toggle()
                                 selectedTab = 1
                                 title = "company"
                             }
@@ -90,7 +95,7 @@ struct MainView: View {
                     UITabBar.appearance().backgroundColor = UIColor(Color.light)
                     resetTrack = true //<< when pressing Tab Bar Reset Navigation View
                     if newState == 1 {
-                        title = "company"
+                        title = ""
                     } else if newState == 2 {
                         title = "rates"
                     } else if newState == 3 {
@@ -105,7 +110,12 @@ struct MainView: View {
                             Button("English", action: {self.lang = "en"})
                             Button("Español", action: {self.lang = "es"})
                         } label: {
-                            Image(systemName: "globe.americas.fill").imageScale(.large)
+                            HStack(alignment: .center){
+                                Image(systemName: "globe.americas.fill").imageScale(.small)
+                                Text(self.lang == "en" ? "English" : "Español")
+                                    .font(.callout)
+                                Image(systemName: "chevron.down").imageScale(.small)
+                            }
                         }
                 )
                 .accentColor(.accent)

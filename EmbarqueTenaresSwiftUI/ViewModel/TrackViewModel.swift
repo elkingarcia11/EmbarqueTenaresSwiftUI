@@ -26,6 +26,8 @@ final class TrackViewModel: ObservableObject {
     @State var apiKey : String = ""
     @State var appId : String = ""
     
+    var logInUrl : String = "https://api.embarquero.com/api/tenares/auth/login"
+    
     public func retrieveApiKeyAndAppId() async throws {
             // Get a reference to database
             let db = Firestore.firestore()
@@ -41,27 +43,34 @@ final class TrackViewModel: ObservableObject {
                    if let document = document, document.exists {
                        let data = document.data()
                        if let data = data {
-                           self.apiKey = data["Api-Key"] as? String ?? ""
-                           self.appId = data["App-Id"] as? String ?? ""
+                           self.apiKey = data["Api-Key"] as! String
+                           self.appId = data["App-Id"] as! String
+                       } else {
+                           errorMsg = error
+                           self.state = .failed
                        }
+                   } else {
+                       errorMsg = error
+                       self.state = .failed
                    }
             }
             if self.state == .failed {
                 throw APIError.unknown(errorMsg?.localizedDescription ?? "Error reading from database")
+            } else {
+                try await loadAndStoreToken()
             }
     }
     
     public func login() async throws {
         do {
             try await retrieveApiKeyAndAppId()
-            try await loadAndStoreToken()
         } catch {
             throw error
         }
     }
     
     private func loadAndStoreToken() async throws {
-        guard let url = URL(string: "https://api.embarquero.com/api/tenares/auth/login")
+        guard let url = URL(string: self.logInUrl)
         else {
             throw APIError.apiUrlNotSet
         }
@@ -77,23 +86,25 @@ final class TrackViewModel: ObservableObject {
         
         // Set up headers for login request
         urlRequest.httpMethod = "POST"
+        print("APP ID: ", self.appId)
         urlRequest.setValue(self.appId, forHTTPHeaderField: "App-Id")
+        print("API KEY: ", self.apiKey)
         urlRequest.setValue(self.apiKey, forHTTPHeaderField: "Api-Key")
-        
+ 
         // Set up body for login request
-        let body: [String: Any] = ["Username": "elkin", "Type":"MOBILE"]
+        let body: [String: Any] = ["Username" : "elkin", "Type" : "MOBILE"]
         // Serialize body into json
         let jsonData = try? JSONSerialization.data(withJSONObject: body)
         urlRequest.httpBody = jsonData
         
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         guard let statuscode = (response as? HTTPURLResponse)?.statusCode else { throw APIError.apiError("Failed to login")}
-        print("test")
         if(200...299).contains(statuscode){
             result = try JSONDecoder().decode(objectType, from: data)
             let logInResponse = result.response[0]
             self.authToken = logInResponse.token
         } else {
+            print("STATUSCODE: ", statuscode)
             result = try JSONDecoder().decode(objectType, from: data)
             let logInResponse = result.response[0]
             print(logInResponse)

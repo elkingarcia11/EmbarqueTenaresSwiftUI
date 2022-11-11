@@ -23,7 +23,7 @@ struct SplashScreenView: View {
                     .scaledToFit()
                     .frame(width: screenWidth/1.25, alignment: .center)
                     .scaleEffect(animationValues[0] ? 1 : 4, anchor: .center)
-                    .offset(y: -30)
+                    .offset(y: -25)
                 
             }
             MainView()
