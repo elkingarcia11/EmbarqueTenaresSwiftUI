@@ -8,17 +8,8 @@ struct RatesView: View {
     let whatsapp : LocalizedStringKey = "whatsapp"
     let rates : LocalizedStringKey = "rates"
     
-    func openWhatsapp(){
-        @Environment(\.openURL) var openURL
-        
-        if let url = URL(string: "https://api.whatsapp.com/send?phone=17185621300") {
-            openURL(url)
-        }
-    }
-    
-    // LOCALE CHANGE LOGIC
     var body: some View {
-        ZStack{
+        ZStack(alignment: .bottom){
             Color.light
             if ratesViewModel.isLoading{
                 ProgressView()
@@ -29,54 +20,82 @@ struct RatesView: View {
                     if ratesViewModel.statusCode == -1 {
                         ErrorView(errorMsg: ratesViewModel.errorMsg)
                     } else {
-                        List {
-                            ForEach(ratesViewModel.catsAndItems) { catAndItem in
-                                Collapsible(image: catAndItem.category.name_en, label: lang == "en" ? catAndItem.category.name_en :catAndItem.category.name_es){
-                                    ForEach(catAndItem.items) { item in
-                                        Divider()
-                                        HStack(alignment: .center){
-                                            Text(lang == "en" ? item.name_en : item.name_es)
-                                                .padding(.horizontal)
-                                            Spacer()
-                                            PricePill(price: item.price)
-                                                .padding(.horizontal)
+                            List {
+                                ForEach(ratesViewModel.catsAndItems) { catAndItem in
+                                    Collapsible(image: catAndItem.category.name_en, label: lang == "en" ? catAndItem.category.name_en :catAndItem.category.name_es){
+                                        ForEach(catAndItem.items) { item in
+                                            Divider()
+                                            HStack(alignment: .center){
+                                                Text(lang == "en" ? item.name_en : item.name_es)
+                                                    .padding(.horizontal)
+                                                Spacer()
+                                                PricePill(price: item.price)
+                                                    .padding(.horizontal)
+                                            }
+                                            .frame(width: screenWidth)
+                                            .padding(.vertical)
                                         }
-                                        .frame(width: screenWidth)
-                                        .padding(.vertical)
                                     }
                                 }
                             }
-                        }.frame(maxWidth: .infinity)
-                        .listStyle(.plain)
+                            .frame(width: screenWidth, height: (screenHeight/1.25))
+                            .listStyle(.plain)
+                        
                     }
-                    HStack(alignment: .center){
-                        Image("whatsapp")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .padding([.top, .leading, .bottom])
-                            .frame(width: 75, height: 75)
-                        Text(whatsapp)
-                            .font(.footnote)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.black)
-                            .multilineTextAlignment(.center)
-                            .padding([.top, .bottom, .trailing])
-                    }
-                    .frame(width: screenWidth)
-                    .background(Color.white)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 1)
-                            .stroke(Color.accent, lineWidth: 1.5)
-                    )
-                    .onTapGesture{
-                        openWhatsapp()
-                    }
-                }
+                } // VStack
+                
+            FAB(text: whatsapp, image:
+                    "whatsapp")
             }
-        }
+        } // ZStack
     }
 }
 
+struct FAB : View {
+    @State var text  : LocalizedStringKey
+    @State var image : String
+    
+    func openWhatsapp(){
+        @Environment(\.openURL) var openURL
+        
+        if let url = URL(string: "https://api.whatsapp.com/send?phone=17185621300") {
+            openURL(url)
+        }
+    }
+    
+    var body: some View {
+        HStack{
+            Spacer()
+                    Button(action: {
+                        openWhatsapp()
+                    }) {
+                        VStack(alignment: .center, spacing:0){
+                            Text(text)
+                                .fontWeight(.semibold)
+                                .multilineTextAlignment(.center)
+                                .font(.caption)
+                                .padding(.bottom)
+                                .frame(width: 100)
+                            Image(image)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 50, height: 50)
+                        }
+                        .padding(.horizontal, 30)
+                        .padding(.vertical, 20)
+                    }
+                    .background(Color.lightAccent)
+                    .foregroundColor(.black)
+                    .cornerRadius(.infinity)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: .infinity)
+                            .stroke(Color.lightDark, lineWidth: 2)
+                    )
+                    .padding()
+        } //body
+        
+    }
+}
 struct Collapsible<Content: View>: View {
     var image: String
     var label: String
