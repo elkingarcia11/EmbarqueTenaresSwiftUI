@@ -17,8 +17,7 @@ class LocationViewModel : ObservableObject {
     var isDrClosed : Bool
     var isDrClosedForLunch : Bool
     init(){
-        //let weekday = Calendar.current.component(.weekday, from: Date())
-        let weekday = 2
+        let weekday = Calendar.current.component(.weekday, from: Date())
         let hour = Calendar.current.component(.hour, from: Date())
         
         if(weekday == 1){

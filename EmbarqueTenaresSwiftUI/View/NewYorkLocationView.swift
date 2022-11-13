@@ -154,11 +154,5 @@ struct NewYorkLocationView: View {
         }
         .padding(.vertical)
     }
-}
-
-
-struct NewYorkLocationView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewYorkLocationView()
-    }
+    
 }

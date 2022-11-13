@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		1E0462D929214B2600F60389 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462D829214B2600F60389 /* LocationViewModel.swift */; };
 		1E0462DB29215B6500F60389 /* DrLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462DA29215B6500F60389 /* DrLocationView.swift */; };
+		1E0462DD29216D0400F60389 /* SocialMediaFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462DC29216D0400F60389 /* SocialMediaFooterView.swift */; };
+		1E0462DF29216D5400F60389 /* CollapsibleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462DE29216D5400F60389 /* CollapsibleRowView.swift */; };
+		1E0462E129216DBA00F60389 /* FABView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E029216DBA00F60389 /* FABView.swift */; };
+		1E0462E329216E1900F60389 /* CollapsibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E229216E1900F60389 /* CollapsibleView.swift */; };
+		1E0462E529216E3900F60389 /* PricePillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E429216E3900F60389 /* PricePillView.swift */; };
+		1E0462E729216E5E00F60389 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E629216E5E00F60389 /* ProgressBarView.swift */; };
 		1E1E5DA927EA366D00BCC00A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DA827EA366D00BCC00A /* FirebaseAnalytics */; };
 		1E1E5DAB27EA366D00BCC00A /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DAA27EA366D00BCC00A /* FirebaseAnalyticsSwift-Beta */; };
 		1E1E5DAD27EA366D00BCC00A /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DAC27EA366D00BCC00A /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -121,6 +127,12 @@
 /* Begin PBXFileReference section */
 		1E0462D829214B2600F60389 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		1E0462DA29215B6500F60389 /* DrLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrLocationView.swift; sourceTree = "<group>"; };
+		1E0462DC29216D0400F60389 /* SocialMediaFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaFooterView.swift; sourceTree = "<group>"; };
+		1E0462DE29216D5400F60389 /* CollapsibleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleRowView.swift; sourceTree = "<group>"; };
+		1E0462E029216DBA00F60389 /* FABView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FABView.swift; sourceTree = "<group>"; };
+		1E0462E229216E1900F60389 /* CollapsibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleView.swift; sourceTree = "<group>"; };
+		1E0462E429216E3900F60389 /* PricePillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricePillView.swift; sourceTree = "<group>"; };
+		1E0462E629216E5E00F60389 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		1E1E5DE027ECF79800BCC00A /* RatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesModel.swift; sourceTree = "<group>"; };
 		1E1E5DE227ECF8F800BCC00A /* RatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModel.swift; sourceTree = "<group>"; };
 		1E1E5DE427EF765000BCC00A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -329,6 +341,12 @@
 				1E1E5DE427EF765000BCC00A /* ErrorView.swift */,
 				1E6E551428995D4600ADA8F4 /* SplashScreenView.swift */,
 				1E0462DA29215B6500F60389 /* DrLocationView.swift */,
+				1E0462DC29216D0400F60389 /* SocialMediaFooterView.swift */,
+				1E0462DE29216D5400F60389 /* CollapsibleRowView.swift */,
+				1E0462E029216DBA00F60389 /* FABView.swift */,
+				1E0462E229216E1900F60389 /* CollapsibleView.swift */,
+				1E0462E429216E3900F60389 /* PricePillView.swift */,
+				1E0462E629216E5E00F60389 /* ProgressBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -508,17 +526,23 @@
 				1E1E5DE127ECF79800BCC00A /* RatesModel.swift in Sources */,
 				1EBD54522885A21F0007A77B /* TrackModel.swift in Sources */,
 				1E2E552527DFA66800F25C10 /* TrackView.swift in Sources */,
+				1E0462E729216E5E00F60389 /* ProgressBarView.swift in Sources */,
+				1E0462DD29216D0400F60389 /* SocialMediaFooterView.swift in Sources */,
 				1E1E5DE527EF765100BCC00A /* ErrorView.swift in Sources */,
+				1E0462E129216DBA00F60389 /* FABView.swift in Sources */,
 				1EFE3DA327E8FC750021F8D6 /* FAQsModel.swift in Sources */,
+				1E0462DF29216D5400F60389 /* CollapsibleRowView.swift in Sources */,
 				1EFE3DA127E8F2ED0021F8D6 /* FAQsViewModel.swift in Sources */,
 				1E6E551528995D4600ADA8F4 /* SplashScreenView.swift in Sources */,
 				1E40F1062857EA2B001DC2A4 /* Endpoint.swift in Sources */,
 				1EE474BE27C40FEF00861E5C /* NewYorkLocationView.swift in Sources */,
 				1EE474BA27C4082100861E5C /* FAQsView.swift in Sources */,
 				1EE474B827C4081000861E5C /* RatesView.swift in Sources */,
+				1E0462E529216E3900F60389 /* PricePillView.swift in Sources */,
 				1EE474BC27C4082E00861E5C /* LocationsView.swift in Sources */,
 				1E6E5517289962E200ADA8F4 /* Fonts.swift in Sources */,
 				1EE474C227C41EBE00861E5C /* Color.swift in Sources */,
+				1E0462E329216E1900F60389 /* CollapsibleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

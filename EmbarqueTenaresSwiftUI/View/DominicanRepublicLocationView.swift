@@ -2,14 +2,6 @@ import Foundation
 import SwiftUI
 import MapKit
 
-// URLS FROM DB
-
-extension LocalizedStringKey.StringInterpolation{
-    mutating func appendInterpolation(value: LocalizedStringKey){
-        self.appendInterpolation(Text(value))
-    }
-    
-}
 struct DominicanRepublicLocationView: View {
     let weekday = Calendar.current.component(.weekday, from: Date())
     
