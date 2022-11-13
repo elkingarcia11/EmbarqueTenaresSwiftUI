@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0462D929214B2600F60389 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462D829214B2600F60389 /* LocationViewModel.swift */; };
+		1E0462DB29215B6500F60389 /* DrLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462DA29215B6500F60389 /* DrLocationView.swift */; };
 		1E1E5DA927EA366D00BCC00A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DA827EA366D00BCC00A /* FirebaseAnalytics */; };
 		1E1E5DAB27EA366D00BCC00A /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DAA27EA366D00BCC00A /* FirebaseAnalyticsSwift-Beta */; };
 		1E1E5DAD27EA366D00BCC00A /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DAC27EA366D00BCC00A /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -117,6 +119,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E0462D829214B2600F60389 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		1E0462DA29215B6500F60389 /* DrLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrLocationView.swift; sourceTree = "<group>"; };
 		1E1E5DE027ECF79800BCC00A /* RatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesModel.swift; sourceTree = "<group>"; };
 		1E1E5DE227ECF8F800BCC00A /* RatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModel.swift; sourceTree = "<group>"; };
 		1E1E5DE427EF765000BCC00A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -307,6 +311,7 @@
 				1E1E5DE227ECF8F800BCC00A /* RatesViewModel.swift */,
 				1EFE3DA027E8F2ED0021F8D6 /* FAQsViewModel.swift */,
 				1E1E5DEB27F23B2300BCC00A /* TrackViewModel.swift */,
+				1E0462D829214B2600F60389 /* LocationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 				1EE474BF27C40FFD00861E5C /* DominicanRepublicLocationView.swift */,
 				1E1E5DE427EF765000BCC00A /* ErrorView.swift */,
 				1E6E551428995D4600ADA8F4 /* SplashScreenView.swift */,
+				1E0462DA29215B6500F60389 /* DrLocationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -495,6 +501,8 @@
 				1E1E5DEC27F23B2300BCC00A /* TrackViewModel.swift in Sources */,
 				1E1E5DE327ECF8F800BCC00A /* RatesViewModel.swift in Sources */,
 				1EE474A827C4050100861E5C /* MainView.swift in Sources */,
+				1E0462D929214B2600F60389 /* LocationViewModel.swift in Sources */,
+				1E0462DB29215B6500F60389 /* DrLocationView.swift in Sources */,
 				1EE474A627C4050100861E5C /* EmbarqueTenaresSwiftUIApp.swift in Sources */,
 				1EE474C027C40FFD00861E5C /* DominicanRepublicLocationView.swift in Sources */,
 				1E1E5DE127ECF79800BCC00A /* RatesModel.swift in Sources */,

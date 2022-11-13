@@ -1,58 +1,24 @@
 import Foundation
-
 import SwiftUI
-
-// DB URLS
 
 struct LocationsView: View {
     
     @State private var selectedLocation: Int = 0
     let ny : LocalizedStringKey = "ny"
     let dr : LocalizedStringKey = "dr"
-    
-    init() {
-        
-        //and this changes the color for the whole "bar" background
-        UISegmentedControl.appearance().backgroundColor = UIColor(Color.lightAccent)
-        
-        //this changes the "thumb" that selects between items
-        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(Color.accent)
-        
-        //this will change the font size
-        UISegmentedControl.appearance().setTitleTextAttributes([.font : UIFont.preferredFont(forTextStyle: .largeTitle)], for: .normal)
-        
-        //these lines change the text color for various states
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor:UIColor.black], for: .normal)
-        
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-    }
-    
+
     var body: some View {
-        
-        VStack(alignment: .leading) {
-            
-            Picker("locations", selection: $selectedLocation) {
-                
-                Text(ny).tag(0)
-                Text(dr).tag(1)
-                
+        ZStack{
+            VStack(alignment: .leading) {
+                ScrollView{
+                    NewYorkLocationView()
+                    Divider()
+                    DrLocationView()
+                }
+                SocialMediaFooter()
             }
             
-            if selectedLocation == 0 {
-                
-                NewYorkLocationView()
-                
-            } else {
-                
-                DominicanRepublicLocationView()
-                
-            }
-            
-            Spacer()
-            
-            SocialMediaFooter()
         }
-        .pickerStyle(.segmented)
     }
 }
 
@@ -131,7 +97,7 @@ struct SocialMediaFooter : View{
             
             Spacer()
         }
-        .padding(.bottom, 30.0)
+        .padding(.bottom)
         .frame(width: screenWidth)
         
     }

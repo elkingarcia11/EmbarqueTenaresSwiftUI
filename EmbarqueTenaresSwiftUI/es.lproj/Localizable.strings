@@ -22,24 +22,30 @@
 "errorMsg2" = "no pudo ser encontrado.";
 "search" = "Rastrea tu factura (ej. 123456)";
 
-"whatsapp" = "O envia imágenes a nuestro";
+"whatsapp" = "O envianos imágenes por";
 
 "ny" = "Nueva York";
 "dr" = "República Dominicana";
 "address" = "Dirección:";
 "hours" = "Horario:";
-"phone" = "Teléfono:";
-"email" = "Correo electrónico:";
 
-"monday" = "lunes";
-"tuesday" = "martes";
-"wednesday" = "miércoles";
-"thursday" = "jueves";
-"friday" = "viernes";
-"saturday" = "sábado";
-"sunday" = "domingo";
+"email" = "Email";
+"directions" = "Direcciones";
+"call" = "Llamar";
+"website" = "Sitio web";
+
+"8to6" = "8:00 AM - 6:00 PM";
+"8to12" = "8:00 AM - 12:00 PM";
+"8to5" = "8:00 AM - 5:00 PM";
+
+"monToSat" = "Lunes a Sábado";
+"monToFri" = "Lunes a Viernes";
+"saturday" = "Sábado";
+"sunday" = "Domingo";
+"sunClosed" = "Cerrado todo el día";
 "closed" = "Cerrado";
-"closedDaily" = "Cerrado para almuerzo de 12PM-2PM";
+"open" = "Abierto";
+"closedForLunch" = "Cerrado para almuerzo (12PM - 2PM)";
 "drAddress" = "San Marcos #10, Puerto Plata, RD 57000";
 
 "error_eta1" = "No se pudo calcular la hora estimada de llegada. Llame a nuestras oficinas para más información";

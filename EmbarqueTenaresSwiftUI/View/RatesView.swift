@@ -82,7 +82,7 @@ struct FAB : View {
                                 .frame(width: 50, height: 50)
                         }
                         .padding(.horizontal, 30)
-                        .padding(.vertical, 20)
+                        .padding(.vertical, 25)
                     }
                     .background(Color.lightAccent)
                     .foregroundColor(.black)

@@ -23,7 +23,7 @@ struct ErrorView : View {
                 .resizable()
                 .padding(.vertical)
                 .scaledToFit()
-                .frame(width: 175.0, height: 175.0)
+                .frame(width: 125, height: 125)
             
             HStack(alignment: .center){
                 Text(error).font(.subheadline).fontWeight(.semibold).multilineTextAlignment(.center)

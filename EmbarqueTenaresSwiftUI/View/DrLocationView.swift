@@ -1,11 +1,10 @@
 import Foundation
 import SwiftUI
-import MapKit
 
-struct NewYorkLocationView: View {
-    
+struct DrLocationView: View {
     var locationViewModel = LocationViewModel()
-    
+    let dr : LocalizedStringKey = "dr"
+    let drAdrress : LocalizedStringKey = "drAddress"
     let address : LocalizedStringKey = "address"
     let hours : LocalizedStringKey = "hours"
     let phone : LocalizedStringKey = "phone"
@@ -16,17 +15,19 @@ struct NewYorkLocationView: View {
     let website : LocalizedStringKey = "website"
     let open : LocalizedStringKey = "open"
     let closed : LocalizedStringKey = "closed"
+    let closedForLunch : LocalizedStringKey = "closedForLunch"
     
     @State var isCollapsed : Bool = false
     
     var body: some View {
         VStack(alignment: .center, spacing: 0){
-            Text(ny)
+            Text(dr)
                 .font(.title)
                 .fontWeight(.bold)
+                .multilineTextAlignment(.center)
                 .frame(width: screenWidth)
-            Link(destination: URL(string:"https://goo.gl/maps/RUVQUFbiPr6J113z5")!) {
-                Text("2249 Washington Ave Bronx, NY 10457")
+            Link(destination: URL(string:"https://goo.gl/maps/k1N2CKedA8Awaa9MA")!) {
+                Text(drAdrress)
                     .fontWeight(.semibold)
                     .font(.callout)
                     .multilineTextAlignment(.leading)
@@ -36,7 +37,7 @@ struct NewYorkLocationView: View {
             .padding(.bottom)
             
             HStack(alignment: .center){
-                Link(destination: URL(string:"https://goo.gl/maps/RUVQUFbiPr6J113z5")!) {
+                Link(destination: URL(string:"https://goo.gl/maps/k1N2CKedA8Awaa9MA")!) {
                     VStack(alignment: .center){
                         Image(systemName: "arrow.triangle.turn.up.right.circle.fill")
                             .padding(.vertical, 0.5)
@@ -52,7 +53,7 @@ struct NewYorkLocationView: View {
                     .cornerRadius(10)
                     .frame(width: screenWidth*0.22)
                 }
-                Link(destination: URL(string: "tel:7185621300")!) {
+                Link(destination: URL(string: "tel:8099700007")!) {
                     VStack(alignment: .center){
                         Image(systemName: "phone.fill")
                             .padding(.vertical, 0.5)
@@ -68,7 +69,7 @@ struct NewYorkLocationView: View {
                     .cornerRadius(10)
                     .frame(width: screenWidth*0.22)
                 }
-                Link(destination: URL(string: "mailto:ny@embarquetenares.com")!) {
+                Link(destination: URL(string: "mailto:rd@embarquetenares.com")!) {
                     VStack(alignment: .center){
                         Image(systemName: "envelope.fill")
                             .padding(.vertical, 0.5)
@@ -111,12 +112,17 @@ struct NewYorkLocationView: View {
                             Text("Hours")
                                 .foregroundColor(Color(UIColor.systemGray))
                             if(!isCollapsed){
-                                Text(LocalizedStringKey(locationViewModel.nyFirstSlotHours))
+                                Text(LocalizedStringKey(locationViewModel.drFirstSlotHours))
                                     .fontWeight(.semibold)
                                     .foregroundColor(.black)
                             }
-                            Text(LocalizedStringKey(locationViewModel.isNyClosed ? "closed" : "open"))
-                                .foregroundColor(locationViewModel.isNyClosed ? Color(UIColor.systemRed) : Color(UIColor.systemGreen))
+                            if(locationViewModel.isDrClosedForLunch){
+                                Text(LocalizedStringKey("closedForLunch"))
+                                    .foregroundColor(Color(UIColor.systemRed))
+                            } else {
+                                Text(LocalizedStringKey(locationViewModel.isDrClosed ? "closed" : "open"))
+                                    .foregroundColor(locationViewModel.isDrClosed ? Color(UIColor.systemRed) : Color(UIColor.systemGreen))
+                            }
                         }
                         .padding()
                         Spacer()
@@ -130,18 +136,20 @@ struct NewYorkLocationView: View {
                     // Hours - after collapsed
                     HStack(alignment: .bottom) {
                         VStack(alignment: .leading, spacing: 0){
-                            Text(LocalizedStringKey(locationViewModel.nyFirstSlot))
+                            Text(LocalizedStringKey(locationViewModel.drFirstSlot))
                                 .fontWeight(.semibold)
-                            Text(LocalizedStringKey(locationViewModel.nySecondSlot))
+                            Text(LocalizedStringKey(locationViewModel.drSecondSlot))
+                            Text(LocalizedStringKey(locationViewModel.drThirdSlot))
                         }
                         .padding(.leading)
                         
                         Spacer()
                         
                         VStack(alignment: .center, spacing: 0){
-                            Text(LocalizedStringKey(locationViewModel.nyFirstSlotHours))
+                            Text(LocalizedStringKey(locationViewModel.drFirstSlotHours))
                                 .fontWeight(.semibold)
-                            Text(LocalizedStringKey(locationViewModel.nySecondSlotHours))
+                            Text(LocalizedStringKey(locationViewModel.drSecondSlotHours))
+                            Text(LocalizedStringKey(locationViewModel.drThirdSlotHours))
                         }
                         .padding(.trailing)
                     }
@@ -153,12 +161,5 @@ struct NewYorkLocationView: View {
             .cornerRadius(5)
         }
         .padding(.vertical)
-    }
-}
-
-
-struct NewYorkLocationView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewYorkLocationView()
     }
 }

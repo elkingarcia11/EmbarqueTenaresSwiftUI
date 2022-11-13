@@ -21,24 +21,30 @@
 "errorMsg2" = "could not be found.";
 "search" = "Track your invoice (ex: 123456)";
 
-"whatsapp" = "Or send images to our";
+"whatsapp" = "Or send us images through";
 
 "ny" = "New York";
 "dr" = "Dominican Republic";
 "address" = "Address:";
 "hours" = "Hours:";
-"phone" = "Phone:";
-"email" = "Email:";
 
-"monday" = "Monday";
-"tuesday" = "Tuesday";
-"wednesday" = "Wednesday";
-"thursday" = "Thursday";
-"friday" = "Friday";
+"email" = "Email";
+"directions" = "Directions";
+"call" = "Call";
+"website" = "Website";
+
+"8to6" = "8:00 AM - 6:00 PM";
+"8to12"= "8:00 AM - 12:00 PM";
+"8to5" = "8:00 AM - 5:00 PM";
+
+"monToSat" = "Monday - Saturday";
+"monToFri" = "Monday - Friday";
 "saturday" = "Saturday";
 "sunday" = "Sunday";
+"sunClosed" = "Closed all day";
 "closed" = "Closed";
-"closedDaily" = "Closed for lunch from 12PM-2PM";
+"open" = "Open";
+"closedForLunch" = "Closed for lunch (12PM - 2PM)";
 "drAddress" = "San Marcos #10, Puerto Plata, DR 57000";
 
 "error_eta1" = "Failed to calculate estimated time of arrival. Call our offices for more information";

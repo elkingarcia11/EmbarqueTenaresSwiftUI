@@ -124,10 +124,3 @@ struct MainView: View {
         .environment(\.locale, Locale(identifier: self.lang))
     }
 }
-
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
-}
