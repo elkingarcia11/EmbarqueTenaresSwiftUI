@@ -30,7 +30,7 @@ struct NewYorkLocationView: View {
                     .fontWeight(.semibold)
                     .font(.callout)
                     .multilineTextAlignment(.leading)
-                    .foregroundColor(.accent)
+                    .foregroundColor(.primary)
                     .frame(width: screenWidth)
             }
             .padding(.bottom)
@@ -47,8 +47,8 @@ struct NewYorkLocationView: View {
                             .font(.footnote)
                     }
                     .padding(.vertical)
-                    .foregroundColor(.accent)
-                    .background(Color(UIColor.systemGray6))
+                    .foregroundColor(.primary)
+                    .background(.white)
                     .cornerRadius(10)
                     .frame(width: screenWidth*0.22)
                 }
@@ -63,8 +63,8 @@ struct NewYorkLocationView: View {
                             .font(.footnote)
                     }
                     .padding(.vertical)
-                    .foregroundColor(.accent)
-                    .background(Color(UIColor.systemGray6))
+                    .foregroundColor(.primary)
+                    .background(.white)
                     .cornerRadius(10)
                     .frame(width: screenWidth*0.22)
                 }
@@ -79,8 +79,8 @@ struct NewYorkLocationView: View {
                             .font(.footnote)
                     }
                     .padding(.vertical)
-                    .foregroundColor(.accent)
-                    .background(Color(UIColor.systemGray6))
+                    .foregroundColor(.primary)
+                    .background(.white)
                     .cornerRadius(10)
                     .frame(width: screenWidth*0.22)
                 }
@@ -95,8 +95,8 @@ struct NewYorkLocationView: View {
                             .font(.footnote)
                     }
                     .padding(.vertical)
-                    .foregroundColor(.accent)
-                    .background(Color(UIColor.systemGray6))
+                    .foregroundColor(.primary)
+                    .background(.white)
                     .cornerRadius(10)
                     .frame(width: screenWidth*0.22)
                 }
@@ -149,7 +149,7 @@ struct NewYorkLocationView: View {
                 }
             }
             .frame(width: screenWidth*0.93)
-            .background(Color(UIColor.systemGray6))
+            .background(.white)
             .cornerRadius(5)
         }
         .padding(.vertical)

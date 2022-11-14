@@ -42,11 +42,12 @@ struct CollapsibleView<Content: View>: View {
                             .padding(.trailing)
                             .frame(width: screenWidth/15)
                     }
+                    .background(Color.light)
                 }
             )
             .buttonStyle(PlainButtonStyle())
             self.content()
-                .background(Color.light)
+                .background(.white)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: collapsed ? 0 : .none, alignment: .top) // <- added `alignment` here
                 .clipped() // Comment to see the overlap
         }

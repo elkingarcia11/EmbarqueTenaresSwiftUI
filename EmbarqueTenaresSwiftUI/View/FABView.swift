@@ -23,33 +23,35 @@ struct FABView : View {
     var body: some View {
         HStack{
             Spacer()
-                    Button(action: {
-                        openWhatsapp()
-                    }) {
-                        VStack(alignment: .center, spacing:0){
-                            Text(text)
-                                .fontWeight(.bold)
-                                .multilineTextAlignment(.center)
-                                .font(.caption)
-                                .padding(.bottom)
-                                .frame(width: 100)
-                            Image(image)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 50, height: 50)
-                        }
-                        .padding(.horizontal, 30)
-                        .padding(.vertical, 25)
-                    }
-                    .background(Color.lightAccent)
-                    .foregroundColor(.black)
-                    .cornerRadius(25)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 25)
-                            .stroke(Color.lightDark, lineWidth: 2)
-                    )
-                    .padding()
+            Button(action: {
+                openWhatsapp()
+            }) {
+                HStack(alignment: .center){
+                    Image(image)
+                        .resizable()
+                        .renderingMode(.template)
+                        .foregroundColor(.white)
+                        .scaledToFill()
+                        .frame(width: 50, height: 50)
+                    Text(text)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.leading)
+                        .font(.caption)
+                        .frame(width: 100)
+                        .foregroundColor(.white)
+                    
+                }
+                .padding(.horizontal)
+                .padding(.vertical)
+            }
+            .background(Color.whatsappGreen)
+            .foregroundColor(.black)
+            .cornerRadius(4)
+            .overlay(
+                RoundedRectangle(cornerRadius: 4)
+                    .stroke(Color.whatsappGreen, lineWidth: 2)
+            )
+            .padding()
         } //body
-        
     }
 }

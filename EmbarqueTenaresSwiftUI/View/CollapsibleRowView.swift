@@ -21,6 +21,7 @@ struct CollapsibleRowView : View {
                 label: {
                     HStack(alignment: .center, spacing: 0) {
                         Text(self.question)
+                            .fontWeight(.bold)
                             .multilineTextAlignment(.leading)
                             .padding()
                         
@@ -31,23 +32,30 @@ struct CollapsibleRowView : View {
                             .frame(width: screenWidth/15)
                             .foregroundColor(Color.accent)
                     }
+                    .background(Color.light)
                 }
             )
             .buttonStyle(PlainButtonStyle())
             VStack(spacing: 0) {
                 HStack(alignment: .center, spacing: 0) {
                     Text(self.answer)
-                        .multilineTextAlignment(.leading)
+                        .multilineTextAlignment(.center)
                         .padding()
                         .frame(minWidth: screenWidth)
                 }
                 .frame(minWidth: screenWidth)
             }
-            .background(Color.light)
+            .background(Color.white)
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: collapsed ? 0 : .none)
             .clipped()
             .transition(.slide)
         }
         .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+    }
+}
+
+struct CollapsibleRpwView_Previews: PreviewProvider {
+    static var previews : some View {
+        CollapsibleRowView(question: "What is your question?", answer: "This is my answer")
     }
 }

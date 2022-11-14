@@ -14,4 +14,5 @@ extension Color {
     static let info = Color("info")
     static let warning = Color("warning")
     static let accentColor = Color("AccentColor")
+    static let whatsappGreen = Color("whatsappGreen")
 }
