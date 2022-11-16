@@ -1,27 +1,20 @@
-import Combine
 import Firebase
 import SwiftUI
 
 class FAQsViewModel: ObservableObject {
-    
     @Published var faqs = [FAQs]()
-    
     @Published var faqs_en: [QandA] = []
-    
     @Published var faqs_es: [QandA] = []
-    
-    @Published var faqs_published: [QandA] = []
-    
     @Published var isLoading = false
-    
     @Published var errorMsg : String = ""
     @Published var statusCode : Int = -2
+    
     init(){
         self.fetchFAQs()
     }
     
     private func fetchFAQs(){
-        isLoading = true
+        self.isLoading = true
         // Get a reference to database
         let db = Firestore.firestore()
         
@@ -42,7 +35,7 @@ class FAQsViewModel: ObservableObject {
                     self.statusCode = 1
                 } else {
                     self.statusCode = -1
-                    self.errorMsg = "error_rates"
+                    self.errorMsg = "error_faqs"
                 }
                 self.isLoading = false
             }

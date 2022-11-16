@@ -1,10 +1,3 @@
-//
-//  SplashScreenView.swift
-//  Tenares Shipping
-//
-//  Created by Elkin Garcia on 8/2/22.
-//
-
 import SwiftUI
 
 struct SplashScreenView: View {
@@ -44,8 +37,3 @@ struct SplashScreenView: View {
         }
     }
 }
-//BodoniSvtyTwoITCTT-Book
-// Baskerville
-// Baskerville-SemiBold
-//BodoniSvtyTwoOSITCTT-Book
-//BodoniSvtyTwoSCITCTT-Book

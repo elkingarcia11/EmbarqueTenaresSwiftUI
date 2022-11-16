@@ -1,10 +1,3 @@
-//
-//  FABView.swift
-//  Tenares Shipping
-//
-//  Created by Elkin Garcia on 11/13/22.
-//
-
 import Foundation
 import SwiftUI
 

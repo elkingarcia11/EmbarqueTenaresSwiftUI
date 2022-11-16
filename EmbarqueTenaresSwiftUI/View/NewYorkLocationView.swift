@@ -1,14 +1,13 @@
 import Foundation
 import SwiftUI
-import MapKit
 
 struct NewYorkLocationView: View {
+    @State var isCollapsed : Bool = false
     
     var locationViewModel = LocationViewModel()
     
-    let address : LocalizedStringKey = "address"
     let hours : LocalizedStringKey = "hours"
-    let phone : LocalizedStringKey = "phone"
+    
     let email : LocalizedStringKey = "email"
     let ny : LocalizedStringKey = "ny"
     let call : LocalizedStringKey = "call"
@@ -17,7 +16,6 @@ struct NewYorkLocationView: View {
     let open : LocalizedStringKey = "open"
     let closed : LocalizedStringKey = "closed"
     
-    @State var isCollapsed : Bool = false
     
     var body: some View {
         VStack(alignment: .center, spacing: 0){
@@ -34,7 +32,6 @@ struct NewYorkLocationView: View {
                     .frame(width: screenWidth)
             }
             .padding(.bottom)
-            
             HStack(alignment: .center){
                 Link(destination: URL(string:"https://goo.gl/maps/RUVQUFbiPr6J113z5")!) {
                     VStack(alignment: .center){
@@ -108,14 +105,14 @@ struct NewYorkLocationView: View {
                 Button(action: {isCollapsed.toggle()}){
                     HStack(alignment: .center){
                         VStack(alignment: .leading, spacing: 0){
-                            Text("Hours")
+                            Text(hours)
                                 .foregroundColor(Color(UIColor.systemGray))
                             if(!isCollapsed){
                                 Text(LocalizedStringKey(locationViewModel.nyFirstSlotHours))
                                     .fontWeight(.semibold)
                                     .foregroundColor(.black)
                             }
-                            Text(LocalizedStringKey(locationViewModel.isNyClosed ? "closed" : "open"))
+                            Text(locationViewModel.isNyClosed ? closed : open)
                                 .foregroundColor(locationViewModel.isNyClosed ? Color(UIColor.systemRed) : Color(UIColor.systemGreen))
                         }
                         .padding()
@@ -135,9 +132,7 @@ struct NewYorkLocationView: View {
                             Text(LocalizedStringKey(locationViewModel.nySecondSlot))
                         }
                         .padding(.leading)
-                        
                         Spacer()
-                        
                         VStack(alignment: .center, spacing: 0){
                             Text(LocalizedStringKey(locationViewModel.nyFirstSlotHours))
                                 .fontWeight(.semibold)
@@ -154,5 +149,4 @@ struct NewYorkLocationView: View {
         }
         .padding(.vertical)
     }
-    
 }

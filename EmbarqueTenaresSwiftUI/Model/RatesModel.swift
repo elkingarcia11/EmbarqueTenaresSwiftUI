@@ -1,12 +1,10 @@
 import Foundation
 
-
 struct CategoryAndItems: Identifiable, Codable {
     let id : Int
     var category : Category
     var items : [Item]
 }
-
 
 struct RatesCategoryServiceResult: Codable {
     let results: [Category]

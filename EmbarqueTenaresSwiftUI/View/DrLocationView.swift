@@ -4,10 +4,8 @@ import SwiftUI
 struct DrLocationView: View {
     var locationViewModel = LocationViewModel()
     let dr : LocalizedStringKey = "dr"
-    let drAdrress : LocalizedStringKey = "drAddress"
-    let address : LocalizedStringKey = "address"
+    let drAddress : LocalizedStringKey = "drAddress"
     let hours : LocalizedStringKey = "hours"
-    let phone : LocalizedStringKey = "phone"
     let email : LocalizedStringKey = "email"
     let ny : LocalizedStringKey = "ny"
     let call : LocalizedStringKey = "call"
@@ -27,7 +25,7 @@ struct DrLocationView: View {
                 .multilineTextAlignment(.center)
                 .frame(width: screenWidth)
             Link(destination: URL(string:"https://goo.gl/maps/k1N2CKedA8Awaa9MA")!) {
-                Text(drAdrress)
+                Text(drAddress)
                     .fontWeight(.semibold)
                     .font(.callout)
                     .multilineTextAlignment(.leading)
@@ -109,7 +107,7 @@ struct DrLocationView: View {
                 Button(action: {isCollapsed.toggle()}){
                     HStack(alignment: .center){
                         VStack(alignment: .leading, spacing: 0){
-                            Text("Hours")
+                            Text(hours)
                                 .foregroundColor(Color(UIColor.systemGray))
                             if(!isCollapsed){
                                 Text(LocalizedStringKey(locationViewModel.drFirstSlotHours))
@@ -117,10 +115,10 @@ struct DrLocationView: View {
                                     .foregroundColor(.black)
                             }
                             if(locationViewModel.isDrClosedForLunch){
-                                Text(LocalizedStringKey("closedForLunch"))
+                                Text(closedForLunch)
                                     .foregroundColor(Color(UIColor.systemRed))
                             } else {
-                                Text(LocalizedStringKey(locationViewModel.isDrClosed ? "closed" : "open"))
+                                Text(locationViewModel.isDrClosed ? closed : open)
                                     .foregroundColor(locationViewModel.isDrClosed ? Color(UIColor.systemRed) : Color(UIColor.systemGreen))
                             }
                         }

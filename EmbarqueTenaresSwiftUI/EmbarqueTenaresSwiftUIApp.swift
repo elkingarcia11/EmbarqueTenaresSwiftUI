@@ -26,6 +26,7 @@ struct EmbarqueTenaresSwiftUIApp: App {
             uID = authResult?.user
         }
         userID = uID
+        
     }
     
     // register app delegate for Firebase setup

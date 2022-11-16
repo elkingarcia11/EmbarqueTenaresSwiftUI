@@ -1,6 +1,5 @@
 import Foundation
 
-// Each db entry will be 
 struct FAQs: Identifiable, Codable {
     var id : Int
     var q_en : String

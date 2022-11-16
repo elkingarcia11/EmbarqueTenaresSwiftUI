@@ -5,7 +5,7 @@ class LocationViewModel : ObservableObject {
     var nyFirstSlotHours : String
     var nySecondSlot : String
     var nySecondSlotHours : String
-
+    
     var drFirstSlot : String
     var drFirstSlotHours : String
     var drSecondSlot : String
@@ -16,6 +16,7 @@ class LocationViewModel : ObservableObject {
     var isNyClosed : Bool
     var isDrClosed : Bool
     var isDrClosedForLunch : Bool
+    
     init(){
         let weekday = Calendar.current.component(.weekday, from: Date())
         let hour = Calendar.current.component(.hour, from: Date())
@@ -84,14 +85,18 @@ class LocationViewModel : ObservableObject {
                     isDrClosedForLunch = false
                 } else {
                     // if its between 8 and 6
-                        
+                    
                     isNyClosed = false //then ny is open
                     if(hour >= 12 && hour < 14) {
                         // if its later than 12 but before 2 then dr is closed
                         isDrClosed = true
                         isDrClosedForLunch = true
                     } else {
-                        isDrClosed = false
+                        if(hour >= 17){
+                            isDrClosed = true
+                        } else {
+                            isDrClosed = false
+                        }
                         isDrClosedForLunch = false
                     }
                 }

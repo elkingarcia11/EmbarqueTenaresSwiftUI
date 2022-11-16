@@ -1,45 +1,4 @@
-//
-//  TrackModel.swift
-//  Tenares Shipping
-//
-//  Created by Elkin Garcia on 7/18/22.
-//
-
 import Foundation
-
-enum APIError: Error {
-    case decodingError
-    case errorCode(Int)
-    case tokenNotSet
-    case missingAuthHeadersError
-    case apiUrlNotSet
-    case apiError(String)
-    case networkError
-    case unknown(String)
-}
-
-extension APIError : LocalizedError {
-    public var errorDescription: String? {
-        switch self {
-            case .apiError(let error):
-                return error
-            case .decodingError:
-                return "Decoding error"
-            case .errorCode(let code):
-                return "Error code: \(code)"
-            case .tokenNotSet:
-                return "Token not set"
-            case .missingAuthHeadersError:
-                return "Missing auth headers in api request"
-            case .apiUrlNotSet:
-                return "API url is not set"
-            case .networkError:
-                return "Network error"
-            case .unknown(let error):
-                return error
-        }
-    }
-}
 
 enum APIState : Equatable {
     case successful

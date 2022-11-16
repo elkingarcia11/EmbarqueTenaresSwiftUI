@@ -1,4 +1,3 @@
-import Combine
 import Firebase
 import SwiftUI
 
@@ -11,12 +10,13 @@ class RatesViewModel: ObservableObject {
     @Published var errorMsg : String = ""
     @Published var statusCode : Int = -2
     
+    
     init(){
         self.fetchCategories()
     }
     
     private func fetchCategories() {
-        isLoading = true
+        self.isLoading = true
         // Get a reference to database
         let db = Firestore.firestore()
         

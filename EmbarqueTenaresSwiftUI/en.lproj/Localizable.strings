@@ -25,9 +25,9 @@
 
 "ny" = "New York";
 "dr" = "Dominican Republic";
-"address" = "Address:";
-"hours" = "Hours:";
+"drAddress" = "San Marcos #10, Puerto Plata, DR 57000";
 
+"hours" = "Hours";
 "email" = "Email";
 "directions" = "Directions";
 "call" = "Call";
@@ -45,10 +45,14 @@
 "closed" = "Closed";
 "open" = "Open";
 "closedForLunch" = "Closed for lunch (12PM - 2PM)";
-"drAddress" = "San Marcos #10, Puerto Plata, DR 57000";
 
 "error_eta1" = "Failed to calculate estimated time of arrival. Call our offices for more information";
 "error_eta2" = "Failed to retrieve invoice information. Call our offices for more information";
 "error_eta3" = "Invoice is invalid. Please enter a valid invoice number.";
 "error_faqs" = "Our servers are currently down. Call our offices if you have any questions!";
 "error_rates" = "Our servers are currently down. Call our offices or message us on WhatsApp if you are interested in pricing estimates";
+
+
+"error_api" = "API Url is invalid";
+"error_res" = "Failed to receive a response from the server";
+"error_inv" = "Failed to retrive the invoice information. Call our office for more information!";

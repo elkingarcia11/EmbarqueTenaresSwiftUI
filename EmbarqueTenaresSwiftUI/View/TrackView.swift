@@ -1,20 +1,21 @@
 import SwiftUI
 import Foundation
 
-// get eta time from db
 struct TrackView: View {
     @Binding var title: LocalizedStringKey
     @Binding var lang: String
-    @Binding var shouldReset: Bool
+    @Binding var resetScreen: Bool
+    
+    @State private var finalText : String = ""
+    @State private var text : String = ""
+    
+    @StateObject var trackViewModel = TrackViewModel()
+    @EnvironmentObject var httpHeader: HttpHeader
     
     let edoa : LocalizedStringKey = "edoa"
     let invoice : LocalizedStringKey = "invoice"
     let etaFootnote : LocalizedStringKey = "etaFootnote"
     let search : LocalizedStringKey = "search"
-    
-    @State private var finalText : String = ""
-    @State private var text : String = ""
-    @StateObject var trackViewModel = TrackViewModel()
     
     var body: some View {
         ZStack {
@@ -82,38 +83,30 @@ struct TrackView: View {
                             .foregroundColor(Color(.systemGray3))
                             .padding([.top, .leading, .bottom])
                         TextField(search, text: $text)
-                                .padding(.vertical)
-                                .onSubmit {
-                                    title = "track"
+                            .padding(.vertical)
+                            .onSubmit {
+                                title = "track"
+                                if(trackViewModel.isValidInvoice(invoiceNumber: self.text)){
                                     Task {
-                                        do {
-                                            await trackViewModel.resetVars()
-                                            try await trackViewModel.login()
-                                            try await trackViewModel.getETA(invoiceNumber: self.text)
-                                            self.finalText = self.text
-                                        } catch {
-                                            trackViewModel.state = .failed
-                                            trackViewModel.errorMsg = error.localizedDescription
-                                        }
+                                        try await trackViewModel.fetchInvoice(invoiceNumber: self.text, appId: httpHeader.appId, apiKey: httpHeader.apiKey, token: httpHeader.token)
                                     }
                                 }
-                        
+                                
+                            }
                     }
                     .background(Color.white)
                     .frame(width: screenWidth)
                 }
             }
         }
-        .onChange(of: shouldReset) {
+        .onChange(of: resetScreen) {
             newValue in
-            self.shouldReset = false
+            self.resetScreen.toggle()
             self.text = ""
             self.finalText = ""
-            Task {
-                await trackViewModel.resetVars()
-            }
+            trackViewModel.resetVars()
         }
     }
-        
+    
 }
 

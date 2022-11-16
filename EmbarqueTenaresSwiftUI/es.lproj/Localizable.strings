@@ -26,9 +26,9 @@
 
 "ny" = "Nueva York";
 "dr" = "República Dominicana";
-"address" = "Dirección:";
-"hours" = "Horario:";
+"drAddress" = "San Marcos #10, Puerto Plata, RD 57000";
 
+"hours" = "Horario";
 "email" = "Email";
 "directions" = "Direcciones";
 "call" = "Llamar";
@@ -46,10 +46,12 @@
 "closed" = "Cerrado";
 "open" = "Abierto";
 "closedForLunch" = "Cerrado para almuerzo (12PM - 2PM)";
-"drAddress" = "San Marcos #10, Puerto Plata, RD 57000";
-
 "error_eta1" = "No se pudo calcular la hora estimada de llegada. Llame a nuestras oficinas para más información";
 "error_eta2" = "No se pudo recuperar la información de la factura. Llame a nuestras oficinas para más información";
 "error_eta3" = "La factura no es válida. Introduzca un número de factura válido.";
 "error_faqs" = "Nuestros servidores están caídos actualmente. ¡Llama a nuestras oficinas si tienes alguna duda!";
 "error_rates" = "Nuestros servidores están caídos actualmente. Llame a nuestras oficinas o envíenos un mensaje de WhatsApp si está interesado en cotizaciones";
+
+"error_api" = "El URL de la API no es válida";
+"error_res" = "No se pudo recibir una respuesta del servidor";
+"error_inv" = "No se pudo recuperar la información de la factura. ¡Llame a nuestra oficina para obtener más información!";

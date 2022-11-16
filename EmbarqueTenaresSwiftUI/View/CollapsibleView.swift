@@ -1,12 +1,6 @@
-//
-//  CollapsibleView.swift
-//  Tenares Shipping
-//
-//  Created by Elkin Garcia on 11/13/22.
-//
-
 import Foundation
 import SwiftUI
+
 struct CollapsibleView<Content: View>: View {
     var image: String
     var label: String
