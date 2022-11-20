@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 
 struct NewYorkLocationView: View {
+    @Environment(\.openURL) private var openURL
     @State var isCollapsed : Bool = false
     
     var locationViewModel = LocationViewModel()
@@ -16,6 +17,41 @@ struct NewYorkLocationView: View {
     let open : LocalizedStringKey = "open"
     let closed : LocalizedStringKey = "closed"
     
+    func openLocation(){
+        if let googleUrl = URL(string: "comgooglemaps://?q=Embarque+Tenares+Corp.+Bronx,+NY&center=40.85455068009679,-73.89396676221173&views=satellite,traffic&zoom=15") {
+            openURL(googleUrl) { accepted in
+                if(!accepted) {
+                    if let appleUrl = URL(string: "maps://?q=Embarque+Tenares+2249+Washington+Ave+Bronx,+NY+10457") {
+                        openURL(appleUrl) { succeeded in
+                            if(!succeeded){
+                                if let googleUrl = URL(string: "https://goo.gl/maps/RUVQUFbiPr6J113z5") {
+                                    openURL(googleUrl)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func openDirections() {
+        if let googleUrl = URL(string: "comgooglemaps://?saddr=&daddr=Embarque+Tenares+Bronx,+NY+10457") {
+            openURL(googleUrl) { accepted in
+                if(!accepted) {
+                    if let appleUrl = URL(string: "maps://?saddr=&daddr=Embarque+Tenares+2249+Washington+Ave+Bronx,+NY+10457") {
+                        openURL(appleUrl) { succeeded in
+                            if(!succeeded){
+                                if let googleUrl = URL(string: "https://goo.gl/maps/RUVQUFbiPr6J113z5") {
+                                    openURL(googleUrl)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     var body: some View {
         VStack(alignment: .center, spacing: 0){
@@ -23,7 +59,7 @@ struct NewYorkLocationView: View {
                 .font(.title)
                 .fontWeight(.bold)
                 .frame(width: screenWidth)
-            Link(destination: URL(string:"https://goo.gl/maps/RUVQUFbiPr6J113z5")!) {
+            Button(action: openLocation) {
                 Text("2249 Washington Ave Bronx, NY 10457")
                     .fontWeight(.semibold)
                     .font(.callout)
@@ -33,7 +69,7 @@ struct NewYorkLocationView: View {
             }
             .padding(.bottom)
             HStack(alignment: .center){
-                Link(destination: URL(string:"https://goo.gl/maps/RUVQUFbiPr6J113z5")!) {
+                Button(action: openDirections) {
                     VStack(alignment: .center){
                         Image(systemName: "arrow.triangle.turn.up.right.circle.fill")
                             .padding(.vertical, 0.5)

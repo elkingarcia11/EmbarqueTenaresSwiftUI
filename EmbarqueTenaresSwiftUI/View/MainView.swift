@@ -140,12 +140,13 @@ struct MainView: View {
                             .onTapGesture {
                                 self.resetTrack.toggle()
                                 selectedTab = 1
+                                title = ""
                             }
                     }
                 }
                 .onChange(of: selectedTab){ newState in
                     UITabBar.appearance().backgroundColor = UIColor(Color.light)
-                    resetTrack = true //<< when pressing Tab Bar Reset Navigation View
+                    self.resetTrack.toggle() //<< when pressing Tab Bar Reset Navigation View
                     if newState == 1 {
                         title = ""
                     } else if newState == 2 {

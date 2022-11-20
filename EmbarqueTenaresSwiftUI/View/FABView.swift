@@ -40,10 +40,7 @@ struct FABView : View {
             .background(Color.whatsappGreen)
             .foregroundColor(.black)
             .cornerRadius(4)
-            .overlay(
-                RoundedRectangle(cornerRadius: 4)
-                    .stroke(Color.whatsappGreen, lineWidth: 2)
-            )
+            .shadow(color:  Color(UIColor.lightGray), radius: 2, x: 3, y: 3)
             .padding()
         } //body
     }

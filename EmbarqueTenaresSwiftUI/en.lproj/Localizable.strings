@@ -13,7 +13,7 @@
 "faqs" = "FAQs";
 
 "invoice" = "Invoice no.";
-"edoa" = "Estimated date of delivery";
+"edoa" = "Estimated delivery date";
 "etaFootnote" = "*The number of days left is an estimate and subject to change.";
 "daysLeft" = "days left*";
 "error" = "Error";

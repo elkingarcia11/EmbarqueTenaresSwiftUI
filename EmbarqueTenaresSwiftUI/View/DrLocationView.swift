@@ -1,7 +1,12 @@
 import Foundation
 import SwiftUI
+// places: "comgooglemaps://?q=Tenares+Shipping+Corp.+Puerto+Plata,+RD&center=19.794385316539273,-70.71694280130453&views=satellite,traffic&zoom=15"
+// directions: "comgooglemaps://?saddr=&daddr=Tenares+Shipping+Corp.+Puerto+Plata,+RD+57000"
+// places: 
+// directions:
 
 struct DrLocationView: View {
+    @Environment(\.openURL) private var openURL
     var locationViewModel = LocationViewModel()
     let dr : LocalizedStringKey = "dr"
     let drAddress : LocalizedStringKey = "drAddress"
@@ -17,6 +22,30 @@ struct DrLocationView: View {
     
     @State var isCollapsed : Bool = false
     
+    func openLocation(){
+        if let googleUrl = URL(string:"comgooglemaps://?q=Tenares+Shipping+Corp.+Puerto+Plata,+RD&center=19.794385316539273,-70.71694280130453&views=satellite,traffic&zoom=15") {
+            openURL(googleUrl) { accepted in
+                if(!accepted) {
+                    if let googleUrl = URL(string: "https://goo.gl/maps/k1N2CKedA8Awaa9MA") {
+                        openURL(googleUrl)
+                    }
+                }
+            }
+        }
+    }
+    
+    func openDirections() {
+        if let googleUrl = URL(string: "comgooglemaps://?saddr=&daddr=Tenares+Shipping+Corp.+Puerto+Plata,+RD+57000") {
+            openURL(googleUrl) { accepted in
+                if(!accepted) {
+                    if let googleUrl = URL(string: "https://goo.gl/maps/k1N2CKedA8Awaa9MA") {
+                        openURL(googleUrl)
+                    }
+                }
+            }
+        }
+    }
+    
     var body: some View {
         VStack(alignment: .center, spacing: 0){
             Text(dr)
@@ -24,7 +53,7 @@ struct DrLocationView: View {
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
                 .frame(width: screenWidth)
-            Link(destination: URL(string:"https://goo.gl/maps/k1N2CKedA8Awaa9MA")!) {
+            Button(action: openLocation) {
                 Text(drAddress)
                     .fontWeight(.semibold)
                     .font(.callout)
@@ -35,7 +64,7 @@ struct DrLocationView: View {
             .padding(.bottom)
             
             HStack(alignment: .center){
-                Link(destination: URL(string:"https://goo.gl/maps/k1N2CKedA8Awaa9MA")!) {
+                Button(action: openDirections) {
                     VStack(alignment: .center){
                         Image(systemName: "arrow.triangle.turn.up.right.circle.fill")
                             .padding(.vertical, 0.5)

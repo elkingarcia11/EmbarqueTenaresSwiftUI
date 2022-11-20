@@ -16,15 +16,19 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct EmbarqueTenaresSwiftUIApp: App {
     @State var userID : FirebaseAuth.User?
     
+   
+    
     init() {
         var uID : FirebaseAuth.User?
         FirebaseApp.configure()
-        Auth.auth().signInAnonymously { authResult, error in
+        
+        Auth.auth().createUser(withEmail: getEncryptedEmail(), password: getEncryptedPass()) { authResult, error in
             if let err = error {
                 print(err.localizedDescription)
             }
             uID = authResult?.user
         }
+        
         userID = uID
         
     }

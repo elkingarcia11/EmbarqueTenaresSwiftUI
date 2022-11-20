@@ -20,7 +20,6 @@ class LocationViewModel : ObservableObject {
     init(){
         let weekday = Calendar.current.component(.weekday, from: Date())
         let hour = Calendar.current.component(.hour, from: Date())
-        
         if(weekday == 1){
             nyFirstSlot = "sunday"
             nyFirstSlotHours = "sunClosed"
@@ -43,7 +42,7 @@ class LocationViewModel : ObservableObject {
             nySecondSlotHours = "sunClosed"
             
             // if saturday
-            if(weekday == 6){
+            if(weekday == 7){
                 drFirstSlot = "saturday"
                 drFirstSlotHours = "8to12"
                 drSecondSlot = "sunday"

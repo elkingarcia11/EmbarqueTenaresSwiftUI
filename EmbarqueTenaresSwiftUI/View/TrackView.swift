@@ -35,11 +35,23 @@ struct TrackView: View {
                             .scaledToFit()
                             .frame(width: screenWidth/1.25, alignment: .center)
                     } else if trackViewModel.state == .successful {
-                        Spacer()
                         Text(edoa)
                             .font(.title)
                             .fontWeight(.bold)
-                            .padding(.top)
+                            .padding(.vertical)
+                        if lang == "es"{
+                            Text(trackViewModel.arrivalDate_es)
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .foregroundColor(.primary)
+                                .padding(.top)
+                        } else {
+                            Text(trackViewModel.arrivalDate_en)
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.primary)
+                                .padding(.top)
+                        }
                         Spacer()
                         HStack {
                             Text(invoice)
@@ -50,17 +62,7 @@ struct TrackView: View {
                         }
                         .padding(.bottom)
                         
-                        if lang == "es"{
-                            Text(trackViewModel.arrivalDate_es)
-                                .font(.title3)
-                                .fontWeight(.bold)
-                                .padding(.bottom)
-                        } else {
-                            Text(trackViewModel.arrivalDate_en)
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .padding(.bottom)
-                        }
+                       
                         ProgressBarView(progress: $trackViewModel.progressValue, daysLeft: trackViewModel.daysLeft)
                             .frame(width: 150.0, height: 150.0)
                             .padding(40.0)
@@ -84,11 +86,13 @@ struct TrackView: View {
                             .padding([.top, .leading, .bottom])
                         TextField(search, text: $text)
                             .padding(.vertical)
+                            .disableAutocorrection(true)
                             .onSubmit {
                                 title = "track"
                                 if(trackViewModel.isValidInvoice(invoiceNumber: self.text)){
                                     Task {
                                         try await trackViewModel.fetchInvoice(invoiceNumber: self.text, appId: httpHeader.appId, apiKey: httpHeader.apiKey, token: httpHeader.token)
+                                        self.finalText = self.text
                                     }
                                 }
                                 
@@ -101,10 +105,10 @@ struct TrackView: View {
         }
         .onChange(of: resetScreen) {
             newValue in
-            self.resetScreen.toggle()
             self.text = ""
             self.finalText = ""
             trackViewModel.resetVars()
+            self.resetScreen.toggle()
         }
     }
     
