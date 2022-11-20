@@ -16,9 +16,3 @@ struct LocationsView: View {
         }
     }
 }
-
-struct Location_Previews: PreviewProvider {
-    static var previews : some View {
-        LocationsView()
-    }
-}

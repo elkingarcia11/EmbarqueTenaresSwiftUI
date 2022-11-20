@@ -7,13 +7,13 @@ struct NewYorkLocationView: View {
     
     var locationViewModel = LocationViewModel()
     
-    let hours : LocalizedStringKey = "hours"
-    
-    let email : LocalizedStringKey = "email"
     let ny : LocalizedStringKey = "ny"
-    let call : LocalizedStringKey = "call"
     let directions : LocalizedStringKey = "directions"
+    let call : LocalizedStringKey = "call"
+    let email : LocalizedStringKey = "email"
     let website : LocalizedStringKey = "website"
+    let more : LocalizedStringKey = "more"
+    let hours : LocalizedStringKey = "hours"
     let open : LocalizedStringKey = "open"
     let closed : LocalizedStringKey = "closed"
     
@@ -53,92 +53,100 @@ struct NewYorkLocationView: View {
         }
     }
     
+    func openWebsite(){
+        if let url = URL(string: "https://embarquetenares.com") {
+            openURL(url)
+        }
+    }
+    
     var body: some View {
         VStack(alignment: .center, spacing: 0){
             Text(ny)
                 .font(.title)
                 .fontWeight(.bold)
+                .multilineTextAlignment(.leading)
+                .padding(.bottom, 3.0)
                 .frame(width: screenWidth)
+            
             Button(action: openLocation) {
                 Text("2249 Washington Ave Bronx, NY 10457")
                     .fontWeight(.semibold)
                     .font(.callout)
                     .multilineTextAlignment(.leading)
-                    .foregroundColor(.primary)
-                    .frame(width: screenWidth)
             }
-            .padding(.bottom)
+            .buttonStyle(.borderless)
+            .foregroundColor(Color.primary)
+            
             HStack(alignment: .center){
                 Button(action: openDirections) {
                     VStack(alignment: .center){
                         Image(systemName: "arrow.triangle.turn.up.right.circle.fill")
-                            .padding(.vertical, 0.5)
+                            .padding(.bottom, -2.0)
                             .font(.title3)
                             .frame(maxWidth: .infinity)
                         Text(directions)
                             .fontWeight(.semibold)
                             .font(.footnote)
                     }
-                    .padding(.vertical)
-                    .foregroundColor(.primary)
-                    .background(.white)
-                    .cornerRadius(10)
-                    .frame(width: screenWidth*0.22)
                 }
-                Link(destination: URL(string: "tel:7185621300")!) {
+                .buttonStyle(.borderedProminent)
+                .tint(.white)
+                .foregroundColor(Color.primary)
+                
+                Link(destination: URL(string: "tel:7185621300")!){
                     VStack(alignment: .center){
                         Image(systemName: "phone.fill")
-                            .padding(.vertical, 0.5)
+                            .padding(.bottom, -2.0)
                             .font(.title3)
                             .frame(maxWidth: .infinity)
                         Text(call)
                             .fontWeight(.semibold)
                             .font(.footnote)
                     }
-                    .padding(.vertical)
-                    .foregroundColor(.primary)
-                    .background(.white)
-                    .cornerRadius(10)
-                    .frame(width: screenWidth*0.22)
                 }
-                Link(destination: URL(string: "mailto:ny@embarquetenares.com")!) {
+                .buttonStyle(.borderedProminent)
+                .tint(.white)
+                .foregroundColor(Color.primary)
+                
+                Link(destination: URL(string: "mailto:ny@embarquetenares.com")!){
                     VStack(alignment: .center){
                         Image(systemName: "envelope.fill")
-                            .padding(.vertical, 0.5)
+                            .padding(.bottom, -2.0)
                             .font(.title3)
                             .frame(maxWidth: .infinity)
                         Text(email)
                             .fontWeight(.semibold)
                             .font(.footnote)
                     }
-                    .padding(.vertical)
-                    .foregroundColor(.primary)
-                    .background(.white)
-                    .cornerRadius(10)
-                    .frame(width: screenWidth*0.22)
                 }
-                Link(destination: URL(string:"https://embarquetenares.com")!) {
+                .buttonStyle(.borderedProminent)
+                .tint(.white)
+                .foregroundColor(Color.primary)
+                
+                Menu {
+                    Button(action: openWebsite){
+                        Label(website, systemImage: "safari")
+                    }
+                    AddContactView(location: 0)
+                } label: {
                     VStack(alignment: .center){
-                        Image(systemName: "safari.fill")
-                            .padding(.vertical, 0.5)
+                        Image(systemName: "ellipsis.circle.fill")
+                            .padding(.bottom, -2.0)
                             .font(.title3)
                             .frame(maxWidth: .infinity)
-                        Text(website)
+                        Text(more)
                             .fontWeight(.semibold)
                             .font(.footnote)
                     }
-                    .padding(.vertical)
-                    .foregroundColor(.primary)
-                    .background(.white)
-                    .cornerRadius(10)
-                    .frame(width: screenWidth*0.22)
                 }
+                .buttonStyle(.borderedProminent)
+                .tint(.white)
+                .foregroundColor(Color.primary)
             }
-            .padding(.vertical)
-            .frame(width: screenWidth)
+            .padding()
             
-            VStack(alignment: .center, spacing: 0){
-                Button(action: {isCollapsed.toggle()}){
+            Button(action: {isCollapsed.toggle()}){
+                VStack(spacing: 0){
                     HStack(alignment: .center){
                         VStack(alignment: .leading, spacing: 0){
                             Text(hours)
@@ -151,37 +159,42 @@ struct NewYorkLocationView: View {
                             Text(locationViewModel.isNyClosed ? closed : open)
                                 .foregroundColor(locationViewModel.isNyClosed ? Color(UIColor.systemRed) : Color(UIColor.systemGreen))
                         }
-                        .padding()
                         Spacer()
                         Image(systemName: isCollapsed ? "chevron.up" : "chevron.down")
-                            .padding(.trailing)
                             .font(.headline)
                             .foregroundColor(Color(UIColor.systemGray))
                     }
-                }
-                if(isCollapsed){
-                    // Hours - after collapsed
-                    HStack(alignment: .bottom) {
-                        VStack(alignment: .leading, spacing: 0){
-                            Text(LocalizedStringKey(locationViewModel.nyFirstSlot))
-                                .fontWeight(.semibold)
-                            Text(LocalizedStringKey(locationViewModel.nySecondSlot))
+                    
+                    if(isCollapsed){
+                        // Hours - after collapsed
+                        HStack(alignment: .bottom) {
+                            VStack(alignment: .leading, spacing: 0){
+                                Text(LocalizedStringKey(locationViewModel.nyFirstSlot))
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.black)
+                                Text(LocalizedStringKey(locationViewModel.nySecondSlot))
+                                    .foregroundColor(.black)
+                            }
+                            
+                            Spacer()
+                            
+                            VStack(alignment: .trailing, spacing: 0){
+                                Text(LocalizedStringKey(locationViewModel.nyFirstSlotHours))
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.black)
+                                Text(LocalizedStringKey(locationViewModel.nySecondSlotHours))
+                                    .foregroundColor(.black)
+                            }
                         }
-                        .padding(.leading)
-                        Spacer()
-                        VStack(alignment: .center, spacing: 0){
-                            Text(LocalizedStringKey(locationViewModel.nyFirstSlotHours))
-                                .fontWeight(.semibold)
-                            Text(LocalizedStringKey(locationViewModel.nySecondSlotHours))
-                        }
-                        .padding(.trailing)
+                        .padding(.top)
                     }
-                    .padding(.bottom)
                 }
+                .padding()
             }
             .frame(width: screenWidth*0.93)
-            .background(.white)
-            .cornerRadius(5)
+            .padding(.bottom)
+            .buttonStyle(.borderedProminent)
+            .tint(.white)
         }
         .padding(.vertical)
     }

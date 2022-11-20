@@ -16,6 +16,7 @@
 		1E0462E529216E3900F60389 /* PricePillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E429216E3900F60389 /* PricePillView.swift */; };
 		1E0462E729216E5E00F60389 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E629216E5E00F60389 /* ProgressBarView.swift */; };
 		1E0462EB2927EF5300F60389 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462EA2927EF5300F60389 /* Credentials.swift */; };
+		1E0462F1292A8D1200F60389 /* AddContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462F0292A8D1200F60389 /* AddContact.swift */; };
 		1E1E5DA927EA366D00BCC00A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DA827EA366D00BCC00A /* FirebaseAnalytics */; };
 		1E1E5DAB27EA366D00BCC00A /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DAA27EA366D00BCC00A /* FirebaseAnalyticsSwift-Beta */; };
 		1E1E5DAD27EA366D00BCC00A /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DAC27EA366D00BCC00A /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -134,6 +135,7 @@
 		1E0462E629216E5E00F60389 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		1E0462EA2927EF5300F60389 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		1E0462EC2927F5EA00F60389 /* Tenares Shipping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tenares Shipping.entitlements"; sourceTree = "<group>"; };
+		1E0462F0292A8D1200F60389 /* AddContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContact.swift; sourceTree = "<group>"; };
 		1E1E5DE027ECF79800BCC00A /* RatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesModel.swift; sourceTree = "<group>"; };
 		1E1E5DE227ECF8F800BCC00A /* RatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModel.swift; sourceTree = "<group>"; };
 		1E1E5DE427EF765000BCC00A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				1E0462E229216E1900F60389 /* CollapsibleView.swift */,
 				1E0462E429216E3900F60389 /* PricePillView.swift */,
 				1E0462E629216E5E00F60389 /* ProgressBarView.swift */,
+				1E0462F0292A8D1200F60389 /* AddContact.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				1EE474BA27C4082100861E5C /* FAQsView.swift in Sources */,
 				1EE474B827C4081000861E5C /* RatesView.swift in Sources */,
 				1E0462EB2927EF5300F60389 /* Credentials.swift in Sources */,
+				1E0462F1292A8D1200F60389 /* AddContact.swift in Sources */,
 				1E0462E529216E3900F60389 /* PricePillView.swift in Sources */,
 				1EE474BC27C4082E00861E5C /* LocationsView.swift in Sources */,
 				1E6E5517289962E200ADA8F4 /* Fonts.swift in Sources */,

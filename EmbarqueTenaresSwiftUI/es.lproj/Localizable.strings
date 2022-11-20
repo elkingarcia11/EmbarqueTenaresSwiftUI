@@ -30,9 +30,13 @@
 
 "hours" = "Horario";
 "email" = "Email";
-"directions" = "Direcciones";
+"directions" = "Dirección";
 "call" = "Llamar";
-"website" = "Sitio web";
+"website" = "Ir al sitio web";
+"contact" = "Agregar como contacto";
+"more" = "Más";
+"contactSaved" = "Contacto agregado";
+"contactAdded" = "¡Este contacto se ha agregado correctamente a su libreta de contactos!";
 
 "8to6" = "8:00 AM - 6:00 PM";
 "8to12" = "8:00 AM - 12:00 PM";
