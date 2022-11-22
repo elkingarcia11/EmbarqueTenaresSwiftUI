@@ -15,8 +15,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct EmbarqueTenaresSwiftUIApp: App {
     @State var userID : FirebaseAuth.User?
-    
-
+ 
     init() {
         var uID : FirebaseAuth.User?
         FirebaseApp.configure()

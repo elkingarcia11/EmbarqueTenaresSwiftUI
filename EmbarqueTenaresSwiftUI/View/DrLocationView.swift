@@ -1,13 +1,11 @@
 import Foundation
 import SwiftUI
-// places: "comgooglemaps://?q=Tenares+Shipping+Corp.+Puerto+Plata,+RD&center=19.794385316539273,-70.71694280130453&views=satellite,traffic&zoom=15"
-// directions: "comgooglemaps://?saddr=&daddr=Tenares+Shipping+Corp.+Puerto+Plata,+RD+57000"
-// places: 
-// directions:
+import Contacts
 
 struct DrLocationView: View {
     @Environment(\.openURL) private var openURL
     @State var isCollapsed : Bool = false
+    @State private var showAlert = false
     
     var locationViewModel = LocationViewModel()
     
@@ -22,6 +20,10 @@ struct DrLocationView: View {
     let open : LocalizedStringKey = "open"
     let closed : LocalizedStringKey = "closed"
     let closedForLunch : LocalizedStringKey = "closedForLunch"
+    
+    let contact : LocalizedStringKey = "contact"
+    let contactSaved : LocalizedStringKey = "contactSaved"
+    let contactAdded : LocalizedStringKey = "contactAdded"
     
     func openLocation(){
         if let googleUrl = URL(string:"comgooglemaps://?q=Tenares+Shipping+Corp.+Puerto+Plata,+RD&center=19.794385316539273,-70.71694280130453&views=satellite,traffic&zoom=15") {
@@ -47,10 +49,37 @@ struct DrLocationView: View {
         }
     }
     
-    
     func openWebsite(){
         if let url = URL(string: "https://embarquetenares.com") {
             openURL(url)
+        }
+    }
+    
+    func addToContact(){
+        let contact = CNMutableContact();
+        contact.givenName = "Embarque Tenares"
+        contact.familyName = "RD"
+        contact.emailAddresses = [CNLabeledValue(label: CNLabelOther, value: "rd@embarquetenares.com")];
+        contact.phoneNumbers = [CNLabeledValue(label: CNLabelPhoneNumberiPhone, value: CNPhoneNumber(stringValue: "8099700007")),CNLabeledValue(label: CNLabelPhoneNumberiPhone, value: CNPhoneNumber(stringValue: "8092612373"))];
+        contact.urlAddresses = [CNLabeledValue(label: CNLabelURLAddressHomePage, value: "embarquetenares.com")];
+        
+        let address = CNMutablePostalAddress()
+        address.street = "San Marcos #10"
+        address.city = "Puerto Plata"
+        address.state = "DO"
+        address.postalCode = "57000"
+        address.country = "DO"
+        contact.postalAddresses = [CNLabeledValue<CNPostalAddress>(label: CNLabelHome, value: address)]
+        
+        let store = CNContactStore()
+        let saveRequest = CNSaveRequest()
+        saveRequest.add(contact, toContainerWithIdentifier: nil)
+        do {
+            try store.execute(saveRequest)
+            showAlert.toggle()
+            
+        } catch {
+            print("Error occur: \(error)")
         }
     }
     
@@ -122,7 +151,9 @@ struct DrLocationView: View {
                     Button(action: openWebsite){
                         Label(website, systemImage: "safari")
                     }
-                    AddContactView(location: 1)
+                    Button(action: addToContact){
+                        Label(contact, systemImage: "person.crop.circle.badge.plus")
+                    }
                 } label: {
                     VStack(alignment: .center){
                         Image(systemName: "ellipsis.circle.fill")
@@ -201,5 +232,11 @@ struct DrLocationView: View {
             .tint(.white)
         }
         .padding(.vertical)
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text(contactSaved),
+                message: Text(contactAdded)
+            )
+        }
     }
 }

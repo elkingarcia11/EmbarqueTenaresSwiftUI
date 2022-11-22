@@ -1,9 +1,11 @@
 import Foundation
 import SwiftUI
+import Contacts
 
 struct NewYorkLocationView: View {
     @Environment(\.openURL) private var openURL
     @State var isCollapsed : Bool = false
+    @State private var showAlert = false
     
     var locationViewModel = LocationViewModel()
     
@@ -16,6 +18,10 @@ struct NewYorkLocationView: View {
     let hours : LocalizedStringKey = "hours"
     let open : LocalizedStringKey = "open"
     let closed : LocalizedStringKey = "closed"
+    
+    let contact : LocalizedStringKey = "contact"
+    let contactSaved : LocalizedStringKey = "contactSaved"
+    let contactAdded : LocalizedStringKey = "contactAdded"
     
     func openLocation(){
         if let googleUrl = URL(string: "comgooglemaps://?q=Embarque+Tenares+Corp.+Bronx,+NY&center=40.85455068009679,-73.89396676221173&views=satellite,traffic&zoom=15") {
@@ -56,6 +62,35 @@ struct NewYorkLocationView: View {
     func openWebsite(){
         if let url = URL(string: "https://embarquetenares.com") {
             openURL(url)
+        }
+    }
+    
+    func addToContact(){
+        let contact = CNMutableContact();
+        contact.givenName = "Embarque Tenares"
+        contact.familyName = "NY"
+        contact.emailAddresses = [CNLabeledValue(label: CNLabelOther, value: "ny@embarquetenares.com")];
+        contact.phoneNumbers = [CNLabeledValue(label: CNLabelPhoneNumberiPhone, value: CNPhoneNumber(stringValue: "7185621300"))];
+        contact.urlAddresses = [CNLabeledValue(label: CNLabelURLAddressHomePage, value: "embarquetenares.com")];
+        
+        let address = CNMutablePostalAddress()
+        address.street = "2249 Washington Ave"
+        address.city = "Bronx"
+        address.state = "NY"
+        address.postalCode = "10457"
+        address.country = "US"
+        
+        contact.postalAddresses = [CNLabeledValue<CNPostalAddress>(label: CNLabelHome, value: address)]
+        
+        let store = CNContactStore()
+        let saveRequest = CNSaveRequest()
+        saveRequest.add(contact, toContainerWithIdentifier: nil)
+        do {
+            try store.execute(saveRequest)
+            self.showAlert.toggle()
+            
+        } catch {
+            print("Error occur: \(error)")
         }
     }
     
@@ -127,7 +162,9 @@ struct NewYorkLocationView: View {
                     Button(action: openWebsite){
                         Label(website, systemImage: "safari")
                     }
-                    AddContactView(location: 0)
+                    Button(action: addToContact){
+                        Label(contact, systemImage: "person.crop.circle.badge.plus")
+                    }
                 } label: {
                     VStack(alignment: .center){
                         Image(systemName: "ellipsis.circle.fill")
@@ -197,5 +234,11 @@ struct NewYorkLocationView: View {
             .tint(.white)
         }
         .padding(.vertical)
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text(contactSaved),
+                message: Text(contactAdded)
+            )
+        }
     }
 }

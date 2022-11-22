@@ -27,11 +27,28 @@ struct AddContactView: View {
             contact.emailAddresses = [CNLabeledValue(label: CNLabelOther, value: "ny@embarquetenares.com")];
             contact.phoneNumbers = [CNLabeledValue(label: CNLabelPhoneNumberiPhone, value: CNPhoneNumber(stringValue: "7185621300"))];
             contact.urlAddresses = [CNLabeledValue(label: CNLabelURLAddressHomePage, value: "embarquetenares.com")];
+            
+            let address = CNMutablePostalAddress()
+                address.street = "2249 Washington Ave"
+                address.city = "Bronx"
+                address.state = "NY"
+                address.postalCode = "10457"
+                address.country = "US"
+            
+            contact.postalAddresses = [CNLabeledValue<CNPostalAddress>(label: CNLabelHome, value: address)]
         } else {
             contact.familyName = "RD"
             contact.emailAddresses = [CNLabeledValue(label: CNLabelOther, value: "rd@embarquetenares.com")];
             contact.phoneNumbers = [CNLabeledValue(label: CNLabelPhoneNumberiPhone, value: CNPhoneNumber(stringValue: "8099700007")),CNLabeledValue(label: CNLabelPhoneNumberiPhone, value: CNPhoneNumber(stringValue: "8092612373"))];
             contact.urlAddresses = [CNLabeledValue(label: CNLabelURLAddressHomePage, value: "embarquetenares.com")];
+            
+            let address = CNMutablePostalAddress()
+                address.street = "San Marcos #10"
+                address.city = "Puerto Plata"
+                address.state = "DO"
+                address.postalCode = "57000"
+                address.country = "DO"
+            contact.postalAddresses = [CNLabeledValue<CNPostalAddress>(label: CNLabelHome, value: address)]
         }
         let store = CNContactStore()
         let saveRequest = CNSaveRequest()
@@ -39,6 +56,7 @@ struct AddContactView: View {
         do {
             try store.execute(saveRequest)
             showAlert.toggle()
+            print("SHOW ALERT TOGGLED")
             
         } catch {
             print("Error occur: \(error)")

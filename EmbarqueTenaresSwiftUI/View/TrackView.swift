@@ -12,6 +12,8 @@ struct TrackView: View {
     @StateObject var trackViewModel = TrackViewModel()
     @EnvironmentObject var httpHeader: HttpHeader
     
+    @FocusState private var isFocused: Bool
+    
     let edoa : LocalizedStringKey = "edoa"
     let invoice : LocalizedStringKey = "invoice"
     let etaFootnote : LocalizedStringKey = "etaFootnote"
@@ -87,6 +89,7 @@ struct TrackView: View {
                         TextField(search, text: $text)
                             .padding(.vertical)
                             .disableAutocorrection(true)
+                            .focused($isFocused)
                             .onSubmit {
                                 title = "track"
                                 if(trackViewModel.isValidInvoice(invoiceNumber: self.text)){
@@ -102,6 +105,9 @@ struct TrackView: View {
                     .frame(width: screenWidth)
                 }
             }
+        }
+        .onTapGesture {
+            isFocused.toggle()
         }
         .onChange(of: resetScreen) {
             newValue in

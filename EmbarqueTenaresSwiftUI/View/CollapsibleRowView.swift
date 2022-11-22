@@ -46,9 +46,3 @@ struct CollapsibleRowView : View {
         .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
     }
 }
-
-struct CollapsibleRpwView_Previews: PreviewProvider {
-    static var previews : some View {
-        CollapsibleRowView(question: "What is your question?", answer: "This is my answer")
-    }
-}
