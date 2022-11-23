@@ -14,21 +14,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct EmbarqueTenaresSwiftUIApp: App {
-    @State var userID : FirebaseAuth.User?
- 
+    
     init() {
-        var uID : FirebaseAuth.User?
         FirebaseApp.configure()
         
-        Auth.auth().createUser(withEmail: getEncryptedEmail(), password: getEncryptedPass()) { authResult, error in
+        Auth.auth().createUser(withEmail: ConfigValues.get().FBUS, password: ConfigValues.get().FBPS) { authResult, error in
             if let err = error {
                 print(err.localizedDescription)
             }
-            uID = authResult?.user
         }
-        
-        userID = uID
-        
     }
     
     // register app delegate for Firebase setup

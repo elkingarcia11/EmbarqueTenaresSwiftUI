@@ -15,8 +15,9 @@
 		1E0462E329216E1900F60389 /* CollapsibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E229216E1900F60389 /* CollapsibleView.swift */; };
 		1E0462E529216E3900F60389 /* PricePillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E429216E3900F60389 /* PricePillView.swift */; };
 		1E0462E729216E5E00F60389 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E629216E5E00F60389 /* ProgressBarView.swift */; };
-		1E0462EB2927EF5300F60389 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462EA2927EF5300F60389 /* Credentials.swift */; };
 		1E0462F1292A8D1200F60389 /* AddContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462F0292A8D1200F60389 /* AddContact.swift */; };
+		1E0462F5292E9BC900F60389 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E0462F4292E9BC900F60389 /* Config.plist */; };
+		1E0462F7292E9C2F00F60389 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462F6292E9C2F00F60389 /* Config.swift */; };
 		1E1E5DA927EA366D00BCC00A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DA827EA366D00BCC00A /* FirebaseAnalytics */; };
 		1E1E5DAB27EA366D00BCC00A /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DAA27EA366D00BCC00A /* FirebaseAnalyticsSwift-Beta */; };
 		1E1E5DAD27EA366D00BCC00A /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DAC27EA366D00BCC00A /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -133,9 +134,10 @@
 		1E0462E229216E1900F60389 /* CollapsibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleView.swift; sourceTree = "<group>"; };
 		1E0462E429216E3900F60389 /* PricePillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricePillView.swift; sourceTree = "<group>"; };
 		1E0462E629216E5E00F60389 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
-		1E0462EA2927EF5300F60389 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		1E0462EC2927F5EA00F60389 /* Tenares Shipping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tenares Shipping.entitlements"; sourceTree = "<group>"; };
 		1E0462F0292A8D1200F60389 /* AddContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContact.swift; sourceTree = "<group>"; };
+		1E0462F4292E9BC900F60389 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		1E0462F6292E9C2F00F60389 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		1E1E5DE027ECF79800BCC00A /* RatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesModel.swift; sourceTree = "<group>"; };
 		1E1E5DE227ECF8F800BCC00A /* RatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModel.swift; sourceTree = "<group>"; };
 		1E1E5DE427EF765000BCC00A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		1E6E551828A400E700ADA8F4 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				1E0462F6292E9C2F00F60389 /* Config.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 		1EE474A427C4050100861E5C /* EmbarqueTenaresSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				1E0462F4292E9BC900F60389 /* Config.plist */,
 				1E6E551828A400E700ADA8F4 /* Service */,
 				1EFE3D9F27E8E3270021F8D6 /* View */,
 				1EFE3D9E27E8E3230021F8D6 /* ViewModel */,
@@ -314,7 +318,6 @@
 				1E1E5DE027ECF79800BCC00A /* RatesModel.swift */,
 				1EBD54512885A21F0007A77B /* TrackModel.swift */,
 				1E6E5516289962E200ADA8F4 /* Fonts.swift */,
-				1E0462EA2927EF5300F60389 /* Credentials.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				1EE474AD27C4050500861E5C /* Preview Assets.xcassets in Resources */,
 				1EBD5454288701DE0007A77B /* GoogleService-Info.plist in Resources */,
 				1E2E552827DFC22D00F25C10 /* Localizable.strings in Resources */,
+				1E0462F5292E9BC900F60389 /* Config.plist in Resources */,
 				1EE474AA27C4050500861E5C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,7 +542,7 @@
 				1EE474BE27C40FEF00861E5C /* NewYorkLocationView.swift in Sources */,
 				1EE474BA27C4082100861E5C /* FAQsView.swift in Sources */,
 				1EE474B827C4081000861E5C /* RatesView.swift in Sources */,
-				1E0462EB2927EF5300F60389 /* Credentials.swift in Sources */,
+				1E0462F7292E9C2F00F60389 /* Config.swift in Sources */,
 				1E0462F1292A8D1200F60389 /* AddContact.swift in Sources */,
 				1E0462E529216E3900F60389 /* PricePillView.swift in Sources */,
 				1EE474BC27C4082E00861E5C /* LocationsView.swift in Sources */,
