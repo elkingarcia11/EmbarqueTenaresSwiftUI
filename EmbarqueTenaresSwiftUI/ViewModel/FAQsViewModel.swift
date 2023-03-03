@@ -47,5 +47,7 @@ class FAQsViewModel: ObservableObject {
             faqs_en.append(QandA(id: i, q: faqs[i].q_en, a: faqs[i].a_en))
             faqs_es.append(QandA(id: i, q: faqs[i].q_es, a: faqs[i].a_es))
         }
+        faqs_en.append(QandA(id:10000000,q: "What app version is this?", a:"This is app version 2.0"))
+        faqs_es.append(QandA(id:10000000,q: "¿Qué versión de la aplicación es esta?", a:"Esta es la versión de la aplicación 2.0"))
     }
 }

@@ -14,6 +14,7 @@ final class TrackViewModel: ObservableObject {
     @Published var arrivalDate_en : String = ""
     @Published var arrivalDate_es : String = ""
     
+    
     func resetVars() {
         self.state = .na
         self.progressValue = 0
@@ -25,26 +26,37 @@ final class TrackViewModel: ObservableObject {
         self.arrivalDate_es = ""
     }
     
-    public func isValidInvoice(invoiceNumber : String) -> Bool {
+    func submitInvoice(invoice: String, httpHeader : HttpHeader) async {
         self.state = .loading
-        // Check if invoice is number && > 0
-        if let i = Int(invoiceNumber) {
-            if i < 0 {
+        if(isValidInvoice(invoice: invoice)){
+            do {
+                try await fetchInvoice(invoice: invoice, httpHeader: httpHeader)
+            } catch {
+                print("ERROR: ", error.localizedDescription)
                 self.state = .failed
-                self.errorMsg = "error_eta3"
+                self.errorMsg = "error_eta2"
+            }
+        } else {
+            self.state = .failed
+            self.errorMsg = "error_eta3"
+        }
+    }
+    
+    private func isValidInvoice(invoice : String) -> Bool {
+        // Check if invoice is number && > 0
+        if let i = Int(invoice) {
+            if i < 0 {
                 return false
             } else {
                 return true
             }
         } else {
-            self.state = .failed
-            self.errorMsg = "error_eta3"
             return false
         }
     }
     
-    func fetchInvoice(invoiceNumber : String, appId : String?, apiKey : String?, token : String?) async throws {
-        guard let url = URL(string: "https://api.embarquero.com/api/tenares/invoice/\(invoiceNumber)") else {
+    private func fetchInvoice(invoice : String, httpHeader : HttpHeader) async throws {
+        guard let url = URL(string: "https://api.embarquero.com/api/tenares/invoice/\(invoice)") else {
             self.state = .failed
             self.errorMsg = "error_api"
             return
@@ -58,10 +70,9 @@ final class TrackViewModel: ObservableObject {
         // Set up headers for login request
         urlRequest.httpMethod = "GET"
         
-        // Set up header for fetch invoice request
-        urlRequest.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
-        urlRequest.setValue(appId, forHTTPHeaderField: "App-Id")
-        urlRequest.setValue(apiKey, forHTTPHeaderField: "Api-Key")
+        urlRequest.setValue("Bearer \(httpHeader.token ?? "")", forHTTPHeaderField: "Authorization")
+        urlRequest.setValue(httpHeader.appId, forHTTPHeaderField: "App-Id")
+        urlRequest.setValue(httpHeader.apiKey, forHTTPHeaderField: "Api-Key")
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         
         guard let statuscode = (response as? HTTPURLResponse)?.statusCode else {
@@ -74,14 +85,14 @@ final class TrackViewModel: ObservableObject {
             result = try JSONDecoder().decode(objectType, from: data)
             let invoiceResponse = result.response[0]
             self.pickUpDate = invoiceResponse.date
-            await self.fetchDeliveryTime()
+            self.fetchDeliveryTime()
         } else {
             self.state = .failed
             self.errorMsg = "error_inv"
         }
     }
     
-    private func fetchDeliveryTime() async {
+    private func fetchDeliveryTime() {
         let db = Firestore.firestore()
         let docRef = db.collection("eta").document("eta_days")
         
@@ -101,7 +112,7 @@ final class TrackViewModel: ObservableObject {
         }
     }
 
-    func calculateETA(){
+    private func calculateETA(){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         let range = self.pickUpDate.index(self.pickUpDate.startIndex, offsetBy: 10)..<self.pickUpDate.endIndex

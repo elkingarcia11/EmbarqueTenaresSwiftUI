@@ -1,0 +1,12 @@
+//
+//  Config.xcconfig
+//  Tenares Shipping
+//
+//  Created by Elkin Garcia on 3/3/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+AUTH_U=ny@embarquetenares.com
+AUTH_P=SY4+!LR(h$y[rw5vyXAW]SH

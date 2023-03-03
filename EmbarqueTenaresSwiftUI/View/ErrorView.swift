@@ -10,30 +10,29 @@ struct ErrorView : View {
     var body : some View {
         VStack{
             Spacer()
-            
-            Text("Error")
-                .font(.title)
-                .fontWeight(.semibold)
-                .foregroundColor(.black)
-                .padding(.bottom)
-            
-            Image("sad_error")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 125, height: 125)
-            
-            HStack(alignment: .center){
-                Text(error).font(.subheadline).fontWeight(.semibold).multilineTextAlignment(.center)
+            VStack{
+                Text("Error")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.black)
+                    .padding(.vertical)
+                
+                Image(systemName: "xmark.octagon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100, height: 100)
+                    .foregroundColor(Color.gray)
+                
+                HStack(alignment: .center){
+                    Text(error).font(.subheadline).fontWeight(.semibold).multilineTextAlignment(.center)
+                }
+                .padding(.all)
             }
-            .padding([.top, .leading, .trailing])
-            
+            .background(Color.white)
+            .cornerRadius(20)
+            .shadow(radius: 5)
+            .padding()
             Spacer()
         }
-    }
-}
-
-struct ErrorView_Previews: PreviewProvider {
-    static var previews : some View {
-        ErrorView(errorMsg: "This is my error message.This is my error message.This is my error message.This is my error message.This is my error message.This is my error message.This is my error message.")
     }
 }

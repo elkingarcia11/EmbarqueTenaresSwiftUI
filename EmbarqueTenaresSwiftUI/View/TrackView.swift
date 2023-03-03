@@ -10,6 +10,7 @@ struct TrackView: View {
     @State private var text : String = ""
     
     @StateObject var trackViewModel = TrackViewModel()
+    
     @EnvironmentObject var httpHeader: HttpHeader
     
     @FocusState private var isFocused: Bool
@@ -92,13 +93,9 @@ struct TrackView: View {
                             .focused($isFocused)
                             .onSubmit {
                                 title = "track"
-                                if(trackViewModel.isValidInvoice(invoiceNumber: self.text)){
-                                    Task {
-                                        try await trackViewModel.fetchInvoice(invoiceNumber: self.text, appId: httpHeader.appId, apiKey: httpHeader.apiKey, token: httpHeader.token)
-                                        self.finalText = self.text
-                                    }
+                                Task{
+                                    await trackViewModel.submitInvoice(invoice: self.text, httpHeader: httpHeader)
                                 }
-                                
                             }
                     }
                     .background(Color.white)

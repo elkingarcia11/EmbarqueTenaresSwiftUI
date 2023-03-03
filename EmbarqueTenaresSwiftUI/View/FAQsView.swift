@@ -49,9 +49,3 @@ struct FAQsView: View {
         .frame(width: screenWidth, height: screenHeight)
     }
 }
-
-struct FAQsView_Previews: PreviewProvider {
-    static var previews : some View {
-        FAQsView(lang: .constant("en"))
-    }
-}

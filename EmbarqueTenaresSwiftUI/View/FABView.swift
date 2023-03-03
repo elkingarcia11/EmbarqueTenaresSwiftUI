@@ -19,7 +19,7 @@ struct FABView : View {
             Button(action: {
                 openWhatsapp()
             }) {
-                HStack(alignment: .center){
+                VStack(alignment: .center){
                     Image(image)
                         .resizable()
                         .renderingMode(.template)
@@ -28,7 +28,7 @@ struct FABView : View {
                         .frame(width: 50, height: 50)
                     Text(text)
                         .fontWeight(.bold)
-                        .multilineTextAlignment(.leading)
+                        .multilineTextAlignment(.center)
                         .font(.caption)
                         .frame(width: 100)
                         .foregroundColor(.white)
@@ -39,7 +39,7 @@ struct FABView : View {
             }
             .background(Color.whatsappGreen)
             .foregroundColor(.black)
-            .cornerRadius(4)
+            .cornerRadius(25)
             .shadow(color:  Color(UIColor.lightGray), radius: 2, x: 3, y: 3)
             .padding()
         } //body

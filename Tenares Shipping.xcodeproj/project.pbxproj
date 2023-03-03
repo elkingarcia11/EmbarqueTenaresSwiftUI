@@ -16,8 +16,6 @@
 		1E0462E529216E3900F60389 /* PricePillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E429216E3900F60389 /* PricePillView.swift */; };
 		1E0462E729216E5E00F60389 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E629216E5E00F60389 /* ProgressBarView.swift */; };
 		1E0462F1292A8D1200F60389 /* AddContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462F0292A8D1200F60389 /* AddContact.swift */; };
-		1E0462F5292E9BC900F60389 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E0462F4292E9BC900F60389 /* Config.plist */; };
-		1E0462F7292E9C2F00F60389 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462F6292E9C2F00F60389 /* Config.swift */; };
 		1E1E5DA927EA366D00BCC00A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DA827EA366D00BCC00A /* FirebaseAnalytics */; };
 		1E1E5DAB27EA366D00BCC00A /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DAA27EA366D00BCC00A /* FirebaseAnalyticsSwift-Beta */; };
 		1E1E5DAD27EA366D00BCC00A /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DAC27EA366D00BCC00A /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -136,8 +134,6 @@
 		1E0462E629216E5E00F60389 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		1E0462EC2927F5EA00F60389 /* Tenares Shipping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tenares Shipping.entitlements"; sourceTree = "<group>"; };
 		1E0462F0292A8D1200F60389 /* AddContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContact.swift; sourceTree = "<group>"; };
-		1E0462F4292E9BC900F60389 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
-		1E0462F6292E9C2F00F60389 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		1E1E5DE027ECF79800BCC00A /* RatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesModel.swift; sourceTree = "<group>"; };
 		1E1E5DE227ECF8F800BCC00A /* RatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModel.swift; sourceTree = "<group>"; };
 		1E1E5DE427EF765000BCC00A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -160,6 +156,7 @@
 		1EE474BB27C4082E00861E5C /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 		1EE474BD27C40FEF00861E5C /* NewYorkLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewYorkLocationView.swift; sourceTree = "<group>"; };
 		1EE474C127C41EBE00861E5C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		1EF09CFE29B25B8A00F1C206 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		1EFE3DA027E8F2ED0021F8D6 /* FAQsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsViewModel.swift; sourceTree = "<group>"; };
 		1EFE3DA227E8FC750021F8D6 /* FAQsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -259,17 +256,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E6E551828A400E700ADA8F4 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				1E0462F6292E9C2F00F60389 /* Config.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		1EE4749927C4050100861E5C = {
 			isa = PBXGroup;
 			children = (
+				1EF09CFE29B25B8A00F1C206 /* Config.xcconfig */,
 				1E0462EC2927F5EA00F60389 /* Tenares Shipping.entitlements */,
 				1EE474A427C4050100861E5C /* EmbarqueTenaresSwiftUI */,
 				1EE474A327C4050100861E5C /* Products */,
@@ -287,8 +277,6 @@
 		1EE474A427C4050100861E5C /* EmbarqueTenaresSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				1E0462F4292E9BC900F60389 /* Config.plist */,
-				1E6E551828A400E700ADA8F4 /* Service */,
 				1EFE3D9F27E8E3270021F8D6 /* View */,
 				1EFE3D9E27E8E3230021F8D6 /* ViewModel */,
 				1EFE3D9D27E8E31E0021F8D6 /* Model */,
@@ -510,7 +498,6 @@
 				1EE474AD27C4050500861E5C /* Preview Assets.xcassets in Resources */,
 				1EBD5454288701DE0007A77B /* GoogleService-Info.plist in Resources */,
 				1E2E552827DFC22D00F25C10 /* Localizable.strings in Resources */,
-				1E0462F5292E9BC900F60389 /* Config.plist in Resources */,
 				1EE474AA27C4050500861E5C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,7 +529,6 @@
 				1EE474BE27C40FEF00861E5C /* NewYorkLocationView.swift in Sources */,
 				1EE474BA27C4082100861E5C /* FAQsView.swift in Sources */,
 				1EE474B827C4081000861E5C /* RatesView.swift in Sources */,
-				1E0462F7292E9C2F00F60389 /* Config.swift in Sources */,
 				1E0462F1292A8D1200F60389 /* AddContact.swift in Sources */,
 				1E0462E529216E3900F60389 /* PricePillView.swift in Sources */,
 				1EE474BC27C4082E00861E5C /* LocationsView.swift in Sources */,
@@ -569,6 +555,7 @@
 /* Begin XCBuildConfiguration section */
 		1EE474AE27C4050500861E5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EF09CFE29B25B8A00F1C206 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -631,6 +618,7 @@
 		};
 		1EE474AF27C4050500861E5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EF09CFE29B25B8A00F1C206 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -699,8 +687,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmbarqueTenaresSwiftUI/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Tenares Shipping";
+				INFOPLIST_KEY_NSContactsUsageDescription = "This app needs to access you contacts to save records";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -732,8 +722,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmbarqueTenaresSwiftUI/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Tenares Shipping";
+				INFOPLIST_KEY_NSContactsUsageDescription = "This app needs to access you contacts to save records";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

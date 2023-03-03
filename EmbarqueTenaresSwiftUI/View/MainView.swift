@@ -8,13 +8,13 @@ let screenWidth = UIScreen.main.bounds.size.width
 let screenHeight = UIScreen.main.bounds.size.height
 
 class HttpHeader : ObservableObject {
-    @Published var token : String?
+    var token : String?
     @Published var apiKey : String = ""
     @Published var appId : String = ""
     @Published var httpHeaderChanged : Bool = false
     
-    func getHttpHeaders(){
-        Firestore.firestore().collection("auth").document("login").addSnapshotListener { documentSnapshot, error in
+    func getHttpHeaders() async throws{
+        Firestore.firestore().collection("auth").document("login").addSnapshotListener { (documentSnapshot, error) in
             guard let document = documentSnapshot else {
                 self.apiKey = ""
                 self.appId = ""
@@ -26,15 +26,11 @@ class HttpHeader : ObservableObject {
                 self.appId = ""
                 return
             }
-            
             self.apiKey = data["Api-Key"] as! String
             self.appId = data["App-Id"] as! String
-            self.httpHeaderChanged.toggle()
-            print("Change in http header info")
         }
     }
     
-    @MainActor
     func getToken() async throws {
         guard let url = URL(string: "https://api.embarquero.com/api/tenares/auth/login")
         else {
@@ -51,7 +47,6 @@ class HttpHeader : ObservableObject {
         
         // Set up headers for login request
         urlRequest.httpMethod = "POST"
-        print("App id, api key", self.appId, self.apiKey)
         urlRequest.setValue(self.appId, forHTTPHeaderField: "App-Id")
         urlRequest.setValue(self.apiKey, forHTTPHeaderField: "Api-Key")
         
@@ -81,14 +76,14 @@ struct MainView: View {
     @State var title : LocalizedStringKey = ""
     @State(initialValue: "es") var lang: String
     
-    @StateObject var httpHeader = HttpHeader()
-    
     let fonts = Fonts()
     
     let track : LocalizedStringKey = "track"
     let rates : LocalizedStringKey = "rates"
     let faqs : LocalizedStringKey = "faqs"
     let locations : LocalizedStringKey = "locations"
+    
+    @StateObject var httpHeader = HttpHeader()
     
     init() {
         let navBarAppearance = UINavigationBarAppearance()
@@ -111,6 +106,7 @@ struct MainView: View {
                             Label(track, systemImage: "magnifyingglass.circle.fill")
                         }
                         .tag(1)
+                        .environmentObject(httpHeader)
                     
                     RatesView(lang: $lang)
                         .tabItem {
@@ -174,16 +170,24 @@ struct MainView: View {
                 .accentColor(.primary)
             }
         }
-        .onAppear{
-            httpHeader.getHttpHeaders()
-        }
-        .onChange(of: httpHeader.httpHeaderChanged) { newValue in
-            Task{
+        .onChange(of: httpHeader.apiKey) { result in
+            Task {
                 try await httpHeader.getToken()
             }
-            
+        }
+        .onChange(of: httpHeader.appId) { result in
+            Task {
+                try await httpHeader.getToken()
+            }
+        }
+        .task{
+            do {
+                try await httpHeader.getHttpHeaders() 
+            }
+            catch {
+                print("ERROR retrieving http headers")
+            }
         }
         .environment(\.locale, Locale(identifier: self.lang))
-        .environmentObject(httpHeader)
     }
 }

@@ -30,7 +30,7 @@ struct SocialMediaFooterView : View{
     }
     
     var body: some View{
-        HStack(alignment: .center) {
+        HStack {
             Spacer()
             Button(action: {openLink(index: 0)}) {
                 Image("whatsapp")
@@ -38,6 +38,7 @@ struct SocialMediaFooterView : View{
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 50, height: 50)
             }
+            .padding(.vertical)
             .shadow(color: Color(UIColor.lightGray), radius: 2, x: 3, y: 3)
             Spacer()
             Button(action: {openLink(index: 1)}) {
@@ -46,6 +47,7 @@ struct SocialMediaFooterView : View{
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 50, height: 50)
             }
+            .padding(.vertical)
             .shadow(color: Color(UIColor.lightGray), radius: 2, x: 3, y: 3)
             Spacer()
             Button(action: {openLink(index: 2)}) {
@@ -54,10 +56,13 @@ struct SocialMediaFooterView : View{
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 50, height: 50)
             }
+            .padding(.vertical)
             .shadow(color: Color(UIColor.lightGray), radius: 2, x: 3, y: 3)
             Spacer()
         }
-        .padding(.bottom)
-        .frame(width: screenWidth)
+        .background(Color.white)
+        .cornerRadius(50)
+        .shadow(radius: 1)
+        .padding()
     }
 }
