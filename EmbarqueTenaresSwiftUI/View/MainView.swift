@@ -2,72 +2,9 @@ import SwiftUI
 import UIKit
 import NaturalLanguage
 import CoreML
-import Firebase
 
 let screenWidth = UIScreen.main.bounds.size.width
 let screenHeight = UIScreen.main.bounds.size.height
-
-class HttpHeader : ObservableObject {
-    var token : String?
-    @Published var apiKey : String = ""
-    @Published var appId : String = ""
-    @Published var httpHeaderChanged : Bool = false
-    
-    func getHttpHeaders() async throws{
-        Firestore.firestore().collection("auth").document("login").addSnapshotListener { (documentSnapshot, error) in
-            guard let document = documentSnapshot else {
-                self.apiKey = ""
-                self.appId = ""
-                return
-            }
-            
-            guard let data = document.data() else {
-                self.apiKey = ""
-                self.appId = ""
-                return
-            }
-            self.apiKey = data["Api-Key"] as! String
-            self.appId = data["App-Id"] as! String
-        }
-    }
-    
-    func getToken() async throws {
-        guard let url = URL(string: "https://api.embarquero.com/api/tenares/auth/login")
-        else {
-            return
-        }
-        var urlRequest = URLRequest(url: url)
-        // Create object to store log in response which will be ->
-        // APIResponse is status, action, message, response object
-        // LogInResponse is a response object with a token object and user object
-        // Token object contains access and refresh fields
-        // user object contains id fullname username active and role
-        var result : APIResponse<LogInResponse>
-        let objectType = APIResponse<LogInResponse>.self
-        
-        // Set up headers for login request
-        urlRequest.httpMethod = "POST"
-        urlRequest.setValue(self.appId, forHTTPHeaderField: "App-Id")
-        urlRequest.setValue(self.apiKey, forHTTPHeaderField: "Api-Key")
-        
-        // Set up body for login request
-        let body: [String: Any] = ["Username" : "elkin", "Type" : "MOBILE"]
-        // Serialize body into json
-        let jsonData = try? JSONSerialization.data(withJSONObject: body)
-        urlRequest.httpBody = jsonData
-        
-        let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        guard let statuscode = (response as? HTTPURLResponse)?.statusCode else { return }
-        
-        if(200...299).contains(statuscode){
-            result = try JSONDecoder().decode(objectType, from: data)
-            let logInResponse = result.response[0]
-            self.token = logInResponse.token.access
-        } else {
-            return
-        }
-    }
-}
 
 struct MainView: View {
     @State private var selectedTab = 1
@@ -170,22 +107,12 @@ struct MainView: View {
                 .accentColor(.primary)
             }
         }
-        .onChange(of: httpHeader.apiKey) { result in
-            Task {
-                try await httpHeader.getToken()
-            }
-        }
-        .onChange(of: httpHeader.appId) { result in
-            Task {
-                try await httpHeader.getToken()
-            }
-        }
         .task{
             do {
                 try await httpHeader.getHttpHeaders() 
             }
             catch {
-                print("ERROR retrieving http headers")
+                print("Error retrieving http headers")
             }
         }
         .environment(\.locale, Locale(identifier: self.lang))

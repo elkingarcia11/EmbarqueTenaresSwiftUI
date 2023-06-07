@@ -34,7 +34,6 @@ struct FABView : View {
                         .foregroundColor(.white)
                     
                 }
-                .padding(.horizontal)
                 .padding(.vertical)
             }
             .background(Color.whatsappGreen)

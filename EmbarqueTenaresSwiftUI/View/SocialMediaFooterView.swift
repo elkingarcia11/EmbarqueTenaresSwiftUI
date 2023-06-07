@@ -61,8 +61,7 @@ struct SocialMediaFooterView : View{
             Spacer()
         }
         .background(Color.white)
-        .cornerRadius(50)
-        .shadow(radius: 1)
+        .cornerRadius(10)
         .padding()
     }
 }

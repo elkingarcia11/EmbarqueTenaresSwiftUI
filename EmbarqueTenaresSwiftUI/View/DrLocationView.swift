@@ -110,7 +110,7 @@ struct DrLocationView: View {
                             .frame(maxWidth: .infinity)
                         Text(directions)
                             .fontWeight(.semibold)
-                            .font(.footnote)
+                            .font(.caption2)
                     }
                 }
                 .buttonStyle(.borderedProminent)
@@ -125,7 +125,7 @@ struct DrLocationView: View {
                             .frame(maxWidth: .infinity)
                         Text(call)
                             .fontWeight(.semibold)
-                            .font(.footnote)
+                            .font(.caption2)
                     }
                 }
                 .buttonStyle(.borderedProminent)
@@ -140,7 +140,7 @@ struct DrLocationView: View {
                             .frame(maxWidth: .infinity)
                         Text(email)
                             .fontWeight(.semibold)
-                            .font(.footnote)
+                            .font(.caption2)
                     }
                 }
                 .buttonStyle(.borderedProminent)
@@ -162,7 +162,7 @@ struct DrLocationView: View {
                             .frame(maxWidth: .infinity)
                         Text(more)
                             .fontWeight(.semibold)
-                            .font(.footnote)
+                            .font(.caption2)
                     }
                 }
                 .buttonStyle(.borderedProminent)

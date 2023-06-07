@@ -3,8 +3,8 @@ import SwiftUI
 
 class RatesViewModel: ObservableObject {
     
-    @Published var categories = [Category]()
-    @Published var catsAndItems = [CategoryAndItems]()
+    @Published var categories : [Category] = []
+    @Published var catsAndItems : [CategoryAndItems] = []
     @Published var isLoading = false
     
     @Published var errorMsg : String = ""
