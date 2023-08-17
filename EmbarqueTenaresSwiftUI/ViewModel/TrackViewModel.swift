@@ -71,7 +71,6 @@ final class TrackViewModel: ObservableObject {
         urlRequest.httpMethod = "GET"
         // Set up headers for login request
         let token = try await HttpHeader.firebaseToken()
-        print(token)
         urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         urlRequest.setValue(httpHeader.appId, forHTTPHeaderField: "App-Id")
         urlRequest.setValue(httpHeader.apiKey, forHTTPHeaderField: "Api-Key")
