@@ -147,6 +147,7 @@
 		1E2E552B27DFC22F00F25C10 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1E5D405729DC8198005566DD /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		1E5D405929DE0E69005566DD /* FirebaseErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseErrorModel.swift; sourceTree = "<group>"; };
+		1E6BACB02A8E657600842654 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		1E6E551428995D4600ADA8F4 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		1E6E5516289962E200ADA8F4 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		1E7413DC2A30DC2F0094F064 /* Notif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notif.swift; sourceTree = "<group>"; };
@@ -162,7 +163,6 @@
 		1EE474BB27C4082E00861E5C /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 		1EE474BD27C40FEF00861E5C /* NewYorkLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewYorkLocationView.swift; sourceTree = "<group>"; };
 		1EE474C127C41EBE00861E5C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		1EF09CFE29B25B8A00F1C206 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		1EFE3DA027E8F2ED0021F8D6 /* FAQsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsViewModel.swift; sourceTree = "<group>"; };
 		1EFE3DA227E8FC750021F8D6 /* FAQsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -274,7 +274,7 @@
 		1EE4749927C4050100861E5C = {
 			isa = PBXGroup;
 			children = (
-				1EF09CFE29B25B8A00F1C206 /* Config.xcconfig */,
+				1E6BACB02A8E657600842654 /* Config.xcconfig */,
 				1E0462EC2927F5EA00F60389 /* Tenares Shipping.entitlements */,
 				1EE474A427C4050100861E5C /* EmbarqueTenaresSwiftUI */,
 				1EE474A327C4050100861E5C /* Products */,
@@ -575,7 +575,6 @@
 /* Begin XCBuildConfiguration section */
 		1EE474AE27C4050500861E5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1EF09CFE29B25B8A00F1C206 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -638,7 +637,6 @@
 		};
 		1EE474AF27C4050500861E5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1EF09CFE29B25B8A00F1C206 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
