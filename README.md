@@ -71,11 +71,14 @@ To deploy to the app store, follow these steps:
 - Links to our social media platforms
 
 ### Screenshots
-![Landing Screen](./images/1.PNG)
-![Track Screen ](./images/2.PNG)
-![Rates Screen](./images/3.PNG)
-![Locations Screen](./images/4.PNG)
-![FAQs Snippet](./images/5.PNG)
+
+<div style="display: flex; justify-content: space-between;">
+  <img src="./images/1.PNG" alt="Landing Screen" width="30%">
+  <img src="./images/2.PNG" alt="Track Screen" width="30%">
+  <img src="./images/3.PNG" alt="Rates Screen" width="30%">
+  <img src="./images/4.PNG" alt="FAQs Screen" width="30%">
+  <img src="./images/5.PNG" alt="Location Screen" width="30%">
+</div>
 
 ## Contact
 
