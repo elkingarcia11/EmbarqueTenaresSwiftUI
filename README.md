@@ -82,4 +82,4 @@ To deploy to the app store, follow these steps:
 
 ## Contact
 
-For questions, feedback, or inquiries, feel free to contact me at elkingarcia.11@gmail.com or connect with me on [LinkedIn](https://www.linkedin.com/in/elkingarcia11/)
+For questions, feedback, or inquiries, feel free to contact me via email at elkingarcia.11@gmail.com or connect with me on [LinkedIn](https://www.linkedin.com/in/elkingarcia11/)
