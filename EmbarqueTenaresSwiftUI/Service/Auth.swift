@@ -4,6 +4,7 @@ import Firebase
 class HttpHeader : ObservableObject {
     @Published var apiKey : String = ""
     @Published var appId : String = ""
+    @Published var url : String = ""
     @Published var httpHeaderChanged : Bool = false
     
     func getHttpHeaders() async throws{
@@ -11,16 +12,19 @@ class HttpHeader : ObservableObject {
             guard let document = documentSnapshot else {
                 self.apiKey = ""
                 self.appId = ""
+                self.url = ""
                 return
             }
             
             guard let data = document.data() else {
                 self.apiKey = ""
                 self.appId = ""
+                self.url = ""
                 return
             }
             self.apiKey = data["Api-Key"] as! String
             self.appId = data["App-Id"] as! String
+            self.url = data["url"] as! String
         }
     }
 

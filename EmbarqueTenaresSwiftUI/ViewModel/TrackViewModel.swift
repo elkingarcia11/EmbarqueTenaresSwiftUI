@@ -56,7 +56,7 @@ final class TrackViewModel: ObservableObject {
     }
     
     private func fetchInvoice(invoice : String, httpHeader : HttpHeader) async throws {
-        guard let url = URL(string: "https://api.embarquero.com/api/tenares/invoice/\(invoice)") else {
+        guard let url = URL(string: "\(httpHeader.url)/invoice/\(invoice)") else {
             self.state = .failed
             self.errorMsg = "error_api"
             return

@@ -4,7 +4,6 @@ import SwiftUI
 class RatesViewModel: ObservableObject {
     
     @Published var categories : [Category] = []
-    @Published var catsAndItems : [CategoryAndItems] = []
     @Published var isLoading = false
     
     @Published var errorMsg : String = ""
@@ -28,9 +27,9 @@ class RatesViewModel: ObservableObject {
                     // No errors
                     if let snapshot = snapshot {
                         // Get all the documents and create [Items]
-                        self.categories = snapshot.documents.map{
-                            d in
-                            return Category(id: Int(d.documentID) ?? 0, name_en: d["name_en"] as? String ?? "", name_es: d["name_es"] as? String ?? "")
+                        self.categories = snapshot.documents.enumerated().map{
+                            (i,d) in
+                            return Category(id: Int(d.documentID) ?? i, name_en: d["name_en"] as? String ?? "", name_es: d["name_es"] as? String ?? "")
                         }
                         self.fetchItems()
                         self.statusCode = 1
@@ -49,7 +48,7 @@ class RatesViewModel: ObservableObject {
     
     private func fetchItems(){
         let db = Firestore.firestore()
-        for category in self.categories {
+        for (index, category) in self.categories.enumerated() {
             let docId = String(category.id)
             db.collection("rates").document(docId).collection("items").getDocuments{
                 snapshot, error in
@@ -61,14 +60,14 @@ class RatesViewModel: ObservableObject {
                         // Get all the documents and create [Items]
                         rateItems = snapshot.documents.map{
                             d in
-                            return Item(id: Int(d.documentID) ?? 0, name_en: d["name_en"] as? String ?? "", name_es: d["name_es"] as? String ?? "", price:  d["price"] as? String ?? "")
+                            return Item(id: UUID(uuidString: d.documentID) ?? UUID(), name_en: d["name_en"] as? String ?? "", name_es: d["name_es"] as? String ?? "", price:  d["price"] as? String ?? "")
                         }
                         self.statusCode = 1
                     } else {
                         self.statusCode = -1
                         self.errorMsg = "error_rates"
                     }
-                    self.catsAndItems.append(CategoryAndItems(id: category.id, category: category, items: rateItems))
+                    self.categories[index].items = rateItems
                 } else {
                     self.statusCode = -1
                     self.errorMsg = "error_rates"
