@@ -5,8 +5,6 @@ struct RatesView: View {
     @Binding var lang: String
     @StateObject var ratesViewModel = RatesViewModel()
     
-    let whatsapp : LocalizedStringKey = "whatsapp"
-    
     var body: some View {
         ZStack(alignment: .bottom){
             Color.light
@@ -46,7 +44,7 @@ struct RatesView: View {
                         
                     }
                 } // VStack
-                FABView(text: whatsapp, image: "whatsapp")
+                FABView(image: "whatsapp")
             }
         } // ZStack
     }

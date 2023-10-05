@@ -15,7 +15,7 @@
 		1E0462E329216E1900F60389 /* CollapsibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E229216E1900F60389 /* CollapsibleView.swift */; };
 		1E0462E529216E3900F60389 /* PricePillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E429216E3900F60389 /* PricePillView.swift */; };
 		1E0462E729216E5E00F60389 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E629216E5E00F60389 /* ProgressBarView.swift */; };
-		1E0462F1292A8D1200F60389 /* AddContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462F0292A8D1200F60389 /* AddContact.swift */; };
+		1E0462F1292A8D1200F60389 /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462F0292A8D1200F60389 /* AddContactView.swift */; };
 		1E1E5DA927EA366D00BCC00A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DA827EA366D00BCC00A /* FirebaseAnalytics */; };
 		1E1E5DAB27EA366D00BCC00A /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DAA27EA366D00BCC00A /* FirebaseAnalyticsSwift-Beta */; };
 		1E1E5DAD27EA366D00BCC00A /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1E5DAC27EA366D00BCC00A /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -50,6 +50,7 @@
 		1E1E5DEC27F23B2300BCC00A /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1E5DEB27F23B2300BCC00A /* TrackViewModel.swift */; };
 		1E2E552527DFA66800F25C10 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E552427DFA66800F25C10 /* TrackView.swift */; };
 		1E2E552827DFC22D00F25C10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E2E552A27DFC22D00F25C10 /* Localizable.strings */; };
+		1E42DBAC2AC763BE00A4120B /* SocialMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42DBAB2AC763BE00A4120B /* SocialMediaButton.swift */; };
 		1E5D405829DC8198005566DD /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D405729DC8198005566DD /* Auth.swift */; };
 		1E5D405A29DE0E69005566DD /* FirebaseErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D405929DE0E69005566DD /* FirebaseErrorModel.swift */; };
 		1E6E551528995D4600ADA8F4 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E551428995D4600ADA8F4 /* SplashScreenView.swift */; };
@@ -136,7 +137,7 @@
 		1E0462E429216E3900F60389 /* PricePillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricePillView.swift; sourceTree = "<group>"; };
 		1E0462E629216E5E00F60389 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		1E0462EC2927F5EA00F60389 /* Tenares Shipping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tenares Shipping.entitlements"; sourceTree = "<group>"; };
-		1E0462F0292A8D1200F60389 /* AddContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContact.swift; sourceTree = "<group>"; };
+		1E0462F0292A8D1200F60389 /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
 		1E1E5DE027ECF79800BCC00A /* RatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesModel.swift; sourceTree = "<group>"; };
 		1E1E5DE227ECF8F800BCC00A /* RatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModel.swift; sourceTree = "<group>"; };
 		1E1E5DE427EF765000BCC00A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 		1E2E552427DFA66800F25C10 /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
 		1E2E552927DFC22D00F25C10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1E2E552B27DFC22F00F25C10 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1E42DBAB2AC763BE00A4120B /* SocialMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaButton.swift; sourceTree = "<group>"; };
 		1E5D405729DC8198005566DD /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		1E5D405929DE0E69005566DD /* FirebaseErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseErrorModel.swift; sourceTree = "<group>"; };
 		1E6BACB02A8E657600842654 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				1EE474A727C4050100861E5C /* MainView.swift */,
+				1E42DBAB2AC763BE00A4120B /* SocialMediaButton.swift */,
 				1E2E552427DFA66800F25C10 /* TrackView.swift */,
 				1EE474B727C4081000861E5C /* RatesView.swift */,
 				1EE474B927C4082100861E5C /* FAQsView.swift */,
@@ -356,7 +359,7 @@
 				1E0462E229216E1900F60389 /* CollapsibleView.swift */,
 				1E0462E429216E3900F60389 /* PricePillView.swift */,
 				1E0462E629216E5E00F60389 /* ProgressBarView.swift */,
-				1E0462F0292A8D1200F60389 /* AddContact.swift */,
+				1E0462F0292A8D1200F60389 /* AddContactView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -545,10 +548,11 @@
 				1EFE3DA127E8F2ED0021F8D6 /* FAQsViewModel.swift in Sources */,
 				1E6E551528995D4600ADA8F4 /* SplashScreenView.swift in Sources */,
 				1E5D405829DC8198005566DD /* Auth.swift in Sources */,
+				1E42DBAC2AC763BE00A4120B /* SocialMediaButton.swift in Sources */,
 				1EE474BE27C40FEF00861E5C /* NewYorkLocationView.swift in Sources */,
 				1EE474BA27C4082100861E5C /* FAQsView.swift in Sources */,
 				1EE474B827C4081000861E5C /* RatesView.swift in Sources */,
-				1E0462F1292A8D1200F60389 /* AddContact.swift in Sources */,
+				1E0462F1292A8D1200F60389 /* AddContactView.swift in Sources */,
 				1E0462E529216E3900F60389 /* PricePillView.swift in Sources */,
 				1EE474BC27C4082E00861E5C /* LocationsView.swift in Sources */,
 				1E6E5517289962E200ADA8F4 /* Fonts.swift in Sources */,

@@ -1,87 +1,71 @@
 import Foundation
 import SwiftUI
 
+/// A SwiftUI view representing a social media footer with buttons to open WhatsApp, Facebook, and Instagram links.
 struct SocialMediaFooterView : View{
-    
+    /// The environment variable for opening URLs, provided by SwiftUI.
     @Environment(\.openURL) var openURL
     
-    /*
-    let whatsapp = UIImage(named: "whatsapp")
-    let facebook = UIImage(named: "facebook")
-    let instagram = UIImage(named: "instagram")
     
-    // Define the desired size for all images
-    let targetSize = CGSize(width: 50, height: 50)
-    
-    // Function to resize an image
-    func resizeImage(_ image: UIImage?, toSize size: CGSize) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
-        image?.draw(in: CGRect(origin: CGPoint.zero, size: size))
-        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return resizedImage
-    }
-    
-    // Resize each image to the desired size
-    let resizedImage1 = resizeImage(image1, toSize: targetSize)
-    let resizedImage2 = resizeImage(image2, toSize: targetSize)
-    let resizedImage3 = resizeImage(image3, toSize: targetSize)
-
-    */
+    /// Opens the corresponding link based on the given index.
+    ///
+    /// - Parameter index: The index of the social media platform to open. Use 0 for WhatsApp, 1 for Facebook, and 2 for Instagram.
     func openLink(index : Int) {
-        if index == 0 {
-            if let url = URL(string: "https://api.whatsapp.com/send?phone=17185621300") {
-                openURL(url)
-            }
-        } else if index == 1 {
-            if let url = URL(string: "fb://profile?id=embarquetenaress") {
-                openURL(url) { accepted in
-                    let _ = accepted ? () : tryBackUpLink()
-                }
-            }
-        } else if index == 2 {
-            if let url = URL(string: "https://instagram.com/embarquetenares") {
-                openURL(url)
-            }
+        switch index {
+        case 0:
+            openURLIfPossible("https://api.whatsapp.com/send?phone=17185621300")
+        case 1:
+            openFacebookProfile()
+        case 2:
+            openURLIfPossible("https://instagram.com/embarquetenares")
+        default:
+            break
         }
     }
     
-    func tryBackUpLink() {
-        if let url = URL(string: "https://www.facebook.com/EmbarqueTenaress/") {
+    /// Opens a URL if it can be created from the provided string.
+    ///
+    /// - Parameter urlString: The URL string to open.
+    func openURLIfPossible(_ urlString: String) {
+        if let url = URL(string: urlString) {
             openURL(url)
+        }
+    }
+    
+    /// Opens the Facebook profile using the Facebook app if available, or falls back to a web URL.
+    func openFacebookProfile() {
+        if let url = URL(string: "fb://profile?id=embarquetenaress") {
+            openURL(url) { accepted in
+                if !accepted {
+                    openURLIfPossible("https://www.facebook.com/EmbarqueTenaress/")
+                }
+            }
+        } else {
+            openURLIfPossible("https://www.facebook.com/EmbarqueTenaress/")
         }
     }
     
     var body: some View{
         HStack {
             Spacer()
-            Button(action: {openLink(index: 0)}) {
-                Image("whatsapp")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
+            SocialMediaButton(imageName: "whatsapp", size: 65) {
+                openLink(index: 0)
             }
-            .shadow(color: Color(UIColor.lightGray), radius: 2, x: 3, y: 3)
             Spacer()
-            Button(action: {openLink(index: 1)}) {
-                Image("facebook")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
+            SocialMediaButton(imageName: "facebook", size: 50) {
+                openLink(index: 1)
             }
-            .shadow(color: Color(UIColor.lightGray), radius: 2, x: 3, y: 3)
             Spacer()
-            Button(action: {openLink(index: 2)}) {
-                Image("instagram")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
+            SocialMediaButton(imageName: "instagram", size: 50) {
+                openLink(index: 2)
             }
-            .shadow(color: Color(UIColor.lightGray), radius: 2, x: 3, y: 3)
             Spacer()
         }
+        .frame(
+            maxWidth: .infinity,
+            alignment: .center
+        )
         .background(Color.white)
         .cornerRadius(10)
         .padding()
-    }
-}
+    }}
