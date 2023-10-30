@@ -91,6 +91,9 @@ struct MainView: View {
                     }
                 }
                 .navigationBarItems(
+                    leading: Text("V 1.1")
+                        .font(.subheadline)
+                        .foregroundColor(Color.gray),
                     trailing:
                         Menu {
                             Button("English", action: {self.lang = "en"})

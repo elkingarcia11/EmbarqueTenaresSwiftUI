@@ -56,6 +56,7 @@
 		1E6E551528995D4600ADA8F4 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E551428995D4600ADA8F4 /* SplashScreenView.swift */; };
 		1E6E5517289962E200ADA8F4 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E5516289962E200ADA8F4 /* Fonts.swift */; };
 		1E7413DD2A30DC2F0094F064 /* Notif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7413DC2A30DC2F0094F064 /* Notif.swift */; };
+		1EAE89E52AF01FB000ABB72A /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1EAE89E42AF01FB000ABB72A /* Config.xcconfig */; };
 		1EBD54522885A21F0007A77B /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBD54512885A21F0007A77B /* TrackModel.swift */; };
 		1EBD5454288701DE0007A77B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EBD5453288701DE0007A77B /* GoogleService-Info.plist */; };
 		1EBD54572888466B0007A77B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1EBD54562888466B0007A77B /* FirebaseAnalytics */; };
@@ -149,10 +150,10 @@
 		1E42DBAB2AC763BE00A4120B /* SocialMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaButton.swift; sourceTree = "<group>"; };
 		1E5D405729DC8198005566DD /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		1E5D405929DE0E69005566DD /* FirebaseErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseErrorModel.swift; sourceTree = "<group>"; };
-		1E6BACB02A8E657600842654 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		1E6E551428995D4600ADA8F4 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		1E6E5516289962E200ADA8F4 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		1E7413DC2A30DC2F0094F064 /* Notif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notif.swift; sourceTree = "<group>"; };
+		1EAE89E42AF01FB000ABB72A /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		1EBD54512885A21F0007A77B /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
 		1EBD5453288701DE0007A77B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EE474A227C4050100861E5C /* Tenares Shipping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenares Shipping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,7 +277,7 @@
 		1EE4749927C4050100861E5C = {
 			isa = PBXGroup;
 			children = (
-				1E6BACB02A8E657600842654 /* Config.xcconfig */,
+				1EAE89E42AF01FB000ABB72A /* Config.xcconfig */,
 				1E0462EC2927F5EA00F60389 /* Tenares Shipping.entitlements */,
 				1EE474A427C4050100861E5C /* EmbarqueTenaresSwiftUI */,
 				1EE474A327C4050100861E5C /* Products */,
@@ -516,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EE474AD27C4050500861E5C /* Preview Assets.xcassets in Resources */,
+				1EAE89E52AF01FB000ABB72A /* Config.xcconfig in Resources */,
 				1EBD5454288701DE0007A77B /* GoogleService-Info.plist in Resources */,
 				1E2E552827DFC22D00F25C10 /* Localizable.strings in Resources */,
 				1EE474AA27C4050500861E5C /* Assets.xcassets in Resources */,
@@ -579,7 +581,6 @@
 /* Begin XCBuildConfiguration section */
 		1EE474AE27C4050500861E5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E6BACB02A8E657600842654 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -642,7 +643,6 @@
 		};
 		1EE474AF27C4050500861E5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E6BACB02A8E657600842654 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
