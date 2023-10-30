@@ -25,7 +25,7 @@ struct EmbarqueTenaresSwiftUIApp: App {
             if let auth_p = Bundle.main.infoDictionary?["AUTH_P"] as? String {
                 Auth.auth().signIn(withEmail: auth_u, password: auth_p){
                     (result, error) in
-                    if error != nil {
+                    if error == nil {
                         print("Signed in succesfully")
                     } else {
                         print(error?.localizedDescription ?? "Error signing in")
