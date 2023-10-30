@@ -20,20 +20,6 @@ struct EmbarqueTenaresSwiftUIApp: App {
         // Configure Firebase
         FirebaseApp.configure()
         
-        // Get the app's bundle identifier from the info.plist file.
-        if let auth_u = Bundle.main.infoDictionary?["AUTH_U"] as? String {
-            if let auth_p = Bundle.main.infoDictionary?["AUTH_P"] as? String {
-                Auth.auth().signIn(withEmail: auth_u, password: auth_p){
-                    (result, error) in
-                    if error == nil {
-                        print("Signed in succesfully")
-                    } else {
-                        print(error?.localizedDescription ?? "Error signing in")
-                    }
-                }
-            }
-        }
-        
         let components = DateComponents(year: 2024, month: 1, day: 10, hour: 12, minute: 0)
         // Create a new instance of the Notif class.
         _ = Notif(title: "¡Ofertas disponibles!", body: "¡Aprovecha nuestras ofertas y llámanos hoy!", dateComponent: components)

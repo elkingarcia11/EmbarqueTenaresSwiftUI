@@ -68,7 +68,6 @@
 		1E42DBAB2AC763BE00A4120B /* SocialMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaButton.swift; sourceTree = "<group>"; };
 		1E5D405729DC8198005566DD /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		1E5D405929DE0E69005566DD /* FirebaseErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseErrorModel.swift; sourceTree = "<group>"; };
-		1E6061C52AF068110079385A /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		1E6E551428995D4600ADA8F4 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		1E6E5516289962E200ADA8F4 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		1E7413DC2A30DC2F0094F064 /* Notif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notif.swift; sourceTree = "<group>"; };
@@ -142,7 +141,6 @@
 				1EE474C127C41EBE00861E5C /* Color.swift */,
 				1EE474A927C4050500861E5C /* Assets.xcassets */,
 				1EE474AB27C4050500861E5C /* Preview Content */,
-				1E6061C52AF068110079385A /* Config.xcconfig */,
 			);
 			path = EmbarqueTenaresSwiftUI;
 			sourceTree = "<group>";
@@ -333,7 +331,6 @@
 /* Begin XCBuildConfiguration section */
 		1EE474AE27C4050500861E5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E6061C52AF068110079385A /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -396,7 +393,6 @@
 		};
 		1EE474AF27C4050500861E5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E6061C52AF068110079385A /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
