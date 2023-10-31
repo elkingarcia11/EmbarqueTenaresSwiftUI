@@ -28,6 +28,17 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1EAC36AC2AF0AD07007272B2"
+               BuildableName = "EmbarqueTenaresSwiftUITests.xctest"
+               BlueprintName = "EmbarqueTenaresSwiftUITests"
+               ReferencedContainer = "container:Tenares Shipping.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

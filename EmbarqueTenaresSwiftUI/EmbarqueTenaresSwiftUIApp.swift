@@ -34,26 +34,30 @@ struct EmbarqueTenaresSwiftUIApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     init() {
-        
-        let components = DateComponents(year: 2024, month: 1, day: 10, hour: 12, minute: 0)
-        // Create a new instance of the Notif class.
-        _ = Notif(title: "¡Ofertas disponibles!", body: "¡Aprovecha nuestras ofertas y llámanos hoy!", dateComponent: components)
-        
-        let components1 = DateComponents(year: 2024, month: 3, day: 20, hour: 12, minute: 0)
-        // Create a new instance of the Notif class.
-        _ = Notif(title: "¡Ofertas disponibles!", body: "¡Aprovecha nuestras ofertas y llámanos hoy!", dateComponent: components1)
-        
-        let components2 = DateComponents(year: 2024, month: 5, day: 31, hour: 12, minute: 0)
-        // Create a new instance of the Notif class.
-        _ = Notif(title: "¡El verano ya casi está aquí!", body: "¡Envíe sus artículos de vacaciones con nosotros!", dateComponent: components2)
-        
-        let components3 = DateComponents(year: 2023, month: 8, day: 15, hour: 12, minute: 0)
-        // Create a new instance of the Notif class.
-        _ = Notif(title: "¡Ofertas disponibles!", body: "¡Aprovecha nuestras ofertas y llámanos hoy!", dateComponent: components3)
-        
-        let components4 = DateComponents(year: 2023, month: 10, day: 27, hour: 12, minute: 0)
-        // Create a new instance of the Notif class.
-        _ = Notif(title: "¡La Navidad ya casi está aquí!", body:  "¡Llama y programa tu cita antes del 20 de noviembre para recibir tus artículos antes de Navidad!", dateComponent: components4)
+        do{
+            let components = DateComponents(year: 2024, month: 1, day: 10, hour: 12, minute: 0)
+            // Create a new instance of the Notif class.
+            _ = try Notif(title: "¡Ofertas disponibles!", body: "¡Aprovecha nuestras ofertas y llámanos hoy!", dateComponent: components)
+            
+            let components1 = DateComponents(year: 2024, month: 3, day: 20, hour: 12, minute: 0)
+            // Create a new instance of the Notif class.
+            _ = try Notif(title: "¡Ofertas disponibles!", body: "¡Aprovecha nuestras ofertas y llámanos hoy!", dateComponent: components1)
+            
+            let components2 = DateComponents(year: 2024, month: 5, day: 31, hour: 12, minute: 0)
+            // Create a new instance of the Notif class.
+            _ = try Notif(title: "¡El verano ya casi está aquí!", body: "¡Envíe sus artículos de vacaciones con nosotros!", dateComponent: components2)
+            
+            let components3 = DateComponents(year: 2023, month: 8, day: 15, hour: 12, minute: 0)
+            // Create a new instance of the Notif class.
+            _ = try Notif(title: "¡Ofertas disponibles!", body: "¡Aprovecha nuestras ofertas y llámanos hoy!", dateComponent: components3)
+            
+            let components4 = DateComponents(year: 2023, month: 10, day: 27, hour: 12, minute: 0)
+            // Create a new instance of the Notif class.
+            _ = try Notif(title: "¡La Navidad ya casi está aquí!", body:  "¡Llama y programa tu cita antes del 20 de noviembre para recibir tus artículos antes de Navidad!", dateComponent: components4)
+        } catch{
+            // Handle the error.
+            print(error.localizedDescription)
+        }
     }
     
     var body: some Scene {

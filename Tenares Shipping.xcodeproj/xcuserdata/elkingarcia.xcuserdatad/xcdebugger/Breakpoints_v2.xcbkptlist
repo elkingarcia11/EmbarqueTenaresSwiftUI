@@ -20,5 +20,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3640B46-CC1C-4925-811F-335113B58CC7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EmbarqueTenaresSwiftUITests/NotifTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "testInvalidDateComponents()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F3640B46-CC1C-4925-811F-335113B58CC7 - 742a7448ffb40bf5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EmbarqueTenaresSwiftUITests.NotifTests.testInvalidDateComponents() -&gt; ()"
+                  moduleName = "EmbarqueTenaresSwiftUITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkingarcia/Documents/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUITests/NotifTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "220">
+               </Location>
+               <Location
+                  uuid = "F3640B46-CC1C-4925-811F-335113B58CC7 - 742a7448ffb40bf5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EmbarqueTenaresSwiftUITests.NotifTests.testInvalidDateComponents() -&gt; ()"
+                  moduleName = "EmbarqueTenaresSwiftUITests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elkingarcia/Documents/ios/EmbarqueTenaresSwiftUI/EmbarqueTenaresSwiftUITests/NotifTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "212">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
