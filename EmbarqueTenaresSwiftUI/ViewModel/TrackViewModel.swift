@@ -61,7 +61,6 @@ final class TrackViewModel: ObservableObject {
             self.errorMsg = "error_api"
             return
         }
-        
         var urlRequest = URLRequest(url: url)
         
         var result : APIResponse<InvoiceResponse>

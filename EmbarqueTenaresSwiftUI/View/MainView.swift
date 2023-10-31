@@ -91,7 +91,7 @@ struct MainView: View {
                     }
                 }
                 .navigationBarItems(
-                    leading: Text("V 1.1")
+                    leading: Text("V 4.1")
                         .font(.subheadline)
                         .foregroundColor(Color.gray),
                     trailing:
