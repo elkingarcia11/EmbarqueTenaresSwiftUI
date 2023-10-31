@@ -18,7 +18,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             if authResult != nil {
                 print("Successfully signed in")
             } else {
-                print("Error signing in")
+                print("Error signing in \(error)")
             }
         }
         return true
