@@ -1,6 +1,4 @@
-import Foundation
 import Firebase
-import SwiftUI
 
 @MainActor
 final class TrackViewModel: ObservableObject {
@@ -69,7 +67,8 @@ final class TrackViewModel: ObservableObject {
         // Set up headers for login request
         urlRequest.httpMethod = "GET"
         // Set up headers for login request
-        let token = try await HttpHeader.firebaseToken()
+        let token = try await httpHeader.firebaseToken()
+        print(token)
         urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         urlRequest.setValue(httpHeader.appId, forHTTPHeaderField: "App-Id")
         urlRequest.setValue(httpHeader.apiKey, forHTTPHeaderField: "Api-Key")

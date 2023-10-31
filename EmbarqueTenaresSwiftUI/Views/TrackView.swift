@@ -1,5 +1,4 @@
 import SwiftUI
-import Foundation
 
 struct TrackView: View {
     @Binding var title: LocalizedStringKey

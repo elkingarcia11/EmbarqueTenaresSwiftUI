@@ -1,5 +1,3 @@
-import Foundation
-
 enum APIState : Equatable {
     case successful
     case failed

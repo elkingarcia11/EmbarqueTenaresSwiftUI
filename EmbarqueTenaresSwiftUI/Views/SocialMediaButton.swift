@@ -1,10 +1,3 @@
-//
-//  SocialMediaButton.swift
-//  Tenares Shipping
-//
-//  Created by Elkin Garcia on 9/29/23.
-//
-
 import SwiftUI
 
 struct SocialMediaButton: View {

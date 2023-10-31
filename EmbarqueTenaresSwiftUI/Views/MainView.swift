@@ -1,7 +1,4 @@
 import SwiftUI
-import UIKit
-import NaturalLanguage
-import CoreML
 
 let screenWidth = UIScreen.main.bounds.size.width
 let screenHeight = UIScreen.main.bounds.size.height

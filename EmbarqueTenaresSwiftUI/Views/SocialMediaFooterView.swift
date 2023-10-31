@@ -1,4 +1,3 @@
-import Foundation
 import SwiftUI
 
 /// A SwiftUI view representing a social media footer with buttons to open WhatsApp, Facebook, and Instagram links.

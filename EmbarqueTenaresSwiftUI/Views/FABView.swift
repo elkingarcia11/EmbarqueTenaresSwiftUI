@@ -1,4 +1,3 @@
-import Foundation
 import SwiftUI
 
 /// A SwiftUI view representing a Floating Action Button (FAB) that opens WhatsApp when tapped.

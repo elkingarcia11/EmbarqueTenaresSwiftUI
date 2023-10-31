@@ -1,5 +1,4 @@
 import Firebase
-import SwiftUI
 
 class RatesViewModel: ObservableObject {
     

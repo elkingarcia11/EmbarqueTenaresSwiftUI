@@ -16,7 +16,7 @@
 		1E0462E529216E3900F60389 /* PricePillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E429216E3900F60389 /* PricePillView.swift */; };
 		1E0462E729216E5E00F60389 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462E629216E5E00F60389 /* ProgressBarView.swift */; };
 		1E0462F1292A8D1200F60389 /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0462F0292A8D1200F60389 /* AddContactView.swift */; };
-		1E1E5DE127ECF79800BCC00A /* RatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1E5DE027ECF79800BCC00A /* RatesModel.swift */; };
+		1E1E5DE127ECF79800BCC00A /* Rates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1E5DE027ECF79800BCC00A /* Rates.swift */; };
 		1E1E5DE327ECF8F800BCC00A /* RatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1E5DE227ECF8F800BCC00A /* RatesViewModel.swift */; };
 		1E1E5DE527EF765100BCC00A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1E5DE427EF765000BCC00A /* ErrorView.swift */; };
 		1E1E5DEC27F23B2300BCC00A /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1E5DEB27F23B2300BCC00A /* TrackViewModel.swift */; };
@@ -24,7 +24,7 @@
 		1E2E552827DFC22D00F25C10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E2E552A27DFC22D00F25C10 /* Localizable.strings */; };
 		1E42DBAC2AC763BE00A4120B /* SocialMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42DBAB2AC763BE00A4120B /* SocialMediaButton.swift */; };
 		1E5D405829DC8198005566DD /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D405729DC8198005566DD /* Auth.swift */; };
-		1E5D405A29DE0E69005566DD /* FirebaseErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D405929DE0E69005566DD /* FirebaseErrorModel.swift */; };
+		1E5D405A29DE0E69005566DD /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D405929DE0E69005566DD /* FirebaseError.swift */; };
 		1E6061C02AF044FB0079385A /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 1E6061BF2AF044FB0079385A /* FirebaseAppCheck */; };
 		1E6061C22AF044FB0079385A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1E6061C12AF044FB0079385A /* FirebaseAuth */; };
 		1E6061C42AF044FB0079385A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1E6061C32AF044FB0079385A /* FirebaseFirestore */; };
@@ -33,8 +33,11 @@
 		1E7413DD2A30DC2F0094F064 /* Notif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7413DC2A30DC2F0094F064 /* Notif.swift */; };
 		1EAC36B02AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAC36AF2AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests.swift */; };
 		1EAC36B92AF0AE7A007272B2 /* NotifTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAC36B82AF0AE7A007272B2 /* NotifTests.swift */; };
-		1EAC36BD2AF0AFA1007272B2 /* Notif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7413DC2A30DC2F0094F064 /* Notif.swift */; };
-		1EBD54522885A21F0007A77B /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBD54512885A21F0007A77B /* TrackModel.swift */; };
+		1EAC36C12AF0C74D007272B2 /* HttpHeaderTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAC36C02AF0C74D007272B2 /* HttpHeaderTestCases.swift */; };
+		1EAC36C32AF0CC32007272B2 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D405729DC8198005566DD /* Auth.swift */; };
+		1EAC36C42AF0CC32007272B2 /* Notif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7413DC2A30DC2F0094F064 /* Notif.swift */; };
+		1EAC36C52AF0CC5C007272B2 /* FirebaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D405929DE0E69005566DD /* FirebaseError.swift */; };
+		1EBD54522885A21F0007A77B /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBD54512885A21F0007A77B /* Track.swift */; };
 		1EBD5454288701DE0007A77B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EBD5453288701DE0007A77B /* GoogleService-Info.plist */; };
 		1EE474A627C4050100861E5C /* EmbarqueTenaresSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474A527C4050100861E5C /* EmbarqueTenaresSwiftUIApp.swift */; };
 		1EE474A827C4050100861E5C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474A727C4050100861E5C /* MainView.swift */; };
@@ -46,7 +49,7 @@
 		1EE474BE27C40FEF00861E5C /* NewYorkLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474BD27C40FEF00861E5C /* NewYorkLocationView.swift */; };
 		1EE474C227C41EBE00861E5C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474C127C41EBE00861E5C /* Color.swift */; };
 		1EFE3DA127E8F2ED0021F8D6 /* FAQsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFE3DA027E8F2ED0021F8D6 /* FAQsViewModel.swift */; };
-		1EFE3DA327E8FC750021F8D6 /* FAQsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFE3DA227E8FC750021F8D6 /* FAQsModel.swift */; };
+		1EFE3DA327E8FC750021F8D6 /* FAQs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFE3DA227E8FC750021F8D6 /* FAQs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +73,7 @@
 		1E0462E629216E5E00F60389 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		1E0462EC2927F5EA00F60389 /* Tenares Shipping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tenares Shipping.entitlements"; sourceTree = "<group>"; };
 		1E0462F0292A8D1200F60389 /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
-		1E1E5DE027ECF79800BCC00A /* RatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesModel.swift; sourceTree = "<group>"; };
+		1E1E5DE027ECF79800BCC00A /* Rates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rates.swift; sourceTree = "<group>"; };
 		1E1E5DE227ECF8F800BCC00A /* RatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModel.swift; sourceTree = "<group>"; };
 		1E1E5DE427EF765000BCC00A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		1E1E5DEB27F23B2300BCC00A /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
@@ -80,14 +83,15 @@
 		1E2E552B27DFC22F00F25C10 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1E42DBAB2AC763BE00A4120B /* SocialMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaButton.swift; sourceTree = "<group>"; };
 		1E5D405729DC8198005566DD /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
-		1E5D405929DE0E69005566DD /* FirebaseErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseErrorModel.swift; sourceTree = "<group>"; };
+		1E5D405929DE0E69005566DD /* FirebaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseError.swift; sourceTree = "<group>"; };
 		1E6E551428995D4600ADA8F4 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		1E6E5516289962E200ADA8F4 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		1E7413DC2A30DC2F0094F064 /* Notif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notif.swift; sourceTree = "<group>"; };
 		1EAC36AD2AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmbarqueTenaresSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EAC36AF2AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbarqueTenaresSwiftUITests.swift; sourceTree = "<group>"; };
 		1EAC36B82AF0AE7A007272B2 /* NotifTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifTests.swift; sourceTree = "<group>"; };
-		1EBD54512885A21F0007A77B /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
+		1EAC36C02AF0C74D007272B2 /* HttpHeaderTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpHeaderTestCases.swift; sourceTree = "<group>"; };
+		1EBD54512885A21F0007A77B /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		1EBD5453288701DE0007A77B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EE474A227C4050100861E5C /* Tenares Shipping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenares Shipping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE474A527C4050100861E5C /* EmbarqueTenaresSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbarqueTenaresSwiftUIApp.swift; sourceTree = "<group>"; };
@@ -100,7 +104,7 @@
 		1EE474BD27C40FEF00861E5C /* NewYorkLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewYorkLocationView.swift; sourceTree = "<group>"; };
 		1EE474C127C41EBE00861E5C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		1EFE3DA027E8F2ED0021F8D6 /* FAQsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsViewModel.swift; sourceTree = "<group>"; };
-		1EFE3DA227E8FC750021F8D6 /* FAQsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsModel.swift; sourceTree = "<group>"; };
+		1EFE3DA227E8FC750021F8D6 /* FAQs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,20 +128,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E5D405629DC8188005566DD /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				1E5D405729DC8198005566DD /* Auth.swift */,
-				1E7413DC2A30DC2F0094F064 /* Notif.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		1EAC36AE2AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
 				1EAC36AF2AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests.swift */,
 				1EAC36B82AF0AE7A007272B2 /* NotifTests.swift */,
+				1EAC36C02AF0C74D007272B2 /* HttpHeaderTestCases.swift */,
 			);
 			path = EmbarqueTenaresSwiftUITests;
 			sourceTree = "<group>";
@@ -164,7 +160,6 @@
 		1EE474A427C4050100861E5C /* EmbarqueTenaresSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				1E5D405629DC8188005566DD /* Services */,
 				1EFE3D9F27E8E3270021F8D6 /* Views */,
 				1EFE3D9E27E8E3230021F8D6 /* ViewModels */,
 				1EFE3D9D27E8E31E0021F8D6 /* Model */,
@@ -190,11 +185,13 @@
 		1EFE3D9D27E8E31E0021F8D6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1EFE3DA227E8FC750021F8D6 /* FAQsModel.swift */,
-				1E1E5DE027ECF79800BCC00A /* RatesModel.swift */,
-				1EBD54512885A21F0007A77B /* TrackModel.swift */,
+				1EFE3DA227E8FC750021F8D6 /* FAQs.swift */,
+				1E5D405729DC8198005566DD /* Auth.swift */,
+				1E7413DC2A30DC2F0094F064 /* Notif.swift */,
+				1E1E5DE027ECF79800BCC00A /* Rates.swift */,
+				1EBD54512885A21F0007A77B /* Track.swift */,
 				1E6E5516289962E200ADA8F4 /* Fonts.swift */,
-				1E5D405929DE0E69005566DD /* FirebaseErrorModel.swift */,
+				1E5D405929DE0E69005566DD /* FirebaseError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,7 +342,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EAC36BD2AF0AFA1007272B2 /* Notif.swift in Sources */,
+				1EAC36C52AF0CC5C007272B2 /* FirebaseError.swift in Sources */,
+				1EAC36C32AF0CC32007272B2 /* Auth.swift in Sources */,
+				1EAC36C42AF0CC32007272B2 /* Notif.swift in Sources */,
+				1EAC36C12AF0C74D007272B2 /* HttpHeaderTestCases.swift in Sources */,
 				1EAC36B92AF0AE7A007272B2 /* NotifTests.swift in Sources */,
 				1EAC36B02AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests.swift in Sources */,
 			);
@@ -362,14 +362,14 @@
 				1E0462D929214B2600F60389 /* LocationViewModel.swift in Sources */,
 				1E0462DB29215B6500F60389 /* DrLocationView.swift in Sources */,
 				1EE474A627C4050100861E5C /* EmbarqueTenaresSwiftUIApp.swift in Sources */,
-				1E1E5DE127ECF79800BCC00A /* RatesModel.swift in Sources */,
-				1EBD54522885A21F0007A77B /* TrackModel.swift in Sources */,
+				1E1E5DE127ECF79800BCC00A /* Rates.swift in Sources */,
+				1EBD54522885A21F0007A77B /* Track.swift in Sources */,
 				1E2E552527DFA66800F25C10 /* TrackView.swift in Sources */,
 				1E0462E729216E5E00F60389 /* ProgressBarView.swift in Sources */,
 				1E0462DD29216D0400F60389 /* SocialMediaFooterView.swift in Sources */,
 				1E1E5DE527EF765100BCC00A /* ErrorView.swift in Sources */,
 				1E0462E129216DBA00F60389 /* FABView.swift in Sources */,
-				1EFE3DA327E8FC750021F8D6 /* FAQsModel.swift in Sources */,
+				1EFE3DA327E8FC750021F8D6 /* FAQs.swift in Sources */,
 				1E0462DF29216D5400F60389 /* CollapsibleRowView.swift in Sources */,
 				1EFE3DA127E8F2ED0021F8D6 /* FAQsViewModel.swift in Sources */,
 				1E6E551528995D4600ADA8F4 /* SplashScreenView.swift in Sources */,
@@ -384,7 +384,7 @@
 				1E6E5517289962E200ADA8F4 /* Fonts.swift in Sources */,
 				1EE474C227C41EBE00861E5C /* Color.swift in Sources */,
 				1E0462E329216E1900F60389 /* CollapsibleView.swift in Sources */,
-				1E5D405A29DE0E69005566DD /* FirebaseErrorModel.swift in Sources */,
+				1E5D405A29DE0E69005566DD /* FirebaseError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +420,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 49AKYU26GJ;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = elkingarcia.EmbarqueTenaresSwiftUITests;
@@ -427,7 +428,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tenares Shipping.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tenares Shipping";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tenares Shipping.app/Tenares Shipping";
 			};
 			name = Debug;
 		};
@@ -440,6 +441,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 49AKYU26GJ;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = elkingarcia.EmbarqueTenaresSwiftUITests;
@@ -447,7 +449,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tenares Shipping.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tenares Shipping";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tenares Shipping.app/Tenares Shipping";
 			};
 			name = Release;
 		};

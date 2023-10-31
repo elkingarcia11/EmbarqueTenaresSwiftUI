@@ -1,5 +1,3 @@
-import Foundation
-
 struct Fonts {
     public var one : String = "BodoniSvtyTwoITCTT-Book"
     public var two : String = "BodoniSvtyTwoOSITCTT-Book"

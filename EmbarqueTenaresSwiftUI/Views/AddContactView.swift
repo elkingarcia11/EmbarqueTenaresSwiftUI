@@ -1,11 +1,3 @@
-//
-//  AddContact.swift
-//  Tenares Shipping
-//
-//  Created by Elkin Garcia on 11/20/22.
-//
-
-import Foundation
 import SwiftUI
 import Contacts
 

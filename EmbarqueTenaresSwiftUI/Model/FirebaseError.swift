@@ -1,11 +1,3 @@
-//
-//  FirebaseErrorModel.swift
-//  Tenares Shipping
-//
-//  Created by Elkin Garcia on 4/5/23.
-//
-
-import Foundation
 import SwiftUI
 
 enum FirebaseError: Error {

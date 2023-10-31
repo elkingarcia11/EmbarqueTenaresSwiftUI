@@ -1,7 +1,6 @@
-import Foundation
 import Firebase
 
-class HttpHeader : ObservableObject {
+public class HttpHeader : ObservableObject {
     @Published var apiKey : String = ""
     @Published var appId : String = ""
     @Published var url : String = ""
@@ -27,11 +26,11 @@ class HttpHeader : ObservableObject {
             self.url = data["url"] as! String
         }
     }
-
-    static func firebaseToken() async throws -> String {
-            guard let token = try await Auth.auth().currentUser?.getIDToken() else {
-                throw FirebaseError.failToGetToken
-            }
-            return token
+    
+    func firebaseToken() async throws -> String {
+        guard let token = try await Auth.auth().currentUser?.getIDToken() else {
+            throw FirebaseError.failToGetToken
         }
+        return token
+    }
 }

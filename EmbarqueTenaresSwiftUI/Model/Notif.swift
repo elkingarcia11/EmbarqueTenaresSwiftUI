@@ -1,5 +1,3 @@
-import Foundation
-import SwiftUI
 import UserNotifications
 
 enum NotifError: Error {
@@ -37,9 +35,9 @@ public class Notif : ObservableObject {
                     print(error?.localizedDescription ?? "Notifications not allowed")
                 }
             }
-            print("Notification was created")
         } else {
             throw NotifError.invalidDateComponents
         }
     }
+    
 }

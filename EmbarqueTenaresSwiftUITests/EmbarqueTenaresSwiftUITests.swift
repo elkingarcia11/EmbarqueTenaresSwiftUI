@@ -1,10 +1,3 @@
-//
-//  EmbarqueTenaresSwiftUITests.swift
-//  EmbarqueTenaresSwiftUITests
-//
-//  Created by Elkin Garcia on 10/30/23.
-//
-
 import XCTest
 
 final class EmbarqueTenaresSwiftUITests: XCTestCase {

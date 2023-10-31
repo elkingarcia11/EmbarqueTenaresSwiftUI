@@ -1,5 +1,3 @@
-import Foundation
-
 struct FAQs: Identifiable, Codable {
     var id : Int
     var q_en : String
