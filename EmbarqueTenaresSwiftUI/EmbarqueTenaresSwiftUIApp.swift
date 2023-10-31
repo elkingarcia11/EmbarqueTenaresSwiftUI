@@ -5,9 +5,22 @@ import FirebaseFirestore
 import FirebaseAuth
 import UserNotifications
 
+
 class AppDelegate: NSObject, UIApplicationDelegate {
+    
+    var config: [String: Any]?
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        // Use Firebase library to configure APIs
+        FirebaseApp.configure()
+        
+        Auth.auth().signInAnonymously { authResult, error in
+            if authResult != nil {
+                print("Successfully signed in")
+            } else {
+                print("Error signing in")
+            }
+        }
         return true
     }
 }
@@ -17,8 +30,6 @@ struct EmbarqueTenaresSwiftUIApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     init() {
-        // Configure Firebase
-        FirebaseApp.configure()
         
         let components = DateComponents(year: 2024, month: 1, day: 10, hour: 12, minute: 0)
         // Create a new instance of the Notif class.
