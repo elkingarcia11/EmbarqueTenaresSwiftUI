@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Tenares Shipping.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1EAC36EE2AF20331007272B2"
+               BuildableName = "EmbarqueTenaresSwiftUIUITests.xctest"
+               BlueprintName = "EmbarqueTenaresSwiftUIUITests"
+               ReferencedContainer = "container:Tenares Shipping.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -35,8 +49,18 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1EAC36AC2AF0AD07007272B2"
-               BuildableName = "EmbarqueTenaresSwiftUITests.xctest"
-               BlueprintName = "EmbarqueTenaresSwiftUITests"
+               BuildableName = "EmbarqueTenaresSwiftUIUnitTests.xctest"
+               BlueprintName = "EmbarqueTenaresSwiftUIUnitTests"
+               ReferencedContainer = "container:Tenares Shipping.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1EAC36EE2AF20331007272B2"
+               BuildableName = "EmbarqueTenaresSwiftUIUITests.xctest"
+               BlueprintName = "EmbarqueTenaresSwiftUIUITests"
                ReferencedContainer = "container:Tenares Shipping.xcodeproj">
             </BuildableReference>
          </TestableReference>

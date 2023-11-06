@@ -2,7 +2,7 @@ import XCTest
 import SwiftUI
 import UserNotifications
 
-class NotifTests: XCTestCase {
+class NotifUnitTests: XCTestCase {
     
     func testIsValidString(){
         XCTAssertNoThrow(try Notif(title: "Valid string", body: "Valid string", dateComponent: DateComponents()))

@@ -1,5 +1,8 @@
 import XCTest
 
+// Naming Structure: test_UnitOfWork_StateUnderTest_ExpectedBehavior
+// Naming Structure: test_[class or struct]_[variable or function]_[expected result]
+// Testing Structure: Given, When, Then
 final class EmbarqueTenaresSwiftUITests: XCTestCase {
 
     override func setUpWithError() throws {
