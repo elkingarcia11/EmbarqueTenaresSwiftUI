@@ -19,6 +19,7 @@ struct MainView: View {
     let rates : LocalizedStringKey = "rates"
     let faqs : LocalizedStringKey = "faqs"
     let locations : LocalizedStringKey = "locations"
+    let versionNumber : String = "V 4.2"
     
     @StateObject var httpHeader = HttpHeader()
     
@@ -91,7 +92,7 @@ struct MainView: View {
                     }
                 }
                 .navigationBarItems(
-                    leading: Text("V 4.1")
+                    leading: Text(versionNumber)
                         .font(.subheadline)
                         .foregroundColor(Color.gray),
                     trailing:
