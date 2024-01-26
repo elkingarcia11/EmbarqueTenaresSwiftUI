@@ -3,21 +3,19 @@ import SwiftUI
 struct SplashScreenView: View {
     
     let fonts = Fonts()
-    
+    let imageName : String = "logo"
     @State var animationValues: [Bool] = Array(repeating: false, count: 10)
-    
     
     var body: some View {
         ZStack{
             Color.light.ignoresSafeArea()
             VStack{
-                Image("logo")
+                Image(imageName)
                     .resizable()
-                    .scaledToFit()
-                    .frame(width: screenWidth/1.25, alignment: .center)
-                    .scaleEffect(animationValues[0] ? 1 : 4, anchor: .center)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: screenWidth/1.25)
+                    .scaleEffect(animationValues[0] ? 1 : 4)
                     .offset(y: -25)
-                
             }
             MainView()
                 .environment(\.colorScheme, .light)

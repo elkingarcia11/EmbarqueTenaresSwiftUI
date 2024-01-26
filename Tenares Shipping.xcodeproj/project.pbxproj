@@ -31,9 +31,6 @@
 		1E6E551528995D4600ADA8F4 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E551428995D4600ADA8F4 /* SplashScreenView.swift */; };
 		1E6E5517289962E200ADA8F4 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E5516289962E200ADA8F4 /* Fonts.swift */; };
 		1E7413DD2A30DC2F0094F064 /* Notif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7413DC2A30DC2F0094F064 /* Notif.swift */; };
-		1EAC36B02AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAC36AF2AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests.swift */; };
-		1EAC36B92AF0AE7A007272B2 /* NotifTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAC36B82AF0AE7A007272B2 /* NotifTests.swift */; };
-		1EAC36BD2AF0AFA1007272B2 /* Notif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7413DC2A30DC2F0094F064 /* Notif.swift */; };
 		1EBD54522885A21F0007A77B /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBD54512885A21F0007A77B /* TrackModel.swift */; };
 		1EBD5454288701DE0007A77B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EBD5453288701DE0007A77B /* GoogleService-Info.plist */; };
 		1EE474A627C4050100861E5C /* EmbarqueTenaresSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE474A527C4050100861E5C /* EmbarqueTenaresSwiftUIApp.swift */; };
@@ -48,16 +45,6 @@
 		1EFE3DA127E8F2ED0021F8D6 /* FAQsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFE3DA027E8F2ED0021F8D6 /* FAQsViewModel.swift */; };
 		1EFE3DA327E8FC750021F8D6 /* FAQsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFE3DA227E8FC750021F8D6 /* FAQsModel.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		1EAC36B12AF0AD07007272B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1EE4749A27C4050100861E5C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1EE474A127C4050100861E5C;
-			remoteInfo = "Tenares Shipping";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1E0462D829214B2600F60389 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
@@ -84,9 +71,6 @@
 		1E6E551428995D4600ADA8F4 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		1E6E5516289962E200ADA8F4 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		1E7413DC2A30DC2F0094F064 /* Notif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notif.swift; sourceTree = "<group>"; };
-		1EAC36AD2AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmbarqueTenaresSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1EAC36AF2AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbarqueTenaresSwiftUITests.swift; sourceTree = "<group>"; };
-		1EAC36B82AF0AE7A007272B2 /* NotifTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifTests.swift; sourceTree = "<group>"; };
 		1EBD54512885A21F0007A77B /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
 		1EBD5453288701DE0007A77B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EE474A227C4050100861E5C /* Tenares Shipping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tenares Shipping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,13 +88,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1EAC36AA2AF0AD07007272B2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1EE4749F27C4050100861E5C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,21 +110,11 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		1EAC36AE2AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1EAC36AF2AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests.swift */,
-				1EAC36B82AF0AE7A007272B2 /* NotifTests.swift */,
-			);
-			path = EmbarqueTenaresSwiftUITests;
-			sourceTree = "<group>";
-		};
 		1EE4749927C4050100861E5C = {
 			isa = PBXGroup;
 			children = (
 				1E0462EC2927F5EA00F60389 /* Tenares Shipping.entitlements */,
 				1EE474A427C4050100861E5C /* EmbarqueTenaresSwiftUI */,
-				1EAC36AE2AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests */,
 				1EE474A327C4050100861E5C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -156,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				1EE474A227C4050100861E5C /* Tenares Shipping.app */,
-				1EAC36AD2AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,24 +203,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1EAC36AC2AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1EAC36B32AF0AD07007272B2 /* Build configuration list for PBXNativeTarget "EmbarqueTenaresSwiftUITests" */;
-			buildPhases = (
-				1EAC36A92AF0AD07007272B2 /* Sources */,
-				1EAC36AA2AF0AD07007272B2 /* Frameworks */,
-				1EAC36AB2AF0AD07007272B2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1EAC36B22AF0AD07007272B2 /* PBXTargetDependency */,
-			);
-			name = EmbarqueTenaresSwiftUITests;
-			productName = EmbarqueTenaresSwiftUITests;
-			productReference = 1EAC36AD2AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		1EE474A127C4050100861E5C /* Tenares Shipping */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1EE474B027C4050500861E5C /* Build configuration list for PBXNativeTarget "Tenares Shipping" */;
@@ -287,10 +235,6 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-					1EAC36AC2AF0AD07007272B2 = {
-						CreatedOnToolsVersion = 14.1;
-						TestTargetID = 1EE474A127C4050100861E5C;
-					};
 					1EE474A127C4050100861E5C = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -314,19 +258,11 @@
 			projectRoot = "";
 			targets = (
 				1EE474A127C4050100861E5C /* Tenares Shipping */,
-				1EAC36AC2AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1EAC36AB2AF0AD07007272B2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1EE474A027C4050100861E5C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -341,16 +277,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1EAC36A92AF0AD07007272B2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1EAC36BD2AF0AFA1007272B2 /* Notif.swift in Sources */,
-				1EAC36B92AF0AE7A007272B2 /* NotifTests.swift in Sources */,
-				1EAC36B02AF0AD07007272B2 /* EmbarqueTenaresSwiftUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1EE4749E27C4050100861E5C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -390,14 +316,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		1EAC36B22AF0AD07007272B2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1EE474A127C4050100861E5C /* Tenares Shipping */;
-			targetProxy = 1EAC36B12AF0AD07007272B2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		1E2E552A27DFC22D00F25C10 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -411,46 +329,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1EAC36B42AF0AD07007272B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 49AKYU26GJ;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = elkingarcia.EmbarqueTenaresSwiftUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tenares Shipping.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tenares Shipping";
-			};
-			name = Debug;
-		};
-		1EAC36B52AF0AD07007272B2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 49AKYU26GJ;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = elkingarcia.EmbarqueTenaresSwiftUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tenares Shipping.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tenares Shipping";
-			};
-			name = Release;
-		};
 		1EE474AE27C4050500861E5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -573,7 +451,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=iphoneos*]" = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Tenares Shipping.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -589,14 +469,13 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.1;
+				MARKETING_VERSION = 4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.embarquetenares.TenaresShipping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -612,7 +491,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=iphoneos*]" = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "Tenares Shipping.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -628,14 +509,13 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.1;
+				MARKETING_VERSION = 4.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.embarquetenares.TenaresShipping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -650,15 +530,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1EAC36B32AF0AD07007272B2 /* Build configuration list for PBXNativeTarget "EmbarqueTenaresSwiftUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1EAC36B42AF0AD07007272B2 /* Debug */,
-				1EAC36B52AF0AD07007272B2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		1EE4749D27C4050100861E5C /* Build configuration list for PBXProject "Tenares Shipping" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

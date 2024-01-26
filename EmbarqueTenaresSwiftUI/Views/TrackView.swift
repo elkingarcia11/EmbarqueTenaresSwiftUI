@@ -19,6 +19,7 @@ struct TrackView: View {
     let invoice : LocalizedStringKey = "invoice"
     let etaFootnote : LocalizedStringKey = "etaFootnote"
     let search : LocalizedStringKey = "search"
+    let imageName : String = "logo"
     
     var body: some View {
         ZStack {
@@ -33,9 +34,9 @@ struct TrackView: View {
                 } else {
                     if trackViewModel.state == .na {
                         Spacer()
-                        Image("logo")
+                        Image(imageName)
                             .resizable()
-                            .scaledToFit()
+                            .aspectRatio(contentMode: .fit)
                             .frame(width: screenWidth/1.25, alignment: .center)
                     } else if trackViewModel.state == .successful {
                         Text(edoa)
@@ -65,7 +66,7 @@ struct TrackView: View {
                         }
                         .padding(.bottom)
                         
-                       
+                        
                         ProgressBarView(progress: $trackViewModel.progressValue, daysLeft: trackViewModel.daysLeft)
                             .frame(width: 150.0, height: 150.0)
                             .padding(40.0)

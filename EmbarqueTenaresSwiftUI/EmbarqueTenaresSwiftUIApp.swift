@@ -58,6 +58,8 @@ struct EmbarqueTenaresSwiftUIApp: App {
             // Handle the error.
             print(error.localizedDescription)
         }
+        
+        
     }
     
     var body: some Scene {

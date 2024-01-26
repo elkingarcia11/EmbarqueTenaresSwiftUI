@@ -37,7 +37,6 @@ public class Notif : ObservableObject {
                     print(error?.localizedDescription ?? "Notifications not allowed")
                 }
             }
-            print("Notification was created")
         } else {
             throw NotifError.invalidDateComponents
         }
